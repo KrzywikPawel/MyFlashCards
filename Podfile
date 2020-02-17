@@ -9,8 +9,8 @@ target 'MyFlashCards' do
 
   target 'MyFlashCardsTests' do
     inherit! :search_paths
-    pod 'ACBRadialCollectionView'
     # Pods for testing
   end
+  pod 'ACBRadialCollectionView'
 
 end
