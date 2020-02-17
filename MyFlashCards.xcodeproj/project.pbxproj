@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C947B6402AE217C0DDEA4B5 /* Pods_MyFlashCardsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3849B0ABDD27FE715AD07B /* Pods_MyFlashCardsTests.framework */; };
 		E5D7BE4C23FA95AC00F10DFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7BE4B23FA95AC00F10DFE /* AppDelegate.swift */; };
 		E5D7BE4E23FA95AC00F10DFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7BE4D23FA95AC00F10DFE /* SceneDelegate.swift */; };
 		E5D7BE5023FA95AC00F10DFE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7BE4F23FA95AC00F10DFE /* ViewController.swift */; };
@@ -14,6 +15,7 @@
 		E5D7BE5523FA95B000F10DFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5D7BE5423FA95B000F10DFE /* Assets.xcassets */; };
 		E5D7BE5823FA95B000F10DFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5D7BE5623FA95B000F10DFE /* LaunchScreen.storyboard */; };
 		E5D7BE6323FA95B000F10DFE /* MyFlashCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7BE6223FA95B000F10DFE /* MyFlashCardsTests.swift */; };
+		F360486EBAB73E1646F23001 /* Pods_MyFlashCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E88B3A966367B2C988887CF2 /* Pods_MyFlashCards.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		164EAB3D9A668DBA9570A3AF /* Pods-MyFlashCards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFlashCards.debug.xcconfig"; path = "Target Support Files/Pods-MyFlashCards/Pods-MyFlashCards.debug.xcconfig"; sourceTree = "<group>"; };
+		2AB73F2D706178E6CB888F83 /* Pods-MyFlashCards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFlashCards.release.xcconfig"; path = "Target Support Files/Pods-MyFlashCards/Pods-MyFlashCards.release.xcconfig"; sourceTree = "<group>"; };
+		30CAE8DCE7917BE58E82731C /* Pods-MyFlashCardsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFlashCardsTests.release.xcconfig"; path = "Target Support Files/Pods-MyFlashCardsTests/Pods-MyFlashCardsTests.release.xcconfig"; sourceTree = "<group>"; };
+		3928A45BE40D099FABC964FA /* Pods-MyFlashCardsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFlashCardsTests.debug.xcconfig"; path = "Target Support Files/Pods-MyFlashCardsTests/Pods-MyFlashCardsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CB3849B0ABDD27FE715AD07B /* Pods_MyFlashCardsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyFlashCardsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5D7BE4823FA95AC00F10DFE /* MyFlashCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFlashCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5D7BE4B23FA95AC00F10DFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5D7BE4D23FA95AC00F10DFE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +45,7 @@
 		E5D7BE5E23FA95B000F10DFE /* MyFlashCardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyFlashCardsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5D7BE6223FA95B000F10DFE /* MyFlashCardsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFlashCardsTests.swift; sourceTree = "<group>"; };
 		E5D7BE6423FA95B000F10DFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E88B3A966367B2C988887CF2 /* Pods_MyFlashCards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyFlashCards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F360486EBAB73E1646F23001 /* Pods_MyFlashCards.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +61,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C947B6402AE217C0DDEA4B5 /* Pods_MyFlashCardsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		317916C34E9A41746134E950 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E88B3A966367B2C988887CF2 /* Pods_MyFlashCards.framework */,
+				CB3849B0ABDD27FE715AD07B /* Pods_MyFlashCardsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E5D7BE3F23FA95AC00F10DFE = {
 			isa = PBXGroup;
 			children = (
 				E5D7BE4A23FA95AC00F10DFE /* MyFlashCards */,
 				E5D7BE6123FA95B000F10DFE /* MyFlashCardsTests */,
 				E5D7BE4923FA95AC00F10DFE /* Products */,
+				FA2F585BF603E508CBC0F640 /* Pods */,
+				317916C34E9A41746134E950 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +120,18 @@
 			path = MyFlashCardsTests;
 			sourceTree = "<group>";
 		};
+		FA2F585BF603E508CBC0F640 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				164EAB3D9A668DBA9570A3AF /* Pods-MyFlashCards.debug.xcconfig */,
+				2AB73F2D706178E6CB888F83 /* Pods-MyFlashCards.release.xcconfig */,
+				3928A45BE40D099FABC964FA /* Pods-MyFlashCardsTests.debug.xcconfig */,
+				30CAE8DCE7917BE58E82731C /* Pods-MyFlashCardsTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,6 +139,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E5D7BE6723FA95B000F10DFE /* Build configuration list for PBXNativeTarget "MyFlashCards" */;
 			buildPhases = (
+				AA2A0ABB75AAE694A1DB95CF /* [CP] Check Pods Manifest.lock */,
 				E5D7BE4423FA95AC00F10DFE /* Sources */,
 				E5D7BE4523FA95AC00F10DFE /* Frameworks */,
 				E5D7BE4623FA95AC00F10DFE /* Resources */,
@@ -123,9 +157,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E5D7BE6A23FA95B000F10DFE /* Build configuration list for PBXNativeTarget "MyFlashCardsTests" */;
 			buildPhases = (
+				61CF6BEFA0A717A38BF0AD43 /* [CP] Check Pods Manifest.lock */,
 				E5D7BE5A23FA95B000F10DFE /* Sources */,
 				E5D7BE5B23FA95B000F10DFE /* Frameworks */,
 				E5D7BE5C23FA95B000F10DFE /* Resources */,
+				91EC50CBDC503EE21EE23AE1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -194,6 +230,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		61CF6BEFA0A717A38BF0AD43 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyFlashCardsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91EC50CBDC503EE21EE23AE1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyFlashCardsTests/Pods-MyFlashCardsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyFlashCardsTests/Pods-MyFlashCardsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyFlashCardsTests/Pods-MyFlashCardsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA2A0ABB75AAE694A1DB95CF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyFlashCards-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E5D7BE4423FA95AC00F10DFE /* Sources */ = {
@@ -360,6 +460,7 @@
 		};
 		E5D7BE6823FA95B000F10DFE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 164EAB3D9A668DBA9570A3AF /* Pods-MyFlashCards.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -378,6 +479,7 @@
 		};
 		E5D7BE6923FA95B000F10DFE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AB73F2D706178E6CB888F83 /* Pods-MyFlashCards.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -396,6 +498,7 @@
 		};
 		E5D7BE6B23FA95B000F10DFE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3928A45BE40D099FABC964FA /* Pods-MyFlashCardsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -418,6 +521,7 @@
 		};
 		E5D7BE6C23FA95B000F10DFE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30CAE8DCE7917BE58E82731C /* Pods-MyFlashCardsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
