@@ -16,7 +16,7 @@ extension ViewController:UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView,cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CategoriesCollectionViewCell
-//        refactor to categoriescollectionviewcell
+//      MARK:  refactor to categoriescollectionviewcell
         cell.categoryImage.image = UIImage(named: "hospital")
         return cell
     }

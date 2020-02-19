@@ -12,6 +12,7 @@ import ACBRadialCollectionView
 class MainView: UIView{
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
     
+    @IBOutlet weak var yourCategoryBtn: UIButton!
     @IBOutlet weak var lastCategoryImage: UIImageView!
     fileprivate var datasourceArray: [String] = []
     
@@ -33,8 +34,9 @@ class MainView: UIView{
         }
     }
     
+    
     private func setBackground() {
-        let backgroundImg = UIImage(named: "backgroundMainView")
+        let backgroundImg = UIImage(named: "MainViewBackground")
         let backgroundImageView = UIImageView.init(frame: self.frame)
         backgroundImageView.image = backgroundImg
         backgroundImageView.contentMode = .scaleAspectFill
@@ -44,7 +46,7 @@ class MainView: UIView{
     private func setCategoriesCollectionView() {
         categoriesCollectionView.backgroundColor = .clear
         let itemRadius: CGFloat = 100
-        let center = CGPoint(x: 100, y: 100)
+        let center = CGPoint(x: 100, y: 80)
         let radius: CGFloat = 200
         let startAngle = CGFloat(0)
         let endAngle = CGFloat.pi / 2

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0C947B6402AE217C0DDEA4B5 /* Pods_MyFlashCardsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3849B0ABDD27FE715AD07B /* Pods_MyFlashCardsTests.framework */; };
+		E52EBE2E23FD352E008311BB /* FlashCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52EBE2D23FD352E008311BB /* FlashCardViewController.swift */; };
 		E55304DF23FAB58800A7A32F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55304DE23FAB58800A7A32F /* MainView.swift */; };
 		E55304E123FAC37F00A7A32F /* CategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55304E023FAC37F00A7A32F /* CategoriesCollectionViewCell.swift */; };
 		E55304E323FAC51700A7A32F /* CategoriesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55304E223FAC51700A7A32F /* CategoriesCollectionView.swift */; };
@@ -37,6 +38,7 @@
 		30CAE8DCE7917BE58E82731C /* Pods-MyFlashCardsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFlashCardsTests.release.xcconfig"; path = "Target Support Files/Pods-MyFlashCardsTests/Pods-MyFlashCardsTests.release.xcconfig"; sourceTree = "<group>"; };
 		3928A45BE40D099FABC964FA /* Pods-MyFlashCardsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFlashCardsTests.debug.xcconfig"; path = "Target Support Files/Pods-MyFlashCardsTests/Pods-MyFlashCardsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB3849B0ABDD27FE715AD07B /* Pods_MyFlashCardsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyFlashCardsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E52EBE2D23FD352E008311BB /* FlashCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardViewController.swift; sourceTree = "<group>"; };
 		E55304DE23FAB58800A7A32F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E55304E023FAC37F00A7A32F /* CategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		E55304E223FAC51700A7A32F /* CategoriesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionView.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			children = (
 				E5D7BE4F23FA95AC00F10DFE /* ViewController.swift */,
 				E55304E223FAC51700A7A32F /* CategoriesCollectionView.swift */,
+				E52EBE2D23FD352E008311BB /* FlashCardViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5D7BE5023FA95AC00F10DFE /* ViewController.swift in Sources */,
+				E52EBE2E23FD352E008311BB /* FlashCardViewController.swift in Sources */,
 				E55304DF23FAB58800A7A32F /* MainView.swift in Sources */,
 				E5D7BE4C23FA95AC00F10DFE /* AppDelegate.swift in Sources */,
 				E5D7BE4E23FA95AC00F10DFE /* SceneDelegate.swift in Sources */,
