@@ -94,31 +94,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D7T-8x-TtW">
-                                <rect key="frame" x="67" y="202" width="240" height="148"/>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="D7T-8x-TtW">
+                                <rect key="frame" x="67" y="156" width="308" height="219"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTn-cm-tcX">
-                                        <rect key="frame" x="99" y="63.5" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" image="thumbUp" translatesAutoresizingMaskIntoConstraints="NO" id="lQZ-ra-j54">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" fixedFrame="YES" image="thumbUp" translatesAutoresizingMaskIntoConstraints="NO" id="lQZ-ra-j54">
                                         <rect key="frame" x="182" y="8" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" image="thumbDown" translatesAutoresizingMaskIntoConstraints="NO" id="fiU-eM-pLO">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" fixedFrame="YES" image="thumbDown" translatesAutoresizingMaskIntoConstraints="NO" id="fiU-eM-pLO">
                                         <rect key="frame" x="8" y="8" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="flashCard" translatesAutoresizingMaskIntoConstraints="NO" id="o3u-MD-mOe">
+                                        <rect key="frame" x="-13" y="-6" width="321" height="241"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="fiU-eM-pLO" firstAttribute="leading" secondItem="D7T-8x-TtW" secondAttribute="leading" constant="8" id="Jw6-vB-D8g"/>
-                                    <constraint firstItem="lQZ-ra-j54" firstAttribute="top" secondItem="D7T-8x-TtW" secondAttribute="top" constant="8" id="NuJ-k6-1Y7"/>
-                                    <constraint firstAttribute="trailing" secondItem="lQZ-ra-j54" secondAttribute="trailing" constant="8" id="kT4-0t-qzr"/>
-                                    <constraint firstItem="hTn-cm-tcX" firstAttribute="centerX" secondItem="D7T-8x-TtW" secondAttribute="centerX" id="m4X-bN-Qvc"/>
-                                    <constraint firstItem="hTn-cm-tcX" firstAttribute="centerY" secondItem="D7T-8x-TtW" secondAttribute="centerY" id="tdG-Bs-FeX"/>
-                                    <constraint firstItem="fiU-eM-pLO" firstAttribute="top" secondItem="D7T-8x-TtW" secondAttribute="top" constant="8" id="v6M-4B-0NF"/>
+                                    <constraint firstItem="o3u-MD-mOe" firstAttribute="top" secondItem="D7T-8x-TtW" secondAttribute="top" constant="-6" id="IpB-pz-xeq"/>
+                                    <constraint firstAttribute="trailing" secondItem="o3u-MD-mOe" secondAttribute="trailing" id="KGz-Ka-jgr"/>
+                                    <constraint firstAttribute="bottom" secondItem="o3u-MD-mOe" secondAttribute="bottom" constant="-16" id="WBY-nF-Dl6"/>
+                                    <constraint firstItem="o3u-MD-mOe" firstAttribute="leading" secondItem="D7T-8x-TtW" secondAttribute="leading" constant="-13" id="Xi3-Cq-ekL"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="dp1-fG-OPg" appends="YES" id="95h-58-dxI"/>
@@ -126,20 +123,20 @@
                                 </connections>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="D7T-8x-TtW" firstAttribute="top" secondItem="pFt-84-mcz" secondAttribute="top" constant="202" id="4e6-Qr-Nd6"/>
-                            <constraint firstItem="pFt-84-mcz" firstAttribute="trailing" secondItem="D7T-8x-TtW" secondAttribute="trailing" constant="68" id="Acw-AK-OJZ"/>
-                            <constraint firstItem="D7T-8x-TtW" firstAttribute="leading" secondItem="pFt-84-mcz" secondAttribute="leading" constant="67" id="cXR-TP-adf"/>
-                            <constraint firstItem="pFt-84-mcz" firstAttribute="bottom" secondItem="D7T-8x-TtW" secondAttribute="bottom" constant="317" id="oyn-pX-NCJ"/>
+                            <constraint firstItem="pFt-84-mcz" firstAttribute="trailing" secondItem="D7T-8x-TtW" secondAttribute="trailing" id="TGG-BZ-qk9"/>
+                            <constraint firstItem="pFt-84-mcz" firstAttribute="bottom" secondItem="D7T-8x-TtW" secondAttribute="bottom" constant="292" id="bfX-h4-8xv"/>
+                            <constraint firstItem="D7T-8x-TtW" firstAttribute="leading" secondItem="pFt-84-mcz" secondAttribute="leading" constant="67" id="qze-uS-8TX"/>
+                            <constraint firstItem="D7T-8x-TtW" firstAttribute="top" secondItem="pFt-84-mcz" secondAttribute="top" constant="156" id="zW7-Yj-sjp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pFt-84-mcz"/>
                     </view>
                     <connections>
                         <outlet property="downThumbImageView" destination="fiU-eM-pLO" id="uvp-pl-FEu"/>
+                        <outlet property="flashCardImg" destination="o3u-MD-mOe" id="LBO-CZ-yDc"/>
                         <outlet property="flashCardView" destination="D7T-8x-TtW" id="UC8-D9-R5R"/>
                         <outlet property="upThumbImageView" destination="lQZ-ra-j54" id="jN7-q0-8te"/>
-                        <outlet property="wordLbl" destination="hTn-cm-tcX" id="LMz-SN-WLu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcj-vK-6FX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -158,6 +155,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="flashCard" width="490" height="317"/>
         <image name="thumbDown" width="50" height="50"/>
         <image name="thumbUp" width="50" height="50"/>
     </resources>

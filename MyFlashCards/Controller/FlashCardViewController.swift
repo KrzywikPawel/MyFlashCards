@@ -10,6 +10,7 @@ import UIKit
 
 class FlashCardViewController: UIViewController {
     
+    @IBOutlet weak var flashCardImg: UIImageView!
     @IBOutlet weak var wordLbl: UILabel!
     @IBOutlet weak var flashCardView: UIView!
     @IBOutlet weak var upThumbImageView: UIImageView!
@@ -17,11 +18,20 @@ class FlashCardViewController: UIViewController {
     var divisor: CGFloat!
     override func viewDidLoad() {
         super.viewDidLoad()
+        flashCardView.backgroundColor = .clear
+        
+        
+        //        wordLbl.text = "fish"
+        let backgroundImg = UIImage(named: "flash")
+        let backgroundImageView = UIImageView.init(frame: view.frame)
+        backgroundImageView.image = backgroundImg
+        backgroundImageView.contentMode = .scaleAspectFill
+        view.insertSubview(backgroundImageView, at: 0)
         divisor = (view.frame.width / 2) / 0.61
         // Do any additional setup after loading the view.
     }
     @IBAction func flashCardTapGesture(_ sender: UITapGestureRecognizer) {
-        UIView.transition(with: flashCardView, duration: 0.3, options: .transitionFlipFromLeft, animations: nil, completion: nil)
+        UIView.transition(with: flashCardView, duration: 0.4, options: .transitionFlipFromLeft, animations: nil, completion: nil)
     }
     
     
@@ -60,14 +70,5 @@ class FlashCardViewController: UIViewController {
             }
         }
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
+
