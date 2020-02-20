@@ -16,24 +16,38 @@ class FlashCardViewController: UIViewController {
     @IBOutlet weak var upThumbImageView: UIImageView!
     @IBOutlet weak var downThumbImageView: UIImageView!
     var divisor: CGFloat!
+    var isOpen = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        flashCardView.backgroundColor = .clear
-        
-        
-        //        wordLbl.text = "fish"
-        let backgroundImg = UIImage(named: "flash")
+        setBackground()
+        setCardView()
+        divisor = (view.frame.width / 2) / 0.61
+        wordLbl.text = "fish"
+    }
+    
+    private func setBackground() {
+        let backgroundImg = UIImage(named: "flashCardBackground")
         let backgroundImageView = UIImageView.init(frame: view.frame)
         backgroundImageView.image = backgroundImg
         backgroundImageView.contentMode = .scaleAspectFill
         view.insertSubview(backgroundImageView, at: 0)
-        divisor = (view.frame.width / 2) / 0.61
-        // Do any additional setup after loading the view.
-    }
-    @IBAction func flashCardTapGesture(_ sender: UITapGestureRecognizer) {
-        UIView.transition(with: flashCardView, duration: 0.4, options: .transitionFlipFromLeft, animations: nil, completion: nil)
     }
     
+    private func setCardView() {
+        flashCardView.backgroundColor = .clear
+    }
+    
+    @IBAction func flashCardTapGesture(_ sender: UITapGestureRecognizer) {
+        UIView.transition(with: flashCardView, duration: 0.4, options: .transitionFlipFromLeft, animations: nil, completion: nil)
+        if isOpen {
+            print(isOpen)
+            isOpen = false
+            wordLbl.text = "fish"
+        } else {
+            isOpen = true
+            wordLbl.text = "rybaaa"
+        }
+    }
     
     @IBAction func flashCardPanGesture(_ sender: UIPanGestureRecognizer) {
         let card = sender.view!

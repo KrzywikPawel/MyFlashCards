@@ -108,12 +108,20 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="flashCard" translatesAutoresizingMaskIntoConstraints="NO" id="o3u-MD-mOe">
                                         <rect key="frame" x="-13" y="-6" width="321" height="241"/>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meo-35-a3E">
+                                        <rect key="frame" x="133" y="99" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="o3u-MD-mOe" firstAttribute="top" secondItem="D7T-8x-TtW" secondAttribute="top" constant="-6" id="IpB-pz-xeq"/>
                                     <constraint firstAttribute="trailing" secondItem="o3u-MD-mOe" secondAttribute="trailing" id="KGz-Ka-jgr"/>
+                                    <constraint firstItem="meo-35-a3E" firstAttribute="centerX" secondItem="D7T-8x-TtW" secondAttribute="centerX" id="PV2-mg-9cl"/>
+                                    <constraint firstItem="meo-35-a3E" firstAttribute="centerY" secondItem="D7T-8x-TtW" secondAttribute="centerY" id="Q7b-PP-C8S"/>
                                     <constraint firstAttribute="bottom" secondItem="o3u-MD-mOe" secondAttribute="bottom" constant="-16" id="WBY-nF-Dl6"/>
                                     <constraint firstItem="o3u-MD-mOe" firstAttribute="leading" secondItem="D7T-8x-TtW" secondAttribute="leading" constant="-13" id="Xi3-Cq-ekL"/>
                                 </constraints>
@@ -137,6 +145,7 @@
                         <outlet property="flashCardImg" destination="o3u-MD-mOe" id="LBO-CZ-yDc"/>
                         <outlet property="flashCardView" destination="D7T-8x-TtW" id="UC8-D9-R5R"/>
                         <outlet property="upThumbImageView" destination="lQZ-ra-j54" id="jN7-q0-8te"/>
+                        <outlet property="wordLbl" destination="meo-35-a3E" id="xSL-48-bMv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcj-vK-6FX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
