@@ -41,7 +41,6 @@ class FlashCardViewController: UIViewController {
     @IBAction func flashCardTapGesture(_ sender: UITapGestureRecognizer) {
         UIView.transition(with: flashCardView, duration: 0.4, options: .transitionFlipFromLeft, animations: nil, completion: nil)
         if isPolishSite {
-            print(isPolishSite)
             isPolishSite = false
             wordLbl.text = "fish"
         } else {
@@ -49,7 +48,6 @@ class FlashCardViewController: UIViewController {
             wordLbl.text = "rybaaa"
         }
     }
-    
     
     @IBAction func flashCardPanGesture(_ sender: UIPanGestureRecognizer) {
         let card = sender.view!
