@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>556859653591-0f35tp223ri468v2quosd1ee0t0pbn74.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.556859653591-0f35tp223ri468v2quosd1ee0t0pbn74</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAqeZqEkBerGaYQBAqykLUZFHm5B2uhkAg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>556859653591</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>krzywik.pl.MyFlashCards</string>
+	<key>PROJECT_ID</key>
+	<string>myflashcards-e38c2</string>
+	<key>STORAGE_BUCKET</key>
+	<string>myflashcards-e38c2.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:556859653591:ios:4a39d58fa446b22de25f92</string>
+	<key>DATABASE_URL</key>
+	<string>https://myflashcards-e38c2.firebaseio.com</string>
+</dict>
+</plist>
