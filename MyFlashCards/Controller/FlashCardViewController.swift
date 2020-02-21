@@ -16,13 +16,13 @@ class FlashCardViewController: UIViewController {
     @IBOutlet weak var upThumbImageView: UIImageView!
     @IBOutlet weak var downThumbImageView: UIImageView!
     var divisor: CGFloat!
-    var isOpen = false
+    var isPolishSite = false
+    let backCardPoint = CGPoint(x: 221, y: 275)
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackground()
         setCardView()
         divisor = (view.frame.width / 2) / 0.61
-        wordLbl.text = "fish"
     }
     
     private func setBackground() {
@@ -35,19 +35,21 @@ class FlashCardViewController: UIViewController {
     
     private func setCardView() {
         flashCardView.backgroundColor = .clear
+        wordLbl.text = "fish"
     }
     
     @IBAction func flashCardTapGesture(_ sender: UITapGestureRecognizer) {
         UIView.transition(with: flashCardView, duration: 0.4, options: .transitionFlipFromLeft, animations: nil, completion: nil)
-        if isOpen {
-            print(isOpen)
-            isOpen = false
+        if isPolishSite {
+            print(isPolishSite)
+            isPolishSite = false
             wordLbl.text = "fish"
         } else {
-            isOpen = true
+            isPolishSite = true
             wordLbl.text = "rybaaa"
         }
     }
+    
     
     @IBAction func flashCardPanGesture(_ sender: UIPanGestureRecognizer) {
         let card = sender.view!
@@ -56,6 +58,7 @@ class FlashCardViewController: UIViewController {
         let xFromCenter = card.center.x - view.center.x
         let scale = min(100/abs(xFromCenter), 1)
         card.transform = CGAffineTransform(rotationAngle: xFromCenter/divisor).scaledBy(x: scale, y: scale)
+        
         if xFromCenter > 0 {
             upThumbImageView.image = UIImage(named: "thumbUp")
             upThumbImageView.tintColor = .green
@@ -72,9 +75,7 @@ class FlashCardViewController: UIViewController {
                 UIView.animate(withDuration: 0.3) {
                     card.center = CGPoint(x: card.center.x - 200, y: card.center.y)
                     card.alpha = 0
-                    
                 }
-                
             } else if card.center.x > (view.frame.width - 75) {
                 UIView.animate(withDuration: 0.3) {
                     card.center = CGPoint(x: card.center.x + 200, y: card.center.y)
@@ -82,7 +83,16 @@ class FlashCardViewController: UIViewController {
                 }
                 return
             }
+            backCardToStartPosition(card)
         }
     }
+    
+    private func backCardToStartPosition(_ card: UIView) {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.flashCardView.center = self.backCardPoint
+            card.transform = CGAffineTransform.identity
+            self.downThumbImageView.alpha = 0
+            self.upThumbImageView.alpha = 0
+        })
+    }
 }
-
