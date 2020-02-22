@@ -19,6 +19,7 @@ class FlashCardViewController: UIViewController {
     var showedCard = 0
     var flashCard = UIView()
     let endWord = "koniec slowek"
+    let emptyHardwords = "your hard words is empty"
     override func viewDidLoad() {
         super.viewDidLoad()
         categoryView.loadAgainBtn.addTarget(self, action: #selector(loadAgain(_:)), for: .touchUpInside)
@@ -29,7 +30,7 @@ class FlashCardViewController: UIViewController {
     
     @objc private func reviewHard(_ sender:UIButton){
         if hardWords.count == 0 {
-            categoryView.setWordLbl("your hard words is empty")
+            categoryView.setWordLbl(emptyHardwords)
         } else {
             showedCard = 0
             words = hardWords
@@ -65,7 +66,8 @@ class FlashCardViewController: UIViewController {
     
     @IBAction func flashCardTapGesture(_ sender: UITapGestureRecognizer) {
         categoryView.transitionFlashCardView()
-        if self.categoryView.takeWordLblText() != endWord {
+        let onFlashCard = self.categoryView.takeWordLblText()
+        if onFlashCard != endWord && onFlashCard != emptyHardwords{
             if isPolishSite {
                 isPolishSite = false
                 categoryView.setWordLbl(words[showedCard].ang)
