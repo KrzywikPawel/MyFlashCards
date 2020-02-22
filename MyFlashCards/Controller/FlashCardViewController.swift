@@ -15,9 +15,10 @@ class FlashCardViewController: UIViewController {
     var isPolishSite = false
     let backCardPoint = CGPoint(x: 221, y: 275)
     var words = [WordStruct]()
+    var hardWords = [WordStruct]()
     var showedCard = 0
     var flashCard = UIView()
-    
+    let endWord = "koniec slowek"
     override func viewDidLoad() {
         super.viewDidLoad()
         takeData()
@@ -26,7 +27,7 @@ class FlashCardViewController: UIViewController {
     
     private func takeData(){
         let categoryData =  TakeCategory()
-//        MARK: change medicine to name from circle collection categories
+        //        MARK: change medicine to name from circle collection categories
         categoryData.parseData("Medicine") { (takedWords) in
             self.words = takedWords
             self.words.shuffle()
@@ -38,7 +39,7 @@ class FlashCardViewController: UIViewController {
     func showFlashCard() {
         //        MARK: exception when index out of range
         if showedCard >= words.count {
-            categoryView.setWordLbl("koniec slowek")
+            categoryView.setWordLbl(endWord)
         } else {
             categoryView.backCardToStartPosition(flashCard,backCardPoint)
             categoryView.setWordLbl(words[showedCard].ang)
@@ -47,12 +48,14 @@ class FlashCardViewController: UIViewController {
     
     @IBAction func flashCardTapGesture(_ sender: UITapGestureRecognizer) {
         categoryView.transitionFlashCardView()
-        if isPolishSite {
-            isPolishSite = false
-            categoryView.setWordLbl(words[showedCard].ang)
-        } else {
-            isPolishSite = true
-            categoryView.setWordLbl(words[showedCard].pol)
+        if self.categoryView.takeWordLblText() != endWord {
+            if isPolishSite {
+                isPolishSite = false
+                categoryView.setWordLbl(words[showedCard].ang)
+            } else {
+                isPolishSite = true
+                categoryView.setWordLbl(words[showedCard].pol)
+            }
         }
     }
     
@@ -71,13 +74,13 @@ class FlashCardViewController: UIViewController {
             let alphaCalculate = abs(xFromCenter) / view.center.x
             categoryView.showThumbDown(alphaCalculate)
         }
-        
-        //        MARK: czy card potrzebny? moze wystarczy flashcardview
+        //        MARK: animation to view or stay in controller?
         if sender.state == UIGestureRecognizer.State.ended {
             if flashCard.center.x < 75 {
                 UIView.animate(withDuration: 0.3) {
                     self.flashCard.center = CGPoint(x: self.flashCard.center.x - 200, y: self.flashCard.center.y)
                     self.flashCard.alpha = 0
+                    self.addWordToHard()
                 }
                 showedCard = showedCard + 1
                 categoryView.backCardToStartPosition(categoryView.flashCardView,backCardPoint)
@@ -92,6 +95,12 @@ class FlashCardViewController: UIViewController {
                 showFlashCard()
             }
             categoryView.backCardToStartPosition(categoryView.flashCardView,backCardPoint)
+        }
+    }
+    
+    private func addWordToHard(){
+        if categoryView.takeWordLblText() != endWord {
+            self.hardWords.append(self.words[self.showedCard])
         }
     }
 }

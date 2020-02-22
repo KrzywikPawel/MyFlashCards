@@ -84,6 +84,10 @@ class CategoryView: UIView {
         })
     }
     
+    func takeWordLblText() -> String{
+        return wordLbl.text!
+    }
+    
     
     
 }
