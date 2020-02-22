@@ -90,7 +90,7 @@
         <scene sceneID="2om-hr-zUR">
             <objects>
                 <viewController id="EVe-lW-vil" customClass="FlashCardViewController" customModule="MyFlashCards" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="NOG-Iz-jmp">
+                    <view key="view" contentMode="scaleToFill" id="NOG-Iz-jmp" customClass="CategoryView" customModule="MyFlashCards" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -149,13 +149,16 @@
                             <constraint firstItem="D7T-8x-TtW" firstAttribute="top" secondItem="pFt-84-mcz" secondAttribute="top" constant="156" id="zW7-Yj-sjp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pFt-84-mcz"/>
+                        <connections>
+                            <outlet property="flashCardImg" destination="o3u-MD-mOe" id="GJm-JZ-CxV"/>
+                            <outlet property="flashCardView" destination="D7T-8x-TtW" id="27v-IA-KkG"/>
+                            <outlet property="thumbDown" destination="fiU-eM-pLO" id="0kO-Gy-y4b"/>
+                            <outlet property="thumbUp" destination="lQZ-ra-j54" id="Div-RN-apn"/>
+                            <outlet property="wordLbl" destination="meo-35-a3E" id="4af-jN-SQs"/>
+                        </connections>
                     </view>
                     <connections>
-                        <outlet property="downThumbImageView" destination="fiU-eM-pLO" id="uvp-pl-FEu"/>
-                        <outlet property="flashCardImg" destination="o3u-MD-mOe" id="LBO-CZ-yDc"/>
-                        <outlet property="flashCardView" destination="D7T-8x-TtW" id="UC8-D9-R5R"/>
-                        <outlet property="upThumbImageView" destination="lQZ-ra-j54" id="jN7-q0-8te"/>
-                        <outlet property="wordLbl" destination="meo-35-a3E" id="xSL-48-bMv"/>
+                        <outlet property="categoryView" destination="NOG-Iz-jmp" id="7VQ-7s-Rrt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcj-vK-6FX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

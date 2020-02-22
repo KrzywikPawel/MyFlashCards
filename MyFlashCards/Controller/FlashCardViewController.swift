@@ -7,50 +7,56 @@
 //
 
 import UIKit
-
+import Foundation
 class FlashCardViewController: UIViewController {
-    
-    @IBOutlet weak var flashCardImg: UIImageView!
-    @IBOutlet weak var wordLbl: UILabel!
-    @IBOutlet weak var flashCardView: UIView!
-    @IBOutlet weak var upThumbImageView: UIImageView!
-    @IBOutlet weak var downThumbImageView: UIImageView!
+    //    MARK: randomize sequence in words
+    @IBOutlet var categoryView: CategoryView!
     var divisor: CGFloat!
     var isPolishSite = false
     let backCardPoint = CGPoint(x: 221, y: 275)
+    var words = [WordStruct]()
+    var showedCard = 0
+    var card = UIView()
     override func viewDidLoad() {
         super.viewDidLoad()
-        setBackground()
-        setCardView()
+        takeData()
         divisor = (view.frame.width / 2) / 0.61
     }
     
-    private func setBackground() {
-        let backgroundImg = UIImage(named: "flashCardBackground")
-        let backgroundImageView = UIImageView.init(frame: view.frame)
-        backgroundImageView.image = backgroundImg
-        backgroundImageView.contentMode = .scaleAspectFill
-        view.insertSubview(backgroundImageView, at: 0)
+    private func takeData(){
+        let categoryData =  TakeCategory()
+        categoryData.parseData("Medicine") { (words) in
+            self.words = words
+            self.categoryView.setWordLbl(self.words[self.showedCard].ang)
+            self.showFlashCard()
+        }
     }
     
-    private func setCardView() {
-        flashCardView.backgroundColor = .clear
-        wordLbl.text = "fish"
+    func showFlashCard(){
+        print("el")
+//        MARK: exception when index out of range
+        print(words.count)
+        print(words[showedCard].ang)
+        categoryView.backCardToStartPosition(card,backCardPoint)
+        categoryView.setWordLbl(words[showedCard].ang)
+        //        }
     }
+    
+    
     
     @IBAction func flashCardTapGesture(_ sender: UITapGestureRecognizer) {
-        UIView.transition(with: flashCardView, duration: 0.4, options: .transitionFlipFromLeft, animations: nil, completion: nil)
+        categoryView.transitionFlashCardView()
         if isPolishSite {
             isPolishSite = false
-            wordLbl.text = "fish"
+            categoryView.setWordLbl(words[showedCard].ang)
         } else {
             isPolishSite = true
-            wordLbl.text = "rybaaa"
+            categoryView.setWordLbl(words[showedCard].pol)
         }
     }
     
     @IBAction func flashCardPanGesture(_ sender: UIPanGestureRecognizer) {
-        let card = sender.view!
+        card = sender.view!
         let point = sender.translation(in: view)
         card.center = CGPoint(x: view.center.x + point.x, y: view.center.y + point.y)
         let xFromCenter = card.center.x - view.center.x
@@ -58,39 +64,34 @@ class FlashCardViewController: UIViewController {
         card.transform = CGAffineTransform(rotationAngle: xFromCenter/divisor).scaledBy(x: scale, y: scale)
         
         if xFromCenter > 0 {
-            upThumbImageView.image = UIImage(named: "thumbUp")
-            upThumbImageView.tintColor = .green
-            upThumbImageView.alpha = abs(xFromCenter) / view.center.x
+            let alphaCalculate = abs(xFromCenter) / view.center.x
+            categoryView.showThumbUp(alphaCalculate)
         } else {
-            downThumbImageView.image = UIImage(named: "thumbDown")
-            downThumbImageView.tintColor = .red
-            downThumbImageView.alpha = abs(xFromCenter) / view.center.x
+            let alphaCalculate = abs(xFromCenter) / view.center.x
+            categoryView.showThumbDown(alphaCalculate)
         }
         
         //        MARK: tutaj dodanie next fisha
         if sender.state == UIGestureRecognizer.State.ended {
             if card.center.x < 75 {
                 UIView.animate(withDuration: 0.3) {
-                    card.center = CGPoint(x: card.center.x - 200, y: card.center.y)
-                    card.alpha = 0
+                    self.card.center = CGPoint(x: self.card.center.x - 200, y: self.card.center.y)
+                    self.card.alpha = 0
                 }
+                showedCard = showedCard + 1
+                categoryView.backCardToStartPosition(categoryView.flashCardView,backCardPoint)
+                showFlashCard()
             } else if card.center.x > (view.frame.width - 75) {
                 UIView.animate(withDuration: 0.3) {
-                    card.center = CGPoint(x: card.center.x + 200, y: card.center.y)
-                    card.alpha = 0
+                    self.card.center = CGPoint(x: self.card.center.x + 200, y: self.card.center.y)
+                    self.card.alpha = 0
                 }
-                return
+                showedCard = showedCard + 1
+                categoryView.backCardToStartPosition(categoryView.flashCardView,backCardPoint)
+                showFlashCard()
             }
-            backCardToStartPosition(card)
+//            categoryView.backCardToStartPosition(card,backCardPoint)
+            categoryView.backCardToStartPosition(categoryView.flashCardView,backCardPoint)
         }
-    }
-    
-    private func backCardToStartPosition(_ card: UIView) {
-        UIView.animate(withDuration: 0.2, animations: {
-            self.flashCardView.center = self.backCardPoint
-            card.transform = CGAffineTransform.identity
-            self.downThumbImageView.alpha = 0
-            self.upThumbImageView.alpha = 0
-        })
     }
 }
