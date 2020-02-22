@@ -70,12 +70,12 @@ class CategoryView: UIView {
     func showThumbDown(_ alphaCalculate: CGFloat){
         let thumbDownImg = UIImage(named: thumbDownImgName)
         thumbDown.image = thumbDownImg
-        thumbDown.tintColor = .green
+        thumbDown.tintColor = .red
         thumbDown.alpha = alphaCalculate
     }
     
     func backCardToStartPosition(_ card: UIView, _ backCardPoint: CGPoint) {
-        UIView.animate(withDuration: 0.2, animations: {
+        UIView.animate(withDuration: 0.4, animations: {
             self.flashCardView.center = backCardPoint
             card.transform = CGAffineTransform.identity
             card.alpha = 1

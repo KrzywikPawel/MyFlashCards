@@ -9,14 +9,15 @@
 import UIKit
 import Foundation
 class FlashCardViewController: UIViewController {
-    //    MARK: randomize sequence in words
+    //     MARK: alert wszystkie slowka pokazane reset or back to main or show this whose dont know
     @IBOutlet var categoryView: CategoryView!
     var divisor: CGFloat!
     var isPolishSite = false
     let backCardPoint = CGPoint(x: 221, y: 275)
     var words = [WordStruct]()
     var showedCard = 0
-    var card = UIView()
+    var flashCard = UIView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         takeData()
@@ -25,24 +26,24 @@ class FlashCardViewController: UIViewController {
     
     private func takeData(){
         let categoryData =  TakeCategory()
-        categoryData.parseData("Medicine") { (words) in
-            self.words = words
+//        MARK: change medicine to name from circle collection categories
+        categoryData.parseData("Medicine") { (takedWords) in
+            self.words = takedWords
+            self.words.shuffle()
             self.categoryView.setWordLbl(self.words[self.showedCard].ang)
             self.showFlashCard()
         }
     }
     
-    func showFlashCard(){
-        print("el")
-//        MARK: exception when index out of range
-        print(words.count)
-        print(words[showedCard].ang)
-        categoryView.backCardToStartPosition(card,backCardPoint)
-        categoryView.setWordLbl(words[showedCard].ang)
-        //        }
+    func showFlashCard() {
+        //        MARK: exception when index out of range
+        if showedCard >= words.count {
+            categoryView.setWordLbl("koniec slowek")
+        } else {
+            categoryView.backCardToStartPosition(flashCard,backCardPoint)
+            categoryView.setWordLbl(words[showedCard].ang)
+        }
     }
-    
-    
     
     @IBAction func flashCardTapGesture(_ sender: UITapGestureRecognizer) {
         categoryView.transitionFlashCardView()
@@ -56,12 +57,12 @@ class FlashCardViewController: UIViewController {
     }
     
     @IBAction func flashCardPanGesture(_ sender: UIPanGestureRecognizer) {
-        card = sender.view!
+        flashCard = sender.view!
         let point = sender.translation(in: view)
-        card.center = CGPoint(x: view.center.x + point.x, y: view.center.y + point.y)
-        let xFromCenter = card.center.x - view.center.x
+        flashCard.center = CGPoint(x: view.center.x + point.x, y: view.center.y + point.y)
+        let xFromCenter = flashCard.center.x - view.center.x
         let scale = min(100/abs(xFromCenter), 1)
-        card.transform = CGAffineTransform(rotationAngle: xFromCenter/divisor).scaledBy(x: scale, y: scale)
+        flashCard.transform = CGAffineTransform(rotationAngle: xFromCenter/divisor).scaledBy(x: scale, y: scale)
         
         if xFromCenter > 0 {
             let alphaCalculate = abs(xFromCenter) / view.center.x
@@ -71,26 +72,25 @@ class FlashCardViewController: UIViewController {
             categoryView.showThumbDown(alphaCalculate)
         }
         
-        //        MARK: tutaj dodanie next fisha
+        //        MARK: czy card potrzebny? moze wystarczy flashcardview
         if sender.state == UIGestureRecognizer.State.ended {
-            if card.center.x < 75 {
+            if flashCard.center.x < 75 {
                 UIView.animate(withDuration: 0.3) {
-                    self.card.center = CGPoint(x: self.card.center.x - 200, y: self.card.center.y)
-                    self.card.alpha = 0
+                    self.flashCard.center = CGPoint(x: self.flashCard.center.x - 200, y: self.flashCard.center.y)
+                    self.flashCard.alpha = 0
                 }
                 showedCard = showedCard + 1
                 categoryView.backCardToStartPosition(categoryView.flashCardView,backCardPoint)
                 showFlashCard()
-            } else if card.center.x > (view.frame.width - 75) {
+            } else if flashCard.center.x > (view.frame.width - 75) {
                 UIView.animate(withDuration: 0.3) {
-                    self.card.center = CGPoint(x: self.card.center.x + 200, y: self.card.center.y)
-                    self.card.alpha = 0
+                    self.flashCard.center = CGPoint(x: self.flashCard.center.x + 200, y: self.flashCard.center.y)
+                    self.flashCard.alpha = 0
                 }
                 showedCard = showedCard + 1
                 categoryView.backCardToStartPosition(categoryView.flashCardView,backCardPoint)
                 showFlashCard()
             }
-//            categoryView.backCardToStartPosition(card,backCardPoint)
             categoryView.backCardToStartPosition(categoryView.flashCardView,backCardPoint)
         }
     }
