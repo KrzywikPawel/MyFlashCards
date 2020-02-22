@@ -20,6 +20,7 @@ class FlashCardViewController: UIViewController {
     var flashCard = UIView()
     let endWord = "koniec slowek"
     let emptyHardwords = "your hard words is empty"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         categoryView.loadAgainBtn.addTarget(self, action: #selector(loadAgain(_:)), for: .touchUpInside)
@@ -54,7 +55,7 @@ class FlashCardViewController: UIViewController {
         }
     }
     
-    func showFlashCard() {
+    private func showFlashCard() {
         //        MARK: exception when index out of range
         if showedCard >= words.count {
             categoryView.setWordLbl(endWord)
@@ -64,7 +65,7 @@ class FlashCardViewController: UIViewController {
         }
     }
     
-    @IBAction func flashCardTapGesture(_ sender: UITapGestureRecognizer) {
+    @IBAction private func flashCardTapGesture(_ sender: UITapGestureRecognizer) {
         categoryView.transitionFlashCardView()
         let onFlashCard = self.categoryView.takeWordLblText()
         if onFlashCard != endWord && onFlashCard != emptyHardwords{
@@ -78,7 +79,7 @@ class FlashCardViewController: UIViewController {
         }
     }
     
-    @IBAction func flashCardPanGesture(_ sender: UIPanGestureRecognizer) {
+    @IBAction private func flashCardPanGesture(_ sender: UIPanGestureRecognizer) {
         flashCard = sender.view!
         let point = sender.translation(in: view)
         flashCard.center = CGPoint(x: view.center.x + point.x, y: view.center.y + point.y)
@@ -118,17 +119,19 @@ class FlashCardViewController: UIViewController {
         }
     }
     
-    private func deleteFromHardWord(){
-        if let index = hardWords.firstIndex(of: words[showedCard]){
-            hardWords.remove(at: index)
+    private func deleteFromHardWord() {
+        let onFlashCard = categoryView.takeWordLblText()
+        if onFlashCard != endWord && onFlashCard != emptyHardwords {
+            if let index = hardWords.firstIndex(of: words[showedCard]) {
+                hardWords.remove(at: index)
+            }
         }
     }
     
     
-    private func addWordToHard(){
+    private func addWordToHard() {
         if categoryView.takeWordLblText() != endWord {
-            print("dodaje \(words[showedCard])")
-            if hardWords.contains(where: {$0 == self.words[self.showedCard]}){
+            if hardWords.contains(where: {$0 == self.words[self.showedCard]}) {
                 //check duplicate
             } else {
                 self.hardWords.append(self.words[self.showedCard])
