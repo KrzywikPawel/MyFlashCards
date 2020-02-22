@@ -28,6 +28,7 @@ class MainView: UIView{
         super.awakeFromNib()
         setBackground()
         setCategoriesCollectionView()
+        
         lastCategoryImage.image = UIImage(named: "hospital")
         for i in 1...10 {
             datasourceArray.append(String(i))

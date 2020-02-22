@@ -15,6 +15,7 @@
 		E55304DF23FAB58800A7A32F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55304DE23FAB58800A7A32F /* MainView.swift */; };
 		E55304E123FAC37F00A7A32F /* CategoriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55304E023FAC37F00A7A32F /* CategoriesCollectionViewCell.swift */; };
 		E55304E323FAC51700A7A32F /* CategoriesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55304E223FAC51700A7A32F /* CategoriesCollectionView.swift */; };
+		E59FE95E24019BFC0094A3B5 /* TakeCategoriesNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59FE95D24019BFC0094A3B5 /* TakeCategoriesNames.swift */; };
 		E5D7BE4C23FA95AC00F10DFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7BE4B23FA95AC00F10DFE /* AppDelegate.swift */; };
 		E5D7BE4E23FA95AC00F10DFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7BE4D23FA95AC00F10DFE /* SceneDelegate.swift */; };
 		E5D7BE5023FA95AC00F10DFE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7BE4F23FA95AC00F10DFE /* ViewController.swift */; };
@@ -49,6 +50,7 @@
 		E55304DE23FAB58800A7A32F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E55304E023FAC37F00A7A32F /* CategoriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		E55304E223FAC51700A7A32F /* CategoriesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionView.swift; sourceTree = "<group>"; };
+		E59FE95D24019BFC0094A3B5 /* TakeCategoriesNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeCategoriesNames.swift; sourceTree = "<group>"; };
 		E5D7BE4823FA95AC00F10DFE /* MyFlashCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFlashCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5D7BE4B23FA95AC00F10DFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5D7BE4D23FA95AC00F10DFE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				E531512424006B4F0089D59B /* WordStruct.swift */,
 				E531512624006D6D0089D59B /* TakeCategory.swift */,
+				E59FE95D24019BFC0094A3B5 /* TakeCategoriesNames.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				E531512524006B4F0089D59B /* WordStruct.swift in Sources */,
 				E55304DF23FAB58800A7A32F /* MainView.swift in Sources */,
 				E5E7E0D024007281001303BC /* CategoryView.swift in Sources */,
+				E59FE95E24019BFC0094A3B5 /* TakeCategoriesNames.swift in Sources */,
 				E5D7BE4C23FA95AC00F10DFE /* AppDelegate.swift in Sources */,
 				E5D7BE4E23FA95AC00F10DFE /* SceneDelegate.swift in Sources */,
 				E55304E323FAC51700A7A32F /* CategoriesCollectionView.swift in Sources */,

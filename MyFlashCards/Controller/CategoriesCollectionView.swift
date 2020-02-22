@@ -11,13 +11,14 @@ import UIKit
 extension ViewController:UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView,numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return namesArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView,cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CategoriesCollectionViewCell
 //      MARK:  refactor to categoriescollectionviewcell
         cell.categoryImage.image = UIImage(named: "hospital")
+        cell.categoryNameLbl.text = namesArray[indexPath.row]
         return cell
     }
     

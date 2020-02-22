@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 class FlashCardViewController: UIViewController {
-    //     MARK: alert wszystkie slowka pokazane reset or back to main or show this whose dont know
+//    MARK: change medicine to name taken from main collection categories
     @IBOutlet var categoryView: CategoryView!
     var divisor: CGFloat!
     var isPolishSite = false
@@ -56,7 +56,6 @@ class FlashCardViewController: UIViewController {
     }
     
     private func showFlashCard() {
-        //        MARK: exception when index out of range
         if showedCard >= words.count {
             categoryView.setWordLbl(endWord)
         } else {
@@ -94,7 +93,7 @@ class FlashCardViewController: UIViewController {
             let alphaCalculate = abs(xFromCenter) / view.center.x
             categoryView.showThumbDown(alphaCalculate)
         }
-        //        MARK: animation to view or stay in controller?
+        //        MARK: animation refactor to view or stay in controller?
         if sender.state == UIGestureRecognizer.State.ended {
             if flashCard.center.x < 75 {
                 UIView.animate(withDuration: 0.3) {
@@ -127,7 +126,6 @@ class FlashCardViewController: UIViewController {
             }
         }
     }
-    
     
     private func addWordToHard() {
         if categoryView.takeWordLblText() != endWord {
