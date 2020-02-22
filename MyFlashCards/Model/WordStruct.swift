@@ -8,12 +8,16 @@
 
 import Foundation
 import FirebaseFirestore
-struct WordStruct {
+struct WordStruct: Equatable {
     let ang: String
     let pol: String
     
     init(_ snapshot: QueryDocumentSnapshot) {
         ang = snapshot["ang"] as! String
         pol = snapshot["pol"] as! String
+    }
+    
+    static func == (left: WordStruct, right: WordStruct) -> Bool {
+        return left.ang == right.ang && left.pol == right.pol
     }
 }

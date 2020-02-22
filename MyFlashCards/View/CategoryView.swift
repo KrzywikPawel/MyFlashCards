@@ -15,6 +15,8 @@ class CategoryView: UIView {
     @IBOutlet weak  var flashCardView: UIView!
     @IBOutlet weak private var thumbDown: UIImageView!
     @IBOutlet weak private var thumbUp: UIImageView!
+    @IBOutlet weak var loadAgainBtn: UIButton!
+    @IBOutlet weak var reviewHardBtn: UIButton!
     
     private let cardViewImg = "flashCard"
     private let thumbUpImgName = "thumbUp"
@@ -29,10 +31,14 @@ class CategoryView: UIView {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
+        loadAgainBtn.titleLabel?.alpha = 0.68
+        reviewHardBtn.titleLabel?.alpha = 0.68
         setBackground()
         setFlashCardBackground()
         setFlashCardBackground()
     }
+    
+    
     
     func setWordLbl(_ word: String){
         wordLbl.text = word

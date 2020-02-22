@@ -21,8 +21,25 @@ class FlashCardViewController: UIViewController {
     let endWord = "koniec slowek"
     override func viewDidLoad() {
         super.viewDidLoad()
+        categoryView.loadAgainBtn.addTarget(self, action: #selector(loadAgain(_:)), for: .touchUpInside)
+        categoryView.reviewHardBtn.addTarget(self, action: #selector(reviewHard(_:)), for: .touchUpInside)
         takeData()
         divisor = (view.frame.width / 2) / 0.61
+    }
+    
+    @objc private func reviewHard(_ sender:UIButton){
+        if hardWords.count == 0 {
+            categoryView.setWordLbl("your hard words is empty")
+        } else {
+            showedCard = 0
+            words = hardWords
+            categoryView.setWordLbl(words[0].ang)
+        }
+    }
+    
+    @objc private func loadAgain(_ sender: UIButton){
+        showedCard = 0
+        takeData()
     }
     
     private func takeData(){
@@ -82,7 +99,7 @@ class FlashCardViewController: UIViewController {
                     self.flashCard.alpha = 0
                     self.addWordToHard()
                 }
-                showedCard = showedCard + 1
+                self.showedCard = self.showedCard + 1
                 categoryView.backCardToStartPosition(categoryView.flashCardView,backCardPoint)
                 showFlashCard()
             } else if flashCard.center.x > (view.frame.width - 75) {
@@ -98,9 +115,21 @@ class FlashCardViewController: UIViewController {
         }
     }
     
+    
     private func addWordToHard(){
         if categoryView.takeWordLblText() != endWord {
-            self.hardWords.append(self.words[self.showedCard])
+            print("dodaje \(words[showedCard])")
+            if hardWords.contains(where: {$0 == self.words[self.showedCard]}){
+                
+            } else {
+                //            for single in hardWords{
+                //                if single == words[self.showedCard]{
+                //                    return
+                //                }
+                //            }
+                self.hardWords.append(self.words[self.showedCard])
+                
+            }
         }
     }
 }

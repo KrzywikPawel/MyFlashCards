@@ -140,11 +140,49 @@
                                     <outletCollection property="gestureRecognizers" destination="6Lf-Nu-p3x" appends="YES" id="uDj-Ck-7rR"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="i47-q7-Ita">
+                                <rect key="frame" x="7" y="484" width="124" height="155"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="155" id="Zf9-qD-IaF"/>
+                                    <constraint firstAttribute="width" constant="124" id="loo-Vi-J4K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="80"/>
+                                <state key="normal" backgroundImage="buttonInFlashView">
+                                    <string key="title">load
+again</string>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IEp-Vz-Tlg" userLabel="review hard">
+                                <rect key="frame" x="244" y="475" width="124" height="155"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="155" id="LJS-yd-xdO"/>
+                                    <constraint firstAttribute="width" constant="124" id="OwR-sk-fTD"/>
+                                </constraints>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="80"/>
+                                <state key="normal" backgroundImage="buttonInFlashView">
+                                    <attributedString key="attributedTitle">
+                                        <fragment>
+                                            <string key="content">review
+hard</string>
+                                            <attributes>
+                                                <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <font key="NSFont" metaFont="system" size="16"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="pFt-84-mcz" firstAttribute="trailing" secondItem="IEp-Vz-Tlg" secondAttribute="trailing" constant="7" id="3m4-u6-7xR"/>
+                            <constraint firstItem="i47-q7-Ita" firstAttribute="leading" secondItem="pFt-84-mcz" secondAttribute="leading" constant="7" id="SO6-Ub-GOt"/>
                             <constraint firstItem="pFt-84-mcz" firstAttribute="trailing" secondItem="D7T-8x-TtW" secondAttribute="trailing" id="TGG-BZ-qk9"/>
+                            <constraint firstItem="pFt-84-mcz" firstAttribute="bottom" secondItem="IEp-Vz-Tlg" secondAttribute="bottom" constant="37" id="WY3-GX-dBw"/>
                             <constraint firstItem="pFt-84-mcz" firstAttribute="bottom" secondItem="D7T-8x-TtW" secondAttribute="bottom" constant="292" id="bfX-h4-8xv"/>
+                            <constraint firstItem="pFt-84-mcz" firstAttribute="bottom" secondItem="i47-q7-Ita" secondAttribute="bottom" constant="28" id="fv6-lH-q2o"/>
                             <constraint firstItem="D7T-8x-TtW" firstAttribute="leading" secondItem="pFt-84-mcz" secondAttribute="leading" constant="67" id="qze-uS-8TX"/>
                             <constraint firstItem="D7T-8x-TtW" firstAttribute="top" secondItem="pFt-84-mcz" secondAttribute="top" constant="156" id="zW7-Yj-sjp"/>
                         </constraints>
@@ -152,6 +190,8 @@
                         <connections>
                             <outlet property="flashCardImg" destination="o3u-MD-mOe" id="GJm-JZ-CxV"/>
                             <outlet property="flashCardView" destination="D7T-8x-TtW" id="27v-IA-KkG"/>
+                            <outlet property="loadAgainBtn" destination="i47-q7-Ita" id="Acp-8Q-gHO"/>
+                            <outlet property="reviewHardBtn" destination="IEp-Vz-Tlg" id="F6E-Qa-SLU"/>
                             <outlet property="thumbDown" destination="fiU-eM-pLO" id="0kO-Gy-y4b"/>
                             <outlet property="thumbUp" destination="lQZ-ra-j54" id="Div-RN-apn"/>
                             <outlet property="wordLbl" destination="meo-35-a3E" id="4af-jN-SQs"/>
@@ -177,6 +217,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="buttonInFlashView" width="490" height="658"/>
         <image name="flashCard" width="490" height="317"/>
         <image name="thumbDown" width="50" height="50"/>
         <image name="thumbUp" width="50" height="50"/>
