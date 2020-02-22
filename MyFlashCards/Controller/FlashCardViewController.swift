@@ -106,6 +106,7 @@ class FlashCardViewController: UIViewController {
                 UIView.animate(withDuration: 0.3) {
                     self.flashCard.center = CGPoint(x: self.flashCard.center.x + 200, y: self.flashCard.center.y)
                     self.flashCard.alpha = 0
+                    self.deleteFromHardWord()
                 }
                 showedCard = showedCard + 1
                 categoryView.backCardToStartPosition(categoryView.flashCardView,backCardPoint)
@@ -115,20 +116,20 @@ class FlashCardViewController: UIViewController {
         }
     }
     
+    private func deleteFromHardWord(){
+        if let index = hardWords.firstIndex(of: words[showedCard]){
+            hardWords.remove(at: index)
+        }
+    }
+    
     
     private func addWordToHard(){
         if categoryView.takeWordLblText() != endWord {
             print("dodaje \(words[showedCard])")
             if hardWords.contains(where: {$0 == self.words[self.showedCard]}){
-                
+                //check duplicate
             } else {
-                //            for single in hardWords{
-                //                if single == words[self.showedCard]{
-                //                    return
-                //                }
-                //            }
                 self.hardWords.append(self.words[self.showedCard])
-                
             }
         }
     }
