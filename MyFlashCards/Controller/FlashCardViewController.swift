@@ -11,6 +11,7 @@ import Foundation
 class FlashCardViewController: UIViewController {
 //    MARK: change medicine to name taken from main collection categories
     @IBOutlet var categoryView: CategoryView!
+    var name = ""
     var divisor: CGFloat!
     var isPolishSite = false
     let backCardPoint = CGPoint(x: 221, y: 275)
@@ -47,7 +48,7 @@ class FlashCardViewController: UIViewController {
     private func takeData(){
         let categoryData =  TakeCategory()
         //        MARK: change medicine to name from circle collection categories
-        categoryData.parseData("Medicine") { (takedWords) in
+        categoryData.parseData(name) { (takedWords) in
             self.words = takedWords
             self.words.shuffle()
             self.categoryView.setWordLbl(self.words[self.showedCard].ang)

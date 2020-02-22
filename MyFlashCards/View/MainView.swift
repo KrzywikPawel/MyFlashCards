@@ -47,7 +47,7 @@ class MainView: UIView{
     private func setCategoriesCollectionView() {
         categoriesCollectionView.backgroundColor = .clear
         let itemRadius: CGFloat = 100
-        let center = CGPoint(x: 100, y: 80)
+        let center = CGPoint(x: 100, y: 70)
         let radius: CGFloat = 200
         let startAngle = CGFloat(0)
         let endAngle = CGFloat.pi / 2

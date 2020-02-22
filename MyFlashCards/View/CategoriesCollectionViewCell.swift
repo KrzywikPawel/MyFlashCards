@@ -12,4 +12,8 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var categoryImage: UIImageView!
     @IBOutlet weak var categoryNameLbl: UILabel!
     
+    func configurateCell(_ categoryName: String,_ categoryImg: UIImage){
+        categoryImage.image = categoryImg
+        categoryNameLbl.text = categoryName
+    }
 }

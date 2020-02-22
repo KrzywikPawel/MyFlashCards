@@ -17,12 +17,14 @@ extension ViewController:UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView,cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CategoriesCollectionViewCell
 //      MARK:  refactor to categoriescollectionviewcell
-        cell.categoryImage.image = dataToCircleCollection[indexPath.row].img
-        cell.categoryNameLbl.text = dataToCircleCollection[indexPath.row].name
+        cell.configurateCell(dataToCircleCollection[indexPath.row].name, dataToCircleCollection[indexPath.row].img)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Tapped on \(indexPath)")
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let pushVC = mainStoryboard.instantiateViewController(identifier: "FlashCardViewController") as! FlashCardViewController
+        pushVC.name = dataToCircleCollection[indexPath.row].name
+        self.navigationController?.pushViewController(pushVC, animated: true)
     }
 }
