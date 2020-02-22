@@ -15,5 +15,5 @@ target 'MyFlashCards' do
   end
   pod 'ACBRadialCollectionView'
   pod 'Firebase/Firestore'
-
+  pod 'Firebase/Storage'
 end

@@ -10,7 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var namesArray = [String]()
+    var dataToCircleCollection = [CircleCollectionDataStruct]()
+    
     @IBOutlet var setView: MainView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,11 +19,10 @@ class ViewController: UIViewController {
     }
     
     private func takeData(){
-        let data = TakeCategoriesNames()
-        data.takeData { (names) in
-            self.namesArray = names
+        let data = CircleCollectionData()
+        data.takeData { (dataToCircleCollection) in
+            self.dataToCircleCollection = dataToCircleCollection
             self.setView.categoriesCollectionView.reloadData()
         }
     }
 }
-
