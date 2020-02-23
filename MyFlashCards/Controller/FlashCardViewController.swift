@@ -9,12 +9,11 @@
 import UIKit
 import Foundation
 class FlashCardViewController: UIViewController {
-    //    MARK: change medicine to name taken from main collection categories
     @IBOutlet var categoryView: CategoryView!
     var name = ""
     var divisor: CGFloat!
     var isPolishSite = false
-    let backCardPoint = CGPoint(x: 221, y: 275)
+    let backCardPoint =  CGPoint(x: 221, y: 300)
     var words = [WordStruct]()
     var hardWords = [WordStruct]()
     var showedCard = 0
@@ -28,6 +27,7 @@ class FlashCardViewController: UIViewController {
         categoryView.setNavigationController(self.navigationController!)
         categoryView.loadAgainBtn.addTarget(self, action: #selector(loadAgain(_:)), for: .touchUpInside)
         categoryView.reviewHardBtn.addTarget(self, action: #selector(reviewHard(_:)), for: .touchUpInside)
+        
         takeData()
         divisor = (view.frame.width / 2) / 0.61
     }
@@ -131,7 +131,8 @@ class FlashCardViewController: UIViewController {
     }
     
     private func addWordToHard() {
-        if categoryView.takeWordLblText() != endWord {
+        let textInSing = categoryView.takeWordLblText()
+        if textInSing != endWord && textInSing != emptyHardwords {
             if hardWords.contains(where: {$0 == self.words[self.showedCard]}) {
                 //check duplicate
             } else {

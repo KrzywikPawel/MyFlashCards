@@ -10,18 +10,13 @@ import UIKit
 
 class YourCategoriesViewController: UIViewController {
     
+    @IBOutlet var setView: YourCategoriesView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        setBackground()
-        
+        let nibCell = UINib(nibName: "CategoriesCollectionViewCell", bundle: nil)
+        setView.yourCategoriesCollectionView.register(nibCell, forCellWithReuseIdentifier: "CategoriesCollectionViewCell")
     }
     
-    private func setBackground(){
-        let backgroundImg = UIImage(named: "yourCategoriesBackground")
-        let backgroundView = UIImageView.init(frame: view.frame)
-        backgroundView.image = backgroundImg
-        backgroundView.contentMode = .scaleAspectFit
-        view.insertSubview(backgroundView, at: 0)
-        
-    }
+  
+    
 }

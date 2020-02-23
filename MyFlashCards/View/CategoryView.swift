@@ -34,8 +34,7 @@ class CategoryView: UIView {
         loadAgainBtn.titleLabel?.alpha = 0.68
         reviewHardBtn.titleLabel?.alpha = 0.68
         setBackground()
-        setFlashCardBackground()
-        setFlashCardBackground()
+        setFlashCard()
     }
     
     
@@ -58,8 +57,16 @@ class CategoryView: UIView {
         self.insertSubview(backgroundImageView, at: 0)
     }
     
-    private func setFlashCardBackground(){
+    private func setFlashCard(){
         flashCardView.backgroundColor = .clear
+        flashCardView.translatesAutoresizingMaskIntoConstraints = false
+        flashCardView.topAnchor.constraint(equalTo: self.topAnchor, constant: 200).isActive = true
+        flashCardView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -267).isActive = true
+        flashCardView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 67).isActive = true
+        flashCardView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        flashCardView.widthAnchor.constraint(equalToConstant: 308).isActive = true
+        flashCardView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        
     }
     
     private func setImgFlashCard(){

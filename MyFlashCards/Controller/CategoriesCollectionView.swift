@@ -15,7 +15,7 @@ extension ViewController:UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView,cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CategoriesCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoriesCollectionViewCell", for: indexPath) as! CategoriesCollectionViewCell
 //      MARK:  refactor to categoriescollectionviewcell
         cell.configurateCell(dataToCircleCollection[indexPath.row].name, dataToCircleCollection[indexPath.row].img)
         return cell

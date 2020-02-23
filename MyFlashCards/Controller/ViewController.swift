@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setView.setNavigationController(self.navigationController!)
+        let nibCell = UINib(nibName: "CategoriesCollectionViewCell", bundle: nil)
+        setView.categoriesCollectionView.register(nibCell, forCellWithReuseIdentifier: "CategoriesCollectionViewCell")
         takeData()
     }
     
