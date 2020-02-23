@@ -301,7 +301,67 @@ Category</string>
                     <view key="view" contentMode="scaleToFill" id="062-QS-oj3" customClass="AddCategoryView" customModule="MyFlashCards" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e7T-mb-Stx">
+                                <rect key="frame" x="43" y="117" width="129" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ANG" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aQS-Ak-WN6">
+                                <rect key="frame" x="16" y="224" width="97" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="84v-0Z-8rU"/>
+                                    <constraint firstAttribute="height" constant="34" id="cKZ-gc-XXw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="POL" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BTr-xC-xSf">
+                                <rect key="frame" x="151" y="224" width="97" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ijt-Ot-Maw">
+                                <rect key="frame" x="121" y="231" width="22" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fH2-E2-lKc">
+                                <rect key="frame" x="92" y="310" width="32" height="30"/>
+                                <state key="normal" title="ADD"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ImD-Or-e06">
+                                <rect key="frame" x="9" y="490" width="304" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="304" id="XQw-T7-UGX"/>
+                                </constraints>
+                                <string key="text">If you want to add a word to an existing
+category, just enter the name.
+Words added previously
+will not be deleted</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BTr-xC-xSf" firstAttribute="top" secondItem="e7T-mb-Stx" secondAttribute="bottom" constant="73" id="022-B3-ghX"/>
+                            <constraint firstItem="ImD-Or-e06" firstAttribute="leading" secondItem="8i1-Fb-lkL" secondAttribute="leading" constant="9" id="5l8-Cj-akx"/>
+                            <constraint firstItem="Ijt-Ot-Maw" firstAttribute="top" secondItem="e7T-mb-Stx" secondAttribute="bottom" constant="80" id="75a-lO-8DM"/>
+                            <constraint firstItem="BTr-xC-xSf" firstAttribute="leading" secondItem="aQS-Ak-WN6" secondAttribute="trailing" constant="38" id="8ee-Q4-ZGY"/>
+                            <constraint firstItem="8i1-Fb-lkL" firstAttribute="bottom" secondItem="ImD-Or-e06" secondAttribute="bottom" constant="110" id="EsV-M3-RSy"/>
+                            <constraint firstItem="Ijt-Ot-Maw" firstAttribute="leading" secondItem="aQS-Ak-WN6" secondAttribute="trailing" constant="8" id="HV0-tm-h9C"/>
+                            <constraint firstItem="fH2-E2-lKc" firstAttribute="leading" secondItem="8i1-Fb-lkL" secondAttribute="leading" constant="92" id="R1V-3Q-Vkz"/>
+                            <constraint firstItem="e7T-mb-Stx" firstAttribute="leading" secondItem="8i1-Fb-lkL" secondAttribute="leading" constant="43" id="cpp-CV-apM"/>
+                            <constraint firstItem="e7T-mb-Stx" firstAttribute="top" secondItem="8i1-Fb-lkL" secondAttribute="top" constant="117" id="dM6-5C-4hc"/>
+                            <constraint firstItem="fH2-E2-lKc" firstAttribute="top" secondItem="Ijt-Ot-Maw" secondAttribute="bottom" constant="58" id="drs-3W-yf7"/>
+                            <constraint firstItem="8i1-Fb-lkL" firstAttribute="trailing" secondItem="BTr-xC-xSf" secondAttribute="trailing" constant="127" id="msh-oT-vtw"/>
+                            <constraint firstItem="aQS-Ak-WN6" firstAttribute="leading" secondItem="8i1-Fb-lkL" secondAttribute="leading" constant="16" id="qzv-v4-uvV"/>
+                            <constraint firstItem="BTr-xC-xSf" firstAttribute="leading" secondItem="Ijt-Ot-Maw" secondAttribute="trailing" constant="8" id="tTG-Vs-Zhd"/>
+                            <constraint firstItem="aQS-Ak-WN6" firstAttribute="top" secondItem="e7T-mb-Stx" secondAttribute="bottom" constant="73" id="wg2-9e-KYB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8i1-Fb-lkL"/>
                     </view>
                     <connections>
@@ -310,7 +370,7 @@ Category</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8M-qp-F4c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2519" y="-915"/>
+            <point key="canvasLocation" x="2517.5999999999999" y="-915.29235382308855"/>
         </scene>
         <!--Item-->
         <scene sceneID="2ER-xZ-MQj">
