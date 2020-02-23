@@ -304,6 +304,9 @@ Category</string>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="8i1-Fb-lkL"/>
                     </view>
+                    <connections>
+                        <outlet property="setView" destination="062-QS-oj3" id="6UE-gJ-K4l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8M-qp-F4c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

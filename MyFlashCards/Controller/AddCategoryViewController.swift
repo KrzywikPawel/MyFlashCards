@@ -9,10 +9,11 @@
 import UIKit
 
 class AddCategoryViewController: UIViewController {
-
+    @IBOutlet var setView: AddCategoryView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setView.setNavigationController(self.navigationController!)
     }
 
 }

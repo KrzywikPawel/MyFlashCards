@@ -23,4 +23,10 @@ class AddCategoryView: UIView{
         backgroundView.contentMode = .scaleAspectFit
         self.insertSubview(backgroundView, at: 0)
     }
+    
+    func setNavigationController(_ navigationController: UINavigationController){
+        navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController.navigationBar.shadowImage = UIImage()
+        navigationController.navigationBar.isTranslucent = true
+    }
 }
