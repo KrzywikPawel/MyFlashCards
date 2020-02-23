@@ -28,6 +28,8 @@
 		E5D7BE5523FA95B000F10DFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5D7BE5423FA95B000F10DFE /* Assets.xcassets */; };
 		E5D7BE5823FA95B000F10DFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5D7BE5623FA95B000F10DFE /* LaunchScreen.storyboard */; };
 		E5D7BE6323FA95B000F10DFE /* MyFlashCardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7BE6223FA95B000F10DFE /* MyFlashCardsTests.swift */; };
+		E5DB07C92402D214001B0158 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DB07C82402D214001B0158 /* AddCategoryViewController.swift */; };
+		E5DB07CB2402D251001B0158 /* AddCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DB07CA2402D251001B0158 /* AddCategoryView.swift */; };
 		E5E7E0D024007281001303BC /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E7E0CF24007281001303BC /* CategoryView.swift */; };
 		F360486EBAB73E1646F23001 /* Pods_MyFlashCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E88B3A966367B2C988887CF2 /* Pods_MyFlashCards.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +74,8 @@
 		E5D7BE5E23FA95B000F10DFE /* MyFlashCardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyFlashCardsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5D7BE6223FA95B000F10DFE /* MyFlashCardsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFlashCardsTests.swift; sourceTree = "<group>"; };
 		E5D7BE6423FA95B000F10DFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5DB07C82402D214001B0158 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
+		E5DB07CA2402D251001B0158 /* AddCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryView.swift; sourceTree = "<group>"; };
 		E5E7E0CF24007281001303BC /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		E88B3A966367B2C988887CF2 /* Pods_MyFlashCards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyFlashCards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -113,6 +117,7 @@
 				E52EBE2D23FD352E008311BB /* FlashCardViewController.swift */,
 				E561D1BF2402837D008917F6 /* YourCategoriesViewController.swift */,
 				E561D1C3240287C0008917F6 /* YourCategoriesCollectionView.swift */,
+				E5DB07C82402D214001B0158 /* AddCategoryViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -136,6 +141,7 @@
 				E561D1C124028698008917F6 /* YourCategoriesView.swift */,
 				E561D1CD24028D9B008917F6 /* CategoriesCollectionViewCell.swift */,
 				E561D1CE24028D9B008917F6 /* CategoriesCollectionViewCell.xib */,
+				E5DB07CA2402D251001B0158 /* AddCategoryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -375,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5DB07C92402D214001B0158 /* AddCategoryViewController.swift in Sources */,
 				E5D7BE5023FA95AC00F10DFE /* ViewController.swift in Sources */,
 				E52EBE2E23FD352E008311BB /* FlashCardViewController.swift in Sources */,
 				E531512524006B4F0089D59B /* WordStruct.swift in Sources */,
@@ -382,6 +389,7 @@
 				E5E7E0D024007281001303BC /* CategoryView.swift in Sources */,
 				E561D1C02402837D008917F6 /* YourCategoriesViewController.swift in Sources */,
 				E561D1C4240287C0008917F6 /* YourCategoriesCollectionView.swift in Sources */,
+				E5DB07CB2402D251001B0158 /* AddCategoryView.swift in Sources */,
 				E59FE95E24019BFC0094A3B5 /* CircleCollectionData.swift in Sources */,
 				E5D7BE4C23FA95AC00F10DFE /* AppDelegate.swift in Sources */,
 				E561D1CF24028D9B008917F6 /* CategoriesCollectionViewCell.swift in Sources */,

@@ -14,7 +14,6 @@ class MainView: UIView{
     
     @IBOutlet weak var yourCategoryBtn: UIButton!
     @IBOutlet weak var lastCategoryImage: UIImageView!
-    fileprivate var datasourceArray: [String] = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,13 +25,10 @@ class MainView: UIView{
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        lastCategoryImage.image = UIImage(named: "hospital")
         setBackground()
         setCategoriesCollectionView()
         
-        lastCategoryImage.image = UIImage(named: "hospital")
-        for i in 1...10 {
-            datasourceArray.append(String(i))
-        }
     }
     
     

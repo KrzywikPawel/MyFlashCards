@@ -15,8 +15,13 @@ class YourCategoriesViewController: UIViewController {
         super.viewDidLoad()
         let nibCell = UINib(nibName: "CategoriesCollectionViewCell", bundle: nil)
         setView.yourCategoriesCollectionView.register(nibCell, forCellWithReuseIdentifier: "CategoriesCollectionViewCell")
+        setView.addNewCategoryBtn.addTarget(self, action: #selector(addCategory(_:)), for: .touchUpInside)
     }
     
-  
     
+    @objc private func addCategory(_ sender:UIButton){
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let pushVC = mainStoryboard.instantiateViewController(withIdentifier: "AddCategoryViewController") as! AddCategoryViewController
+        self.navigationController?.pushViewController(pushVC, animated: true)
+    }
 }
