@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet var setView: MainView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        setView.setNavigationController(self.navigationController!)
         takeData()
     }
     

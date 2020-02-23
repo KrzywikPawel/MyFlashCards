@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 class FlashCardViewController: UIViewController {
-//    MARK: change medicine to name taken from main collection categories
+    //    MARK: change medicine to name taken from main collection categories
     @IBOutlet var categoryView: CategoryView!
     var name = ""
     var divisor: CGFloat!
@@ -24,6 +24,8 @@ class FlashCardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = name
+        categoryView.setNavigationController(self.navigationController!)
         categoryView.loadAgainBtn.addTarget(self, action: #selector(loadAgain(_:)), for: .touchUpInside)
         categoryView.reviewHardBtn.addTarget(self, action: #selector(reviewHard(_:)), for: .touchUpInside)
         takeData()

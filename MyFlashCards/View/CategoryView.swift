@@ -94,6 +94,12 @@ class CategoryView: UIView {
         return wordLbl.text!
     }
     
+    func setNavigationController(_ navigationController: UINavigationController){
+        navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController.navigationBar.shadowImage = UIImage()
+        navigationController.navigationBar.isTranslucent = true
+    }
+    
     
     
 }

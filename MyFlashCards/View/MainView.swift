@@ -57,6 +57,12 @@ class MainView: UIView{
         categoriesCollectionView.enableRadialLayout(WithCenter: center, radius: radius, cellSize: cellSize, angularSpacing: 20.0, scrollDirection: direction, startAngle: startAngle, endAngle: endAngle)
         categoriesCollectionView.applyRotationToCells = rotateCells
     }
+    
+    func setNavigationController(_ navigationController: UINavigationController){
+        navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController.navigationBar.shadowImage = UIImage()
+        navigationController.navigationBar.isTranslucent = true
+    }
 }
 
 
