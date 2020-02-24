@@ -8,7 +8,7 @@
 
 import Foundation
 class OperationInMemory{
-    
+    let arrayWithCategoriesNamesInMemory = "yourCategoriesNames"
     func saveCategory(_ categoryName: String, wordToSave: WordStruct){
         if var isInMemory = UserDefaults.standard.value([WordStruct].self, forKey: categoryName){
             if isInMemory.contains(where: {$0 == wordToSave}){
@@ -21,9 +21,19 @@ class OperationInMemory{
             var newCategory = [WordStruct]()
             newCategory.append(wordToSave)
             UserDefaults.standard.set(encodable: newCategory, forKey: categoryName)
+            if var yourCategoriesNames = UserDefaults.standard.stringArray(forKey: arrayWithCategoriesNamesInMemory) {
+                //                if yourCategoriesNames.contains(where: {$0 == categoryName}) {
+                //
+                //                } else {
+                yourCategoriesNames.append(categoryName)
+                //                }
+            } else {
+                var yourCategoriesNames = [String]()
+                yourCategoriesNames.append(categoryName)
+                UserDefaults.standard.set(yourCategoriesNames,forKey: arrayWithCategoriesNamesInMemory)
+            }
         }
     }
-    
     func loadCategory(_ categoryName: String) -> [WordStruct]{
         if let isInMemory = UserDefaults.standard.value([WordStruct].self, forKey: categoryName){
             return isInMemory
@@ -33,9 +43,24 @@ class OperationInMemory{
         }
     }
     
+    func loadNamesArray() -> [String]{
+        if let namesInArray = UserDefaults.standard.stringArray(forKey: arrayWithCategoriesNamesInMemory){
+            return namesInArray
+        } else {
+            //            return empty doesnt throw exception but meaby dont see anybody in other func taken this
+            let emptyNamesArray = [String]()
+            return emptyNamesArray
+        }
+    }
+    
     func deleteCategory(_ categoryName: String){
         let memory = UserDefaults.standard
         memory.removeObject(forKey: categoryName)
+        var categoriesNamesArray = UserDefaults.standard.stringArray(forKey: arrayWithCategoriesNamesInMemory)
+        if let deleteIndex = categoriesNamesArray!.firstIndex(of: categoryName){
+            categoriesNamesArray?.remove(at: deleteIndex)
+            UserDefaults.standard.set(categoriesNamesArray,forKey: arrayWithCategoriesNamesInMemory)
+        }
     }
 }
 
