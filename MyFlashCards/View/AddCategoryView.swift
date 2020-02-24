@@ -10,10 +10,26 @@ import Foundation
 import UIKit
 
 class AddCategoryView: UIView{
+    @IBOutlet weak var categoryNameField: UITextField!
+    @IBOutlet weak var angWordField: UITextField!
+    @IBOutlet weak var polWordField: UITextField!
+    @IBOutlet weak var addBtn: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setBackground()
+    }
+    
+    func takeAngTextField() -> String{
+        return angWordField.text!
+    }
+    
+    func takePolTextField() -> String{
+        return polWordField.text!
+    }
+    
+    func takeCategoryNameTextField() -> String{
+        return categoryNameField.text!
     }
     
     private func setBackground(){

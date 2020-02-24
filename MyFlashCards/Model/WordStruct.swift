@@ -8,9 +8,14 @@
 
 import Foundation
 import FirebaseFirestore
-struct WordStruct: Equatable {
-    let ang: String
-    let pol: String
+struct WordStruct:Codable ,Equatable {
+    var ang = ""
+    var pol = ""
+    
+    init(_ ang: String, _ pol: String) {
+        self.ang = ang
+        self.pol = pol
+    }
     
     init(_ snapshot: QueryDocumentSnapshot) {
         ang = snapshot["ang"] as! String
