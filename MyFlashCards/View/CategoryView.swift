@@ -9,6 +9,12 @@
 import Foundation
 import UIKit
 
+protocol BtnAction: class {
+    func loadAgainBtn(_ sender:UIButton)
+    func reviewHardBtn(_ sender:UIButton)
+    func deleteCategory()
+}
+
 class CategoryView: UIView {
     @IBOutlet weak private var wordLbl: UILabel!
     @IBOutlet weak private var flashCardImg: UIImageView!
@@ -21,7 +27,7 @@ class CategoryView: UIView {
     private let cardViewImg = "flashCard"
     private let thumbUpImgName = "thumbUp"
     private let thumbDownImgName = "thumbDown"
-    
+    weak var delegate: BtnAction?
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -47,6 +53,12 @@ class CategoryView: UIView {
         UIView.transition(with: flashCardView, duration: 0.4, options: .transitionFlipFromLeft, animations: nil, completion: nil)
     }
     
+    @IBAction func loadAgainBtn(_ sender: UIButton) {
+        delegate?.loadAgainBtn(sender)
+    }
+    @IBAction func reviewHardBtn(_ sender: UIButton) {
+        delegate?.reviewHardBtn(sender)
+    }
     
     
     private func setBackground() {
@@ -69,9 +81,13 @@ class CategoryView: UIView {
         
     }
     
-    func createDeleteBtnIfYourCategory(){
-        let deleteBtn = UIBarButtonItem(title: "Delete", style: .done, target: self, action: #selector(deleteCategory))
-        self.navigationItem.rightBarButtonItem = deleteBtn
+    func createDeleteBtnIfYourCategory(_ navigationItem: UINavigationItem){
+        let deleteBtn = UIBarButtonItem(title: "Delete", style: .done, target: self, action: #selector(deleteCategory(_:)))
+        navigationItem.rightBarButtonItem = deleteBtn
+    }
+    
+    @objc func deleteCategory(_ sender:UIButton){
+        delegate?.deleteCategory()
     }
     
     private func setImgFlashCard(){

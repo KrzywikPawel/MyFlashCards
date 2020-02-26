@@ -83,6 +83,9 @@
 again</string>
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="loadAgainBtn:" destination="NOG-Iz-jmp" eventType="touchUpInside" id="BRZ-um-Wbp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IEp-Vz-Tlg" userLabel="review hard">
                                 <rect key="frame" x="244" y="475" width="124" height="155"/>
@@ -103,6 +106,9 @@ hard</string>
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="reviewHardBtn:" destination="NOG-Iz-jmp" eventType="touchUpInside" id="cgE-ly-xCS"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleAspectFit" id="D7T-8x-TtW">
                                 <rect key="frame" x="67" y="178" width="308" height="196"/>

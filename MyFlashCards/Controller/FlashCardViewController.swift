@@ -8,7 +8,7 @@
 
 import UIKit
 import Foundation
-class FlashCardViewController: UIViewController {
+class FlashCardViewController: UIViewController{
     @IBOutlet var setView: CategoryView!
     var categoryName = ""
     var categoryType = ""
@@ -25,47 +25,24 @@ class FlashCardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = categoryName
+        setView.delegate = self
         setView.setNavigationController(self.navigationController!)
-        setView.loadAgainBtn.addTarget(self, action: #selector(loadWordsAgain(_:)), for: .touchUpInside)
-        setView.reviewHardBtn.addTarget(self, action: #selector(reviewHard(_:)), for: .touchUpInside)
         divisor = (view.frame.width / 2) / 0.61
         checkType()
     }
     
-    private func checkType(){
+    internal func checkType(){
         switch categoryType {
         case "System":
             takeDataFromDatabase()
             break
         case "YourCategory":
-            setView.createDeleteBtnIfYourCategory()
+            setView.createDeleteBtnIfYourCategory(navigationItem)
             takeDataFromUserDefaults()
             break
         default:
             print("error categoryType")
         }
-    }
-    
-    
-    
-    @objc private func deleteCategory(){
-        let deleteYourCategory = OperationInMemory()
-        deleteYourCategory.deleteCategory(categoryName)
-    }
-    
-    @objc private func reviewHard(_ sender:UIButton){
-        if hardWords.count == 0 {
-            setView.setWordLbl(emptyHardwords)
-        } else {
-            showedCard = 0
-            words = hardWords
-            setView.setWordLbl(words[0].ang)
-        }
-    }
-    
-    @objc private func loadWordsAgain(_ sender: UIButton){
-        showedCard = 0
-        checkType()
     }
     
     private func takeDataFromDatabase(){
@@ -170,3 +147,7 @@ class FlashCardViewController: UIViewController {
         }
     }
 }
+
+
+
+
