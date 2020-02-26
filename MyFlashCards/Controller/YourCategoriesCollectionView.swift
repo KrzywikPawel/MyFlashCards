@@ -18,6 +18,7 @@ extension YourCategoriesViewController:UICollectionViewDelegate,UICollectionView
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoriesCollectionViewCell", for: indexPath) as! CategoriesCollectionViewCell
         let img = UIImage(named: "hospital")
         let text = yourCategoriesNames[indexPath.row]
+        print(yourCategoriesNames)
         cell.configurateCell(text, img!)
         return cell
     }

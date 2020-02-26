@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 class FlashCardViewController: UIViewController {
-    @IBOutlet var categoryView: CategoryView!
+    @IBOutlet var setView: CategoryView!
     var categoryName = ""
     var categoryType = ""
     var divisor: CGFloat!
@@ -19,15 +19,15 @@ class FlashCardViewController: UIViewController {
     var hardWords = [WordStruct]()
     var showedCard = 0
     var flashCard = UIView()
-    let endWord = "koniec slowek"
+    let endWord = "end words"
     let emptyHardwords = "your hard words is empty"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = categoryName
-        categoryView.setNavigationController(self.navigationController!)
-        categoryView.loadAgainBtn.addTarget(self, action: #selector(loadAgain(_:)), for: .touchUpInside)
-        categoryView.reviewHardBtn.addTarget(self, action: #selector(reviewHard(_:)), for: .touchUpInside)
+        setView.setNavigationController(self.navigationController!)
+        setView.loadAgainBtn.addTarget(self, action: #selector(loadWordsAgain(_:)), for: .touchUpInside)
+        setView.reviewHardBtn.addTarget(self, action: #selector(reviewHard(_:)), for: .touchUpInside)
         divisor = (view.frame.width / 2) / 0.61
         checkType()
     }
@@ -38,6 +38,7 @@ class FlashCardViewController: UIViewController {
             takeDataFromDatabase()
             break
         case "YourCategory":
+            setView.createDeleteBtnIfYourCategory()
             takeDataFromUserDefaults()
             break
         default:
@@ -45,17 +46,24 @@ class FlashCardViewController: UIViewController {
         }
     }
     
+    
+    
+    @objc private func deleteCategory(){
+        let deleteYourCategory = OperationInMemory()
+        deleteYourCategory.deleteCategory(categoryName)
+    }
+    
     @objc private func reviewHard(_ sender:UIButton){
         if hardWords.count == 0 {
-            categoryView.setWordLbl(emptyHardwords)
+            setView.setWordLbl(emptyHardwords)
         } else {
             showedCard = 0
             words = hardWords
-            categoryView.setWordLbl(words[0].ang)
+            setView.setWordLbl(words[0].ang)
         }
     }
     
-    @objc private func loadAgain(_ sender: UIButton){
+    @objc private func loadWordsAgain(_ sender: UIButton){
         showedCard = 0
         checkType()
     }
@@ -66,7 +74,7 @@ class FlashCardViewController: UIViewController {
         categoryData.parseData(categoryName) { (takedWords) in
             self.words = takedWords
             self.words.shuffle()
-            self.categoryView.setWordLbl(self.words[self.showedCard].ang)
+            self.setView.setWordLbl(self.words[self.showedCard].ang)
             self.showFlashCard()
         }
     }
@@ -75,29 +83,29 @@ class FlashCardViewController: UIViewController {
         let parser = OperationInMemory()
         words = parser.loadCategory(categoryName)
         words.shuffle()
-        categoryView.setWordLbl(words[showedCard].ang)
+        setView.setWordLbl(words[showedCard].ang)
         showFlashCard()
     }
     
     private func showFlashCard() {
         if showedCard >= words.count {
-            categoryView.setWordLbl(endWord)
+            setView.setWordLbl(endWord)
         } else {
-            categoryView.backCardToStartPosition(flashCard,backCardPoint)
-            categoryView.setWordLbl(words[showedCard].ang)
+            setView.backCardToStartPosition(flashCard,backCardPoint)
+            setView.setWordLbl(words[showedCard].ang)
         }
     }
     
     @IBAction private func flashCardTapGesture(_ sender: UITapGestureRecognizer) {
-        categoryView.transitionFlashCardView()
-        let onFlashCard = self.categoryView.takeWordLblText()
+        setView.transitionFlashCardView()
+        let onFlashCard = self.setView.takeWordLblText()
         if onFlashCard != endWord && onFlashCard != emptyHardwords{
             if isPolishSite {
                 isPolishSite = false
-                categoryView.setWordLbl(words[showedCard].ang)
+                setView.setWordLbl(words[showedCard].ang)
             } else {
                 isPolishSite = true
-                categoryView.setWordLbl(words[showedCard].pol)
+                setView.setWordLbl(words[showedCard].pol)
             }
         }
     }
@@ -112,10 +120,10 @@ class FlashCardViewController: UIViewController {
         
         if xFromCenter > 0 {
             let alphaCalculate = abs(xFromCenter) / view.center.x
-            categoryView.showThumbUp(alphaCalculate)
+            setView.showThumbUp(alphaCalculate)
         } else {
             let alphaCalculate = abs(xFromCenter) / view.center.x
-            categoryView.showThumbDown(alphaCalculate)
+            setView.showThumbDown(alphaCalculate)
         }
         //        MARK: animation refactor to view or stay in controller?
         if sender.state == UIGestureRecognizer.State.ended {
@@ -126,7 +134,7 @@ class FlashCardViewController: UIViewController {
                     self.addWordToHard()
                 }
                 self.showedCard = self.showedCard + 1
-                categoryView.backCardToStartPosition(categoryView.flashCardView,backCardPoint)
+                setView.backCardToStartPosition(setView.flashCardView,backCardPoint)
                 showFlashCard()
             } else if flashCard.center.x > (view.frame.width - 75) {
                 UIView.animate(withDuration: 0.3) {
@@ -135,15 +143,15 @@ class FlashCardViewController: UIViewController {
                     self.deleteFromHardWord()
                 }
                 showedCard = showedCard + 1
-                categoryView.backCardToStartPosition(categoryView.flashCardView,backCardPoint)
+                setView.backCardToStartPosition(setView.flashCardView,backCardPoint)
                 showFlashCard()
             }
-            categoryView.backCardToStartPosition(categoryView.flashCardView,backCardPoint)
+            setView.backCardToStartPosition(setView.flashCardView,backCardPoint)
         }
     }
     
     private func deleteFromHardWord() {
-        let onFlashCard = categoryView.takeWordLblText()
+        let onFlashCard = setView.takeWordLblText()
         if onFlashCard != endWord && onFlashCard != emptyHardwords {
             if let index = hardWords.firstIndex(of: words[showedCard]) {
                 hardWords.remove(at: index)
@@ -152,7 +160,7 @@ class FlashCardViewController: UIViewController {
     }
     
     private func addWordToHard() {
-        let textInSing = categoryView.takeWordLblText()
+        let textInSing = setView.takeWordLblText()
         if textInSing != endWord && textInSing != emptyHardwords {
             if hardWords.contains(where: {$0 == self.words[self.showedCard]}) {
                 //check duplicate

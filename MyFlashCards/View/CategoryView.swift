@@ -69,6 +69,11 @@ class CategoryView: UIView {
         
     }
     
+    func createDeleteBtnIfYourCategory(){
+        let deleteBtn = UIBarButtonItem(title: "Delete", style: .done, target: self, action: #selector(deleteCategory))
+        self.navigationItem.rightBarButtonItem = deleteBtn
+    }
+    
     private func setImgFlashCard(){
         flashCardImg.image = UIImage(named: cardViewImg)
     }

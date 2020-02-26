@@ -29,7 +29,6 @@ class OperationInMemory{
     
     private func saveNameCategory(_ categoryName: String){
         if var yourCategoriesNames = UserDefaults.standard.stringArray(forKey: arrayWithCategoriesNamesInMemory) {
-            print("zapis \(categoryName)")
             yourCategoriesNames.append(categoryName)
             UserDefaults.standard.set(yourCategoriesNames,forKey: arrayWithCategoriesNamesInMemory)
         } else {

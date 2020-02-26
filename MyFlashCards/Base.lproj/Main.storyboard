@@ -176,7 +176,7 @@ hard</string>
                     </view>
                     <navigationItem key="navigationItem" id="wJi-Da-obj"/>
                     <connections>
-                        <outlet property="categoryView" destination="NOG-Iz-jmp" id="7VQ-7s-Rrt"/>
+                        <outlet property="setView" destination="NOG-Iz-jmp" id="7VQ-7s-Rrt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcj-vK-6FX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
