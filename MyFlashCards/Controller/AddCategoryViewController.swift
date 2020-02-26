@@ -21,6 +21,7 @@ class AddCategoryViewController: UIViewController {
         let category = setView.takeCategoryNameTextField()
         let angWord = setView.takeAngTextField()
         let polWord = setView.takePolTextField()
+        setView.clearTextFields()
         let wordToSave = WordStruct(angWord, polWord)
         OperationInMemory().saveCategory(category, wordToSave: wordToSave)
     }

@@ -10,7 +10,8 @@ import UIKit
 import Foundation
 class FlashCardViewController: UIViewController {
     @IBOutlet var categoryView: CategoryView!
-    var name = ""
+    var categoryName = ""
+    var categoryType = ""
     var divisor: CGFloat!
     var isPolishSite = false
     let backCardPoint =  CGPoint(x: 221, y: 300)
@@ -23,13 +24,25 @@ class FlashCardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = name
+        self.title = categoryName
         categoryView.setNavigationController(self.navigationController!)
         categoryView.loadAgainBtn.addTarget(self, action: #selector(loadAgain(_:)), for: .touchUpInside)
         categoryView.reviewHardBtn.addTarget(self, action: #selector(reviewHard(_:)), for: .touchUpInside)
-        
-        takeData()
         divisor = (view.frame.width / 2) / 0.61
+        checkType()
+    }
+    
+    private func checkType(){
+        switch categoryType {
+        case "System":
+            takeDataFromDatabase()
+            break
+        case "YourCategory":
+            takeDataFromUserDefaults()
+            break
+        default:
+            print("error categoryType")
+        }
     }
     
     @objc private func reviewHard(_ sender:UIButton){
@@ -44,18 +57,26 @@ class FlashCardViewController: UIViewController {
     
     @objc private func loadAgain(_ sender: UIButton){
         showedCard = 0
-        takeData()
+        checkType()
     }
     
-    private func takeData(){
+    private func takeDataFromDatabase(){
         let categoryData =  TakeCategory()
         //        MARK: change medicine to name from circle collection categories
-        categoryData.parseData(name) { (takedWords) in
+        categoryData.parseData(categoryName) { (takedWords) in
             self.words = takedWords
             self.words.shuffle()
             self.categoryView.setWordLbl(self.words[self.showedCard].ang)
             self.showFlashCard()
         }
+    }
+    
+    private func takeDataFromUserDefaults(){
+        let parser = OperationInMemory()
+        words = parser.loadCategory(categoryName)
+        words.shuffle()
+        categoryView.setWordLbl(words[showedCard].ang)
+        showFlashCard()
     }
     
     private func showFlashCard() {

@@ -24,7 +24,8 @@ extension ViewController:UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let pushVC = mainStoryboard.instantiateViewController(identifier: "FlashCardViewController") as! FlashCardViewController
-        pushVC.name = dataToCircleCollection[indexPath.row].name
+        pushVC.categoryName = dataToCircleCollection[indexPath.row].name
+        pushVC.categoryType = "System"
         self.navigationController?.pushViewController(pushVC, animated: true)
     }
 }

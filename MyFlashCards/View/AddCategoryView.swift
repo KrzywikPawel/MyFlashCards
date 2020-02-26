@@ -32,6 +32,11 @@ class AddCategoryView: UIView{
         return categoryNameField.text!
     }
     
+    func clearTextFields(){
+        angWordField.text = ""
+        polWordField.text = ""
+    }
+    
     private func setBackground(){
         let backgroundImg = UIImage(named: "addCategoryBackground")
         let backgroundView = UIImageView.init(frame: self.frame)
