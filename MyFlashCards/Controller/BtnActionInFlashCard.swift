@@ -7,7 +7,7 @@
 //
 
 import UIKit
-extension FlashCardViewController: BtnAction{
+extension FlashCardViewController: BtnActionInFlashCardView{
     func deleteCategory() {
         let deleteYourCategory = OperationInMemory()
         deleteYourCategory.deleteCategory(categoryName)

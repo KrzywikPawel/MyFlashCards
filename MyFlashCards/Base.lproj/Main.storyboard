@@ -275,6 +275,9 @@ hard</string>
 Category</string>
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="addNewCategoryBtn:" destination="ZhH-F8-bYC" eventType="touchUpInside" id="sPE-MD-Vhs"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

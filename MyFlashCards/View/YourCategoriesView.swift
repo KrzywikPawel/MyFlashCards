@@ -9,11 +9,15 @@
 import Foundation
 import UIKit
 import ACBRadialCollectionView
+protocol BtnActionInYourCategories: class {
+    func addNewCategoryBtn()
+}
+
 class YourCategoriesView: UIView{
     
     @IBOutlet weak var yourCategoriesCollectionView: UICollectionView!
     @IBOutlet weak var addNewCategoryBtn: UIButton!
-    
+    weak var delegate: BtnActionInYourCategories?
     
     
     override func awakeFromNib() {
@@ -30,6 +34,9 @@ class YourCategoriesView: UIView{
         self.insertSubview(backgroundView, at: 0)
     }
     
+    @IBAction func addNewCategoryBtn(_ sender: UIButton) {
+        delegate?.addNewCategoryBtn()
+    }
     
     
     private func setYourCategoriesCollectionView() {

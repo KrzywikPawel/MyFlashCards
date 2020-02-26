@@ -8,25 +8,30 @@
 
 import UIKit
 
-class YourCategoriesViewController: UIViewController {
+class YourCategoriesViewController: UIViewController, BtnActionInYourCategories {
+    
     var yourCategoriesNames = [String]()
     @IBOutlet var setView: YourCategoriesView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        takeCategoriesNames()
+        
+        setView.delegate = self
         let nibCell = UINib(nibName: "CategoriesCollectionViewCell", bundle: nil)
         setView.yourCategoriesCollectionView.register(nibCell, forCellWithReuseIdentifier: "CategoriesCollectionViewCell")
-        setView.addNewCategoryBtn.addTarget(self, action: #selector(addCategory(_:)), for: .touchUpInside)
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        takeCategoriesNames()
+        setView.yourCategoriesCollectionView.reloadData()
     }
     
     private func takeCategoriesNames(){
         let parser = OperationInMemory()
         yourCategoriesNames = parser.loadNamesArray()
+        
     }
     
-    
-    @objc private func addCategory(_ sender:UIButton){
+    func addNewCategoryBtn() {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let pushVC = mainStoryboard.instantiateViewController(withIdentifier: "AddCategoryViewController") as! AddCategoryViewController
         self.navigationController?.pushViewController(pushVC, animated: true)

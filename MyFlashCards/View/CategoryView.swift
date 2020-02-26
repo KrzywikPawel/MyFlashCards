@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol BtnAction: class {
+protocol BtnActionInFlashCardView: class {
     func loadAgainBtn(_ sender:UIButton)
     func reviewHardBtn(_ sender:UIButton)
     func deleteCategory()
@@ -27,7 +27,7 @@ class CategoryView: UIView {
     private let cardViewImg = "flashCard"
     private let thumbUpImgName = "thumbUp"
     private let thumbDownImgName = "thumbDown"
-    weak var delegate: BtnAction?
+    weak var delegate: BtnActionInFlashCardView?
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
