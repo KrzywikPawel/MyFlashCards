@@ -9,6 +9,7 @@
 import Foundation
 class OperationInMemory{
     let arrayWithCategoriesNamesInMemory = "yourCategoriesNames"
+    
     func saveCategory(_ categoryName: String, wordToSave: WordStruct){
         if var isInMemory = UserDefaults.standard.value([WordStruct].self, forKey: categoryName){
             if isInMemory.contains(where: {$0 == wordToSave}){
@@ -16,24 +17,28 @@ class OperationInMemory{
             } else {
                 isInMemory.append(wordToSave)
                 UserDefaults.standard.set(encodable: isInMemory, forKey: categoryName)
+                saveNameCategory(categoryName)
             }
         } else {
             var newCategory = [WordStruct]()
             newCategory.append(wordToSave)
             UserDefaults.standard.set(encodable: newCategory, forKey: categoryName)
-            if var yourCategoriesNames = UserDefaults.standard.stringArray(forKey: arrayWithCategoriesNamesInMemory) {
-                //                if yourCategoriesNames.contains(where: {$0 == categoryName}) {
-                //
-                //                } else {
-                yourCategoriesNames.append(categoryName)
-                //                }
-            } else {
-                var yourCategoriesNames = [String]()
-                yourCategoriesNames.append(categoryName)
-                UserDefaults.standard.set(yourCategoriesNames,forKey: arrayWithCategoriesNamesInMemory)
-            }
+            saveNameCategory(categoryName)
         }
     }
+    
+    private func saveNameCategory(_ categoryName: String){
+        if var yourCategoriesNames = UserDefaults.standard.stringArray(forKey: arrayWithCategoriesNamesInMemory) {
+            print("zapis \(categoryName)")
+            yourCategoriesNames.append(categoryName)
+            UserDefaults.standard.set(yourCategoriesNames,forKey: arrayWithCategoriesNamesInMemory)
+        } else {
+            var array = [String]()
+            array.append(categoryName)
+            UserDefaults.standard.set(array,forKey: arrayWithCategoriesNamesInMemory)
+        }
+    }
+    
     func loadCategory(_ categoryName: String) -> [WordStruct]{
         if let isInMemory = UserDefaults.standard.value([WordStruct].self, forKey: categoryName){
             return isInMemory

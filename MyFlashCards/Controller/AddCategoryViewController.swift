@@ -30,5 +30,5 @@ class AddCategoryViewController: UIViewController {
         let wordsInCategory = parser.loadCategory(name)
         return wordsInCategory
     }
-
+    
 }
