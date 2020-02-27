@@ -11,6 +11,12 @@ import UIKit
 
 extension YourCategoriesViewController:UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if yourCategoriesNames.count == 0 {
+            let setEmptyMessage = SetEmptyCollectionViewMessage()
+            setEmptyMessage.collectionViewEmptyMessage(collectionView, emptyCollectionMessage)
+        } else {
+            collectionView.restore()
+        }
         return yourCategoriesNames.count
     }
     

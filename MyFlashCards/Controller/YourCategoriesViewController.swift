@@ -11,6 +11,7 @@ import UIKit
 class YourCategoriesViewController: UIViewController, BtnActionInYourCategories {
     
     var yourCategoriesNames = [String]()
+    let emptyCollectionMessage = "Your Categories are empty, \nadd category and back here"
     @IBOutlet var setView: YourCategoriesView!
     override func viewDidLoad() {
         super.viewDidLoad()
