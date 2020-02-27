@@ -8,22 +8,15 @@
 
 import UIKit
 
-class AddCategoryViewController: UIViewController {
+class AddCategoryViewController: UIViewController, AddCategoryBtnAction {
+    
     @IBOutlet var setView: AddCategoryView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setView.delegate = self
         setView.setNavigationController(self.navigationController!)
-        setView.addBtn.addTarget(self, action: #selector(addWordToCategory(_:)), for: .touchUpInside)
-    }
-    
-    @objc private func addWordToCategory(_ sender: UIButton){
-        let category = setView.takeCategoryNameTextField()
-        let angWord = setView.takeAngTextField()
-        let polWord = setView.takePolTextField()
-        setView.clearTextFields()
-        let wordToSave = WordStruct(angWord, polWord)
-        OperationInMemory().saveCategory(category, wordToSave: wordToSave)
+        setView.createBackBtnItem(self.navigationItem)
     }
     
     private func takeCategory(_ name: String) -> [WordStruct]{
@@ -32,4 +25,16 @@ class AddCategoryViewController: UIViewController {
         return wordsInCategory
     }
     
+    func addWordToCategory() {
+        let category = setView.takeCategoryNameTextField()
+        let angWord = setView.takeAngTextField()
+        let polWord = setView.takePolTextField()
+        setView.clearTextFields()
+        let wordToSave = WordStruct(angWord, polWord)
+        OperationInMemory().saveCategory(category, wordToSave: wordToSave)
+    }
+    
+    func backToYourCategoriesScreen() {
+        navigationController?.popViewController(animated: true)
+    }
 }

@@ -18,8 +18,7 @@ class YourCategoriesView: UIView{
     @IBOutlet weak var yourCategoriesCollectionView: UICollectionView!
     @IBOutlet weak var addNewCategoryBtn: UIButton!
     weak var delegate: BtnActionInYourCategories?
-    
-    
+
     override func awakeFromNib() {
         addNewCategoryBtn.titleLabel?.alpha = 0.68
         setBackground()

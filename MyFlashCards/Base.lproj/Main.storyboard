@@ -339,6 +339,9 @@ Category</string>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fH2-E2-lKc">
                                 <rect key="frame" x="115" y="310" width="32" height="30"/>
                                 <state key="normal" title="ADD"/>
+                                <connections>
+                                    <action selector="addBtn:" destination="062-QS-oj3" eventType="touchUpInside" id="zel-yw-71T"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ImD-Or-e06">
                                 <rect key="frame" x="9" y="490" width="304" height="67"/>
