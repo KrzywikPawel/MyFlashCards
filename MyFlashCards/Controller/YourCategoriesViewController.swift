@@ -15,13 +15,14 @@ class YourCategoriesViewController: UIViewController, BtnActionInYourCategories 
     @IBOutlet var setView: YourCategoriesView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setView.delegate = self
         let nibCell = UINib(nibName: "CategoriesCollectionViewCell", bundle: nil)
         setView.yourCategoriesCollectionView.register(nibCell, forCellWithReuseIdentifier: "CategoriesCollectionViewCell")
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.leftBarButtonItems?.remove(at: 0)
         takeCategoriesNames()
         setView.yourCategoriesCollectionView.reloadData()
     }

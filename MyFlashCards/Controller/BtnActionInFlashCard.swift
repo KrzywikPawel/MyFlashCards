@@ -21,9 +21,7 @@ extension CategoryViewController: BtnActionInFlashCardView {
     }
     
     func backToYourCategoriesView() {
-        let mainstoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let pushVC = mainstoryboard.instantiateViewController(identifier: "YourCategoriesViewController") as! YourCategoriesViewController
-        navigationController?.pushViewController(pushVC, animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     func loadAgainBtn(_ sender: UIButton) {
