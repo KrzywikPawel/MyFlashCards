@@ -8,7 +8,7 @@
 
 import UIKit
 import Foundation
-class FlashCardViewController: UIViewController{
+class CategoryViewController: UIViewController{
     @IBOutlet var setView: CategoryView!
     var categoryName = ""
     var categoryType = ""
@@ -27,6 +27,7 @@ class FlashCardViewController: UIViewController{
         self.title = categoryName
         setView.delegate = self
         setView.setNavigationController(self.navigationController!)
+        setView.createBackBtnItem(self.navigationItem)
         divisor = (view.frame.width / 2) / 0.61
         checkType()
     }

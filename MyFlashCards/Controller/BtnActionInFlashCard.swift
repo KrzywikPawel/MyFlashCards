@@ -7,10 +7,23 @@
 //
 
 import UIKit
-extension FlashCardViewController: BtnActionInFlashCardView{
+extension CategoryViewController: BtnActionInFlashCardView {
+    
+    func backToMainScreen() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     func deleteCategory() {
         let deleteYourCategory = OperationInMemory()
         deleteYourCategory.deleteCategory(categoryName)
+        backToYourCategoriesView()
+        
+    }
+    
+    func backToYourCategoriesView() {
+        let mainstoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let pushVC = mainstoryboard.instantiateViewController(identifier: "YourCategoriesViewController") as! YourCategoriesViewController
+        navigationController?.pushViewController(pushVC, animated: true)
     }
     
     func loadAgainBtn(_ sender: UIButton) {

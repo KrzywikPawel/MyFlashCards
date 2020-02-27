@@ -13,6 +13,7 @@ protocol BtnActionInFlashCardView: class {
     func loadAgainBtn(_ sender:UIButton)
     func reviewHardBtn(_ sender:UIButton)
     func deleteCategory()
+    func backToMainScreen()
 }
 
 class CategoryView: UIView {
@@ -43,7 +44,17 @@ class CategoryView: UIView {
         setFlashCard()
     }
     
+    func createBackBtnItem(_ navigationItem: UINavigationItem){
+        let createBackBtn = CreateBarBackBtn()
+        let backBtn = createBackBtn.setBarBackBtn()
+        backBtn.addTarget(self, action: #selector(backToMainScreen(_:)), for: .touchUpInside)
+        let leftBarBtnItem = UIBarButtonItem(customView: backBtn)
+        navigationItem.leftBarButtonItem = leftBarBtnItem
+    }
     
+    @objc func backToMainScreen(_ sender:UIButton){
+        delegate?.backToMainScreen()
+    }
     
     func setWordLbl(_ word: String){
         wordLbl.text = word
@@ -126,6 +137,7 @@ class CategoryView: UIView {
         navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController.navigationBar.shadowImage = UIImage()
         navigationController.navigationBar.isTranslucent = true
+        navigationController.interactivePopGestureRecognizer?.delegate = nil
     }
     
     

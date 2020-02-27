@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Screen View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyFlashCards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainScreenViewController" customModule="MyFlashCards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="MainView" customModule="MyFlashCards" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,10 +62,10 @@
             </objects>
             <point key="canvasLocation" x="2956" y="99.400299850074973"/>
         </scene>
-        <!--Flash Card View Controller-->
+        <!--Category View Controller-->
         <scene sceneID="2om-hr-zUR">
             <objects>
-                <viewController storyboardIdentifier="FlashCardViewController" id="EVe-lW-vil" customClass="FlashCardViewController" customModule="MyFlashCards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FlashCardViewController" id="EVe-lW-vil" customClass="CategoryViewController" customModule="MyFlashCards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NOG-Iz-jmp" customClass="CategoryView" customModule="MyFlashCards" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -240,7 +240,7 @@ hard</string>
         <!--Your Categories View Controller-->
         <scene sceneID="d0T-xE-XQH">
             <objects>
-                <viewController id="mh8-Zu-YzC" customClass="YourCategoriesViewController" customModule="MyFlashCards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YourCategoriesViewController" id="mh8-Zu-YzC" customClass="YourCategoriesViewController" customModule="MyFlashCards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZhH-F8-bYC" customClass="YourCategoriesView" customModule="MyFlashCards" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

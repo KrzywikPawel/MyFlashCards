@@ -18,14 +18,13 @@ extension YourCategoriesViewController:UICollectionViewDelegate,UICollectionView
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoriesCollectionViewCell", for: indexPath) as! CategoriesCollectionViewCell
         let img = UIImage(named: "hospital")
         let text = yourCategoriesNames[indexPath.row]
-        print(yourCategoriesNames)
         cell.configurateCell(text, img!)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let pushVC = mainStoryboard.instantiateViewController(identifier: "FlashCardViewController") as! FlashCardViewController
+        let pushVC = mainStoryboard.instantiateViewController(identifier: "FlashCardViewController") as! CategoryViewController
         pushVC.categoryName = yourCategoriesNames[indexPath.row]
         pushVC.categoryType = "YourCategory"
         self.navigationController?.pushViewController(pushVC, animated: true)
