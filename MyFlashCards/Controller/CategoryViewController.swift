@@ -103,29 +103,44 @@ class CategoryViewController: UIViewController{
             let alphaCalculate = abs(xFromCenter) / view.center.x
             setView.showThumbDown(alphaCalculate)
         }
+        endedHoldFlashCard(sender)
+    }
+    
+    private func endedHoldFlashCard(_ sender: UIPanGestureRecognizer) {
         //        MARK: animation refactor to view or stay in controller?
         if sender.state == UIGestureRecognizer.State.ended {
             if flashCard.center.x < 75 {
-                UIView.animate(withDuration: 0.3) {
-                    self.flashCard.center = CGPoint(x: self.flashCard.center.x - 200, y: self.flashCard.center.y)
-                    self.flashCard.alpha = 0
-                    self.addWordToHard()
-                }
-                self.showedCard = self.showedCard + 1
-                setView.backCardToStartPosition(setView.flashCardView,backCardPoint)
-                showFlashCard()
+                swipeLeft()
             } else if flashCard.center.x > (view.frame.width - 75) {
-                UIView.animate(withDuration: 0.3) {
-                    self.flashCard.center = CGPoint(x: self.flashCard.center.x + 200, y: self.flashCard.center.y)
-                    self.flashCard.alpha = 0
-                    self.deleteFromHardWord()
-                }
-                showedCard = showedCard + 1
-                setView.backCardToStartPosition(setView.flashCardView,backCardPoint)
-                showFlashCard()
+                swipeRight()
             }
+//            ended hold flash and dont swipe, back to start position
             setView.backCardToStartPosition(setView.flashCardView,backCardPoint)
         }
+    }
+    
+    private func swipeLeft() {
+        UIView.animate(withDuration: 0.3) {
+            self.flashCard.center = CGPoint(x: self.flashCard.center.x - 200, y: self.flashCard.center.y)
+            self.flashCard.alpha = 0
+            self.addWordToHard()
+        }
+        nextFlashCard()
+    }
+    
+    private func swipeRight() {
+        UIView.animate(withDuration: 0.3) {
+            self.flashCard.center = CGPoint(x: self.flashCard.center.x + 200, y: self.flashCard.center.y)
+            self.flashCard.alpha = 0
+            self.deleteFromHardWord()
+        }
+        nextFlashCard()
+    }
+    
+    private func nextFlashCard() {
+        showedCard = showedCard + 1
+        setView.backCardToStartPosition(setView.flashCardView,backCardPoint)
+        showFlashCard()
     }
     
     private func deleteFromHardWord() {
