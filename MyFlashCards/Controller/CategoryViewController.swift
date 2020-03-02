@@ -12,6 +12,7 @@ class CategoryViewController: UIViewController{
     @IBOutlet var setView: CategoryView!
     var categoryName = ""
     var categoryType = ""
+    var isHardWordsView = false
     var divisor: CGFloat!
     var isPolishSite = false
     let backCardPoint =  CGPoint(x: 221, y: 300)
@@ -19,6 +20,7 @@ class CategoryViewController: UIViewController{
     var hardWords = [WordStruct]()
     var showedCard = 0
     var flashCard = UIView()
+    let operationInMemory = OperationInMemory()
     let endWord = "end words"
     let emptyHardwords = "your hard words is empty"
     
@@ -42,23 +44,16 @@ class CategoryViewController: UIViewController{
             takeDataFromUserDefaults()
             break
         case "HardWords":
-            takeHardWords()
+            categoryName = operationInMemory.namedHardWordArrayInMemory
+            takeDataFromUserDefaults()
             break
         default:
             print("error categoryType")
         }
     }
     
-    private func takeHardWords(){
-        let memoryOperation = OperationInMemory()
-        let namedHardWordInMemory = memoryOperation.namedHardWordArrayInMemory
-        words = memoryOperation.loadCategory(namedHardWordInMemory)
-        flashCardStartAction()
-    }
-    
     private func takeDataFromDatabase(){
         let categoryData =  TakeCategory()
-        //        MARK: change medicine to name from circle collection categories
         categoryData.parseData(categoryName) { (takedWords) in
             self.words = takedWords
             self.flashCardStartAction()
@@ -66,15 +61,18 @@ class CategoryViewController: UIViewController{
     }
     
     private func takeDataFromUserDefaults(){
-        let parser = OperationInMemory()
-        words = parser.loadCategory(categoryName)
+        words = operationInMemory.loadCategory(categoryName)
         flashCardStartAction()
     }
     
     private func flashCardStartAction() {
-        words.shuffle()
-        setView.setWordLbl(words[showedCard].ang)
-        showFlashCard()
+        if words.count != 0 {
+            words.shuffle()
+            setView.setWordLbl(words[showedCard].ang)
+            showFlashCard()
+        } else {
+             setView.setWordLbl(endWord)
+        }
     }
     
     private func showFlashCard() {

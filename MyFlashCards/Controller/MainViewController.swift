@@ -34,6 +34,7 @@ class MainViewController: UIViewController, BtnActionInMainView {
         let mainStoryboard =  UIStoryboard(name: "Main", bundle: nil)
         let pushVC = mainStoryboard.instantiateViewController(identifier: "CategoryViewController") as CategoryViewController
         pushVC.categoryType = "HardWords"
+        pushVC.isHardWordsView = true
         self.navigationController?.pushViewController(pushVC, animated: true)
      }
 }

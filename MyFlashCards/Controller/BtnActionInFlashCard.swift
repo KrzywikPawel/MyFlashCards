@@ -10,9 +10,13 @@ import UIKit
 extension CategoryViewController: BtnActionInFlashCardView {
     
     func backBtnAction() {
-        if hardWords.count != 0 {
-            let saveAlert = setView.createAlertSaveHardWord()
-            self.present(saveAlert,animated: true)
+        if isHardWordsView == true {
+            operationInMemory.replaceHardWords(hardWords)
+        } else {
+            if hardWords.count != 0 {
+                let saveAlert = setView.createAlertSaveHardWord()
+                self.present(saveAlert,animated: true)
+            }
         }
         self.navigationController?.popViewController(animated: true)
     }

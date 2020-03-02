@@ -22,6 +22,11 @@ class OperationInMemory {
         }
     }
     
+    func replaceHardWords(_ hardWords: [WordStruct]) {
+        deleteCategory(namedHardWordArrayInMemory)
+        saveNewArray(hardWords, key: namedHardWordArrayInMemory)
+    }
+    
     
     /// - parameter categoryName: without this parameter, func saved hardwords
     func saveToMemory(categoryName:String = "0" , _ wordsToSave: [WordStruct]) {
