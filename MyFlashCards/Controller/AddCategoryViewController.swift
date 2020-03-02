@@ -31,7 +31,8 @@ class AddCategoryViewController: UIViewController, AddCategoryBtnAction {
         let polWord = setView.takePolTextField()
         setView.clearTextFields()
         let wordToSave = WordStruct(angWord, polWord)
-        OperationInMemory().saveCategory(category, wordToSave: wordToSave)
+        let array = [wordToSave]
+        OperationInMemory().saveToMemory(categoryName: category, array)
     }
     
     func backToYourCategoriesScreen() {

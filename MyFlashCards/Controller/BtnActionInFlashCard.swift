@@ -43,7 +43,7 @@ extension CategoryViewController: BtnActionInFlashCardView {
     
     func saveHardWord() {
         let operationInMemory = OperationInMemory()
-        operationInMemory.saveHardWord(hardWords)
+        operationInMemory.saveToMemory(hardWords)
         self.navigationController?.popViewController(animated: true)
     }
     

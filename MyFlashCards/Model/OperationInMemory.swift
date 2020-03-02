@@ -11,23 +11,6 @@ class OperationInMemory {
     let arrayWithCategoriesNamesInMemory = "yourCategoriesNames"
     let namedHardWordArrayInMemory = "hardWords"
     
-    func saveCategory(_ categoryName: String, wordToSave: WordStruct) {
-        if var isInMemory = UserDefaults.standard.value([WordStruct].self, forKey: categoryName){
-            if isInMemory.contains(where: {$0 == wordToSave}){
-                
-            } else {
-                isInMemory.append(wordToSave)
-                UserDefaults.standard.set(encodable: isInMemory, forKey: categoryName)
-                saveNameCategory(categoryName)
-            }
-        } else {
-            var newCategory = [WordStruct]()
-            newCategory.append(wordToSave)
-            UserDefaults.standard.set(encodable: newCategory, forKey: categoryName)
-            saveNameCategory(categoryName)
-        }
-    }
-    
     private func saveNameCategory(_ categoryName: String) {
         if var yourCategoriesNames = UserDefaults.standard.stringArray(forKey: arrayWithCategoriesNamesInMemory) {
             yourCategoriesNames.append(categoryName)
@@ -36,6 +19,26 @@ class OperationInMemory {
             var array = [String]()
             array.append(categoryName)
             UserDefaults.standard.set(array,forKey: arrayWithCategoriesNamesInMemory)
+        }
+    }
+    
+    
+    /// - parameter categoryName: without this parameter, func saved hardwords
+    func saveToMemory(categoryName:String = "0" , _ wordsToSave: [WordStruct]) {
+        switch categoryName {
+        case "0":
+            if let isInMemory = UserDefaults.standard.value([WordStruct].self, forKey: namedHardWordArrayInMemory) {
+                saveIfArrayExist(where: isInMemory, what: wordsToSave, key: namedHardWordArrayInMemory)
+            } else {
+                saveNewArray(wordsToSave, key: namedHardWordArrayInMemory)
+            }
+        default:
+            if let isInMemory = UserDefaults.standard.value([WordStruct].self, forKey: categoryName) {
+                saveIfArrayExist(where: isInMemory, what: wordsToSave, key: categoryName)
+            } else {
+                saveNameCategory(categoryName)
+                saveNewArray(wordsToSave, key: categoryName)
+            }
         }
     }
     
@@ -68,15 +71,7 @@ class OperationInMemory {
         }
     }
     
-    func saveHardWord(_ hardWords: [WordStruct]) {
-        if let isInMemory = UserDefaults.standard.value([WordStruct].self, forKey: namedHardWordArrayInMemory) {
-            saveIfArrayExist(where: isInMemory, what: hardWords)
-        } else {
-            saveNewArray(hardWords)
-        }
-    }
-    
-    private func saveIfArrayExist(where writedWords: [WordStruct], what hardWords:[WordStruct]) {
+    private func saveIfArrayExist(where writedWords: [WordStruct], what hardWords:[WordStruct], key: String) {
         var wordsInMemory = writedWords
         for wordToSave in hardWords {
             if wordsInMemory.contains(where: {$0 == wordToSave}) {
@@ -85,11 +80,11 @@ class OperationInMemory {
                 wordsInMemory.append(wordToSave)
             }
         }
-        UserDefaults.standard.set(encodable: wordsInMemory, forKey: namedHardWordArrayInMemory)
+        UserDefaults.standard.set(encodable: wordsInMemory, forKey: key)
     }
     
-    private func saveNewArray(_ hardWords: [WordStruct]) {
-        UserDefaults.standard.set(encodable: hardWords, forKey: namedHardWordArrayInMemory)
+    private func saveNewArray(_ hardWords: [WordStruct], key: String) {
+        UserDefaults.standard.set(encodable: hardWords, forKey: key)
     }
 }
 fileprivate extension UserDefaults {
