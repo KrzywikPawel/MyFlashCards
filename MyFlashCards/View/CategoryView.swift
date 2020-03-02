@@ -13,7 +13,9 @@ protocol BtnActionInFlashCardView: class {
     func loadAgainBtn(_ sender:UIButton)
     func reviewHardBtn(_ sender:UIButton)
     func deleteCategory()
-    func backToMainScreen()
+    func backBtnAction()
+    func saveHardWord()
+    func dontSaveHardWord()
 }
 
 class CategoryView: UIView {
@@ -52,8 +54,21 @@ class CategoryView: UIView {
         navigationItem.leftBarButtonItem = leftBarBtnItem
     }
     
+    func createAlertSaveHardWord() -> UIAlertController{
+        let saveAlert = UIAlertController(title: "write down hard words?", message: "you can back to learn it later", preferredStyle: .alert)
+        let saveOption = UIAlertAction(title: "save", style: .default) { (result) in
+            self.delegate?.saveHardWord()
+        }
+        saveAlert.addAction(saveOption)
+        let dontSave = UIAlertAction(title: "don't save", style: .default) { (result) in
+            self.delegate?.dontSaveHardWord()
+        }
+        saveAlert.addAction(dontSave)
+        return saveAlert
+    }
+    
     @objc func backToMainScreen(_ sender:UIButton){
-        delegate?.backToMainScreen()
+        delegate?.backBtnAction()
     }
     
     func setWordLbl(_ word: String){

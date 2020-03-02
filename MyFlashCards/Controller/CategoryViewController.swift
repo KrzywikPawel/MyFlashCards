@@ -114,7 +114,7 @@ class CategoryViewController: UIViewController{
             } else if flashCard.center.x > (view.frame.width - 75) {
                 swipeRight()
             }
-//            ended hold flash and dont swipe, back to start position
+            //            ended hold flash and dont swipe, back to start position
             setView.backCardToStartPosition(setView.flashCardView,backCardPoint)
         }
     }
@@ -154,6 +154,10 @@ class CategoryViewController: UIViewController{
     
     private func addWordToHard() {
         let textInSing = setView.takeWordLblText()
+        addWordToTemporaryHard(textInSing)
+    }
+    
+    private func addWordToTemporaryHard(_ textInSing: String) {
         if textInSing != endWord && textInSing != emptyHardwords {
             if hardWords.contains(where: {$0 == self.words[self.showedCard]}) {
                 //check duplicate

@@ -9,8 +9,9 @@
 import UIKit
 extension CategoryViewController: BtnActionInFlashCardView {
     
-    func backToMainScreen() {
-        self.navigationController?.popViewController(animated: true)
+    func backBtnAction() {
+       let saveAlert = setView.createAlertSaveHardWord()
+        self.present(saveAlert,animated: true)
     }
     
     func deleteCategory() {
@@ -38,5 +39,16 @@ extension CategoryViewController: BtnActionInFlashCardView {
             words = hardWords
             setView.setWordLbl(words[0].ang)
         }
+    }
+    
+    func saveHardWord() {
+        let operationInMemory = OperationInMemory()
+        operationInMemory.saveHardWord(hardWords)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func dontSaveHardWord() {
+        print("dont save lol")
+        self.navigationController?.popViewController(animated: true)
     }
 }

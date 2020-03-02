@@ -7,10 +7,11 @@
 //
 
 import Foundation
-class OperationInMemory{
+class OperationInMemory {
     let arrayWithCategoriesNamesInMemory = "yourCategoriesNames"
+    let namedHardWordArrayInMemory = "hardWords"
     
-    func saveCategory(_ categoryName: String, wordToSave: WordStruct){
+    func saveCategory(_ categoryName: String, wordToSave: WordStruct) {
         if var isInMemory = UserDefaults.standard.value([WordStruct].self, forKey: categoryName){
             if isInMemory.contains(where: {$0 == wordToSave}){
                 
@@ -27,7 +28,7 @@ class OperationInMemory{
         }
     }
     
-    private func saveNameCategory(_ categoryName: String){
+    private func saveNameCategory(_ categoryName: String) {
         if var yourCategoriesNames = UserDefaults.standard.stringArray(forKey: arrayWithCategoriesNamesInMemory) {
             yourCategoriesNames.append(categoryName)
             UserDefaults.standard.set(yourCategoriesNames,forKey: arrayWithCategoriesNamesInMemory)
@@ -66,8 +67,31 @@ class OperationInMemory{
             UserDefaults.standard.set(categoriesNamesArray,forKey: arrayWithCategoriesNamesInMemory)
         }
     }
+    
+    func saveHardWord(_ hardWords: [WordStruct]) {
+        if let isInMemory = UserDefaults.standard.value([WordStruct].self, forKey: namedHardWordArrayInMemory) {
+            saveIfArrayExist(where: isInMemory, what: hardWords)
+        } else {
+            saveNewArray(hardWords)
+        }
+    }
+    
+    private func saveIfArrayExist(where writedWords: [WordStruct], what hardWords:[WordStruct]) {
+        var wordsInMemory = writedWords
+        for wordToSave in hardWords {
+            if wordsInMemory.contains(where: {$0 == wordToSave}) {
+                
+            } else {
+                wordsInMemory.append(wordToSave)
+            }
+        }
+        UserDefaults.standard.set(encodable: wordsInMemory, forKey: namedHardWordArrayInMemory)
+    }
+    
+    private func saveNewArray(_ hardWords: [WordStruct]) {
+        UserDefaults.standard.set(encodable: hardWords, forKey: namedHardWordArrayInMemory)
+    }
 }
-
 fileprivate extension UserDefaults {
     
     func set<T: Encodable>(encodable: T, forKey key: String) {
