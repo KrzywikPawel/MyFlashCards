@@ -14,6 +14,7 @@ extension CategoryViewController: BtnActionInFlashCardView {
             let saveAlert = setView.createAlertSaveHardWord()
             self.present(saveAlert,animated: true)
         }
+        self.navigationController?.popViewController(animated: true)
     }
     
     func deleteCategory() {

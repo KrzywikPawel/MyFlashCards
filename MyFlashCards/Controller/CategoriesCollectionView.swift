@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-extension MainScreenViewController:UICollectionViewDataSource, UICollectionViewDelegate {
+extension MainViewController:UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView,numberOfItemsInSection section: Int) -> Int {
         return dataToCircleCollection.count
@@ -23,7 +23,7 @@ extension MainScreenViewController:UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let pushVC = mainStoryboard.instantiateViewController(identifier: "FlashCardViewController") as! CategoryViewController
+        let pushVC = mainStoryboard.instantiateViewController(identifier: "CategoryViewController") as! CategoryViewController
         pushVC.categoryName = dataToCircleCollection[indexPath.row].name
         pushVC.categoryType = "System"
         self.navigationController?.pushViewController(pushVC, animated: true)

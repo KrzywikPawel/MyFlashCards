@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main Screen View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainScreenViewController" customModule="MyFlashCards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="MyFlashCards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="MainView" customModule="MyFlashCards" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,8 +31,11 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVQ-m5-xJT">
-                                <rect key="frame" x="51" y="76" width="100" height="100"/>
+                                <rect key="frame" x="51" y="76" width="200" height="200"/>
                                 <state key="normal" title="Button" backgroundImage="hospital"/>
+                                <connections>
+                                    <action selector="hardestWordsBtn:" destination="8bC-Xf-vdC" eventType="touchUpInside" id="vGX-HS-OyU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -62,7 +65,7 @@
         <!--Category View Controller-->
         <scene sceneID="2om-hr-zUR">
             <objects>
-                <viewController storyboardIdentifier="FlashCardViewController" id="EVe-lW-vil" customClass="CategoryViewController" customModule="MyFlashCards" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategoryViewController" id="EVe-lW-vil" customClass="CategoryViewController" customModule="MyFlashCards" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NOG-Iz-jmp" customClass="CategoryView" customModule="MyFlashCards" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

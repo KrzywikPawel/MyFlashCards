@@ -9,11 +9,15 @@
 import Foundation
 import UIKit
 import ACBRadialCollectionView
+protocol BtnActionInMainView:class {
+    func hardestWordsAction()
+}
+
 class MainView: UIView{
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
     
     @IBOutlet weak var yourCategoryBtn: UIButton!
-    
+    weak var delegate: BtnActionInMainView?
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -27,6 +31,10 @@ class MainView: UIView{
         setBackground()
         setCategoriesCollectionView()
         
+    }
+    
+    @IBAction func hardestWordsBtn(_ sender: UIButton) {
+        delegate?.hardestWordsAction()
     }
     
     

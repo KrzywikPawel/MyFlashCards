@@ -41,9 +41,19 @@ class CategoryViewController: UIViewController{
             setView.createDeleteBtnIfYourCategory(navigationItem)
             takeDataFromUserDefaults()
             break
+        case "HardWords":
+            takeHardWords()
+            break
         default:
             print("error categoryType")
         }
+    }
+    
+    private func takeHardWords(){
+        let memoryOperation = OperationInMemory()
+        let namedHardWordInMemory = memoryOperation.namedHardWordArrayInMemory
+        words = memoryOperation.loadCategory(namedHardWordInMemory)
+        flashCardStartAction()
     }
     
     private func takeDataFromDatabase(){
@@ -51,15 +61,17 @@ class CategoryViewController: UIViewController{
         //        MARK: change medicine to name from circle collection categories
         categoryData.parseData(categoryName) { (takedWords) in
             self.words = takedWords
-            self.words.shuffle()
-            self.setView.setWordLbl(self.words[self.showedCard].ang)
-            self.showFlashCard()
+            self.flashCardStartAction()
         }
     }
     
     private func takeDataFromUserDefaults(){
         let parser = OperationInMemory()
         words = parser.loadCategory(categoryName)
+        flashCardStartAction()
+    }
+    
+    private func flashCardStartAction() {
         words.shuffle()
         setView.setWordLbl(words[showedCard].ang)
         showFlashCard()

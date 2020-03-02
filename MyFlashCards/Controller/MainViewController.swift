@@ -8,13 +8,14 @@
 
 import UIKit
 
-class MainScreenViewController: UIViewController {
+class MainViewController: UIViewController, BtnActionInMainView {
     
     var dataToCircleCollection = [CircleCollectionDataStruct]()
     
     @IBOutlet var setView: MainView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        setView.delegate = self
         setView.setNavigationController(self.navigationController!)
         let nibCell = UINib(nibName: "CategoriesCollectionViewCell", bundle: nil)
         setView.categoriesCollectionView.register(nibCell, forCellWithReuseIdentifier: "CategoriesCollectionViewCell")
@@ -28,4 +29,11 @@ class MainScreenViewController: UIViewController {
             self.setView.categoriesCollectionView.reloadData()
         }
     }
+    
+    func hardestWordsAction() {
+        let mainStoryboard =  UIStoryboard(name: "Main", bundle: nil)
+        let pushVC = mainStoryboard.instantiateViewController(identifier: "CategoryViewController") as CategoryViewController
+        pushVC.categoryType = "HardWords"
+        self.navigationController?.pushViewController(pushVC, animated: true)
+     }
 }

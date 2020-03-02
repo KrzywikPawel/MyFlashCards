@@ -29,7 +29,7 @@
 		E59FE96024019FF20094A3B5 /* CircleCollectionDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59FE95F24019FF20094A3B5 /* CircleCollectionDataStruct.swift */; };
 		E5D7BE4C23FA95AC00F10DFE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7BE4B23FA95AC00F10DFE /* AppDelegate.swift */; };
 		E5D7BE4E23FA95AC00F10DFE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7BE4D23FA95AC00F10DFE /* SceneDelegate.swift */; };
-		E5D7BE5023FA95AC00F10DFE /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7BE4F23FA95AC00F10DFE /* MainScreenViewController.swift */; };
+		E5D7BE5023FA95AC00F10DFE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D7BE4F23FA95AC00F10DFE /* MainViewController.swift */; };
 		E5D7BE5323FA95AC00F10DFE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5D7BE5123FA95AC00F10DFE /* Main.storyboard */; };
 		E5D7BE5523FA95B000F10DFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5D7BE5423FA95B000F10DFE /* Assets.xcassets */; };
 		E5D7BE5823FA95B000F10DFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5D7BE5623FA95B000F10DFE /* LaunchScreen.storyboard */; };
@@ -80,7 +80,7 @@
 		E5D7BE4823FA95AC00F10DFE /* MyFlashCards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFlashCards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5D7BE4B23FA95AC00F10DFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5D7BE4D23FA95AC00F10DFE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E5D7BE4F23FA95AC00F10DFE /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		E5D7BE4F23FA95AC00F10DFE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E5D7BE5223FA95AC00F10DFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E5D7BE5423FA95B000F10DFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5D7BE5723FA95B000F10DFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 		E556E2A723FAB292008F2F4F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E5D7BE4F23FA95AC00F10DFE /* MainScreenViewController.swift */,
+				E5D7BE4F23FA95AC00F10DFE /* MainViewController.swift */,
 				E55304E223FAC51700A7A32F /* CategoriesCollectionView.swift */,
 				E52EBE2D23FD352E008311BB /* CategoryViewController.swift */,
 				E507C06D2406F327004DA8DF /* BtnActionInFlashCard.swift */,
@@ -412,7 +412,7 @@
 			files = (
 				E5DB07C92402D214001B0158 /* AddCategoryViewController.swift in Sources */,
 				E55D6B152407BC0800A6A590 /* SetEmptyCollectionViewMessage.swift in Sources */,
-				E5D7BE5023FA95AC00F10DFE /* MainScreenViewController.swift in Sources */,
+				E5D7BE5023FA95AC00F10DFE /* MainViewController.swift in Sources */,
 				E52EBE2E23FD352E008311BB /* CategoryViewController.swift in Sources */,
 				E55D6B102407AF8400A6A590 /* CreateBarBackBtn.swift in Sources */,
 				E531512524006B4F0089D59B /* WordStruct.swift in Sources */,
