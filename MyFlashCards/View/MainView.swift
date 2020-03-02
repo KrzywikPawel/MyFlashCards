@@ -13,7 +13,6 @@ class MainView: UIView{
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
     
     @IBOutlet weak var yourCategoryBtn: UIButton!
-    @IBOutlet weak var lastCategoryImage: UIImageView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,7 +24,6 @@ class MainView: UIView{
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        lastCategoryImage.image = UIImage(named: "hospital")
         setBackground()
         setCategoriesCollectionView()
         

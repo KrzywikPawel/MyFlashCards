@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C947B6402AE217C0DDEA4B5 /* Pods_MyFlashCardsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB3849B0ABDD27FE715AD07B /* Pods_MyFlashCardsTests.framework */; };
+		29F72DF456790E3E70690729 /* Pods_MyFlashCardsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 553FF6DF750C56B9E87000AE /* Pods_MyFlashCardsTests.framework */; };
+		8D5F2C05CF2A1231208E1EB0 /* Pods_MyFlashCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31C2825A814B6F28CCF96710 /* Pods_MyFlashCards.framework */; };
 		E507C06E2406F327004DA8DF /* BtnActionInFlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C06D2406F327004DA8DF /* BtnActionInFlashCard.swift */; };
 		E51C11ED2400611100D2BEC5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E51C11EC2400611100D2BEC5 /* GoogleService-Info.plist */; };
 		E52EBE2E23FD352E008311BB /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52EBE2D23FD352E008311BB /* CategoryViewController.swift */; };
@@ -36,7 +37,6 @@
 		E5DB07C92402D214001B0158 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DB07C82402D214001B0158 /* AddCategoryViewController.swift */; };
 		E5DB07CB2402D251001B0158 /* AddCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5DB07CA2402D251001B0158 /* AddCategoryView.swift */; };
 		E5E7E0D024007281001303BC /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E7E0CF24007281001303BC /* CategoryView.swift */; };
-		F360486EBAB73E1646F23001 /* Pods_MyFlashCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E88B3A966367B2C988887CF2 /* Pods_MyFlashCards.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,13 +53,17 @@
 		164EAB3D9A668DBA9570A3AF /* Pods-MyFlashCards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFlashCards.debug.xcconfig"; path = "Target Support Files/Pods-MyFlashCards/Pods-MyFlashCards.debug.xcconfig"; sourceTree = "<group>"; };
 		2AB73F2D706178E6CB888F83 /* Pods-MyFlashCards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFlashCards.release.xcconfig"; path = "Target Support Files/Pods-MyFlashCards/Pods-MyFlashCards.release.xcconfig"; sourceTree = "<group>"; };
 		30CAE8DCE7917BE58E82731C /* Pods-MyFlashCardsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFlashCardsTests.release.xcconfig"; path = "Target Support Files/Pods-MyFlashCardsTests/Pods-MyFlashCardsTests.release.xcconfig"; sourceTree = "<group>"; };
+		31C2825A814B6F28CCF96710 /* Pods_MyFlashCards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyFlashCards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3928A45BE40D099FABC964FA /* Pods-MyFlashCardsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFlashCardsTests.debug.xcconfig"; path = "Target Support Files/Pods-MyFlashCardsTests/Pods-MyFlashCardsTests.debug.xcconfig"; sourceTree = "<group>"; };
-		CB3849B0ABDD27FE715AD07B /* Pods_MyFlashCardsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyFlashCardsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		553FF6DF750C56B9E87000AE /* Pods_MyFlashCardsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyFlashCardsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E507C06D2406F327004DA8DF /* BtnActionInFlashCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnActionInFlashCard.swift; sourceTree = "<group>"; };
 		E51C11EC2400611100D2BEC5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E52EBE2D23FD352E008311BB /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		E531512424006B4F0089D59B /* WordStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordStruct.swift; sourceTree = "<group>"; };
 		E531512624006D6D0089D59B /* TakeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeCategory.swift; sourceTree = "<group>"; };
+		E54BBF8A240D73B6007CFE45 /* ACBRadialCollectionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ACBRadialCollectionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E54BBF8C240D73F1007CFE45 /* ACBRadialCollectionView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ACBRadialCollectionView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E54BBF8E240D7438007CFE45 /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E55304DE23FAB58800A7A32F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E55304E223FAC51700A7A32F /* CategoriesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCollectionView.swift; sourceTree = "<group>"; };
 		E55828E02403B07B002708E6 /* OperationInMemory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationInMemory.swift; sourceTree = "<group>"; };
@@ -87,7 +91,6 @@
 		E5DB07C82402D214001B0158 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
 		E5DB07CA2402D251001B0158 /* AddCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryView.swift; sourceTree = "<group>"; };
 		E5E7E0CF24007281001303BC /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
-		E88B3A966367B2C988887CF2 /* Pods_MyFlashCards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyFlashCards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F360486EBAB73E1646F23001 /* Pods_MyFlashCards.framework in Frameworks */,
+				8D5F2C05CF2A1231208E1EB0 /* Pods_MyFlashCards.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C947B6402AE217C0DDEA4B5 /* Pods_MyFlashCardsTests.framework in Frameworks */,
+				29F72DF456790E3E70690729 /* Pods_MyFlashCardsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,8 +116,11 @@
 		317916C34E9A41746134E950 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E88B3A966367B2C988887CF2 /* Pods_MyFlashCards.framework */,
-				CB3849B0ABDD27FE715AD07B /* Pods_MyFlashCardsTests.framework */,
+				E54BBF8E240D7438007CFE45 /* GTMSessionFetcher.framework */,
+				E54BBF8C240D73F1007CFE45 /* ACBRadialCollectionView.framework */,
+				E54BBF8A240D73B6007CFE45 /* ACBRadialCollectionView.framework */,
+				31C2825A814B6F28CCF96710 /* Pods_MyFlashCards.framework */,
+				553FF6DF750C56B9E87000AE /* Pods_MyFlashCardsTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -245,7 +251,7 @@
 				E5D7BE4423FA95AC00F10DFE /* Sources */,
 				E5D7BE4523FA95AC00F10DFE /* Frameworks */,
 				E5D7BE4623FA95AC00F10DFE /* Resources */,
-				3C968E742C77CF77CF97EA2B /* [CP] Embed Pods Frameworks */,
+				E843391DB61D3FFA2338027E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -336,23 +342,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3C968E742C77CF77CF97EA2B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyFlashCards/Pods-MyFlashCards-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MyFlashCards/Pods-MyFlashCards-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyFlashCards/Pods-MyFlashCards-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		61CF6BEFA0A717A38BF0AD43 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -395,6 +384,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E843391DB61D3FFA2338027E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyFlashCards/Pods-MyFlashCards-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MyFlashCards/Pods-MyFlashCards-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MyFlashCards/Pods-MyFlashCards-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

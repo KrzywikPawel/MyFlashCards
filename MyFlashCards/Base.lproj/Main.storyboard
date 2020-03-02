@@ -30,27 +30,24 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="51J-HG-lLO"/>
                                 </connections>
                             </collectionView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cTP-Ma-N6W">
-                                <rect key="frame" x="16" y="69" width="152" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="APl-z7-n19"/>
-                                    <constraint firstAttribute="width" constant="152" id="t04-O8-Z7C"/>
-                                </constraints>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVQ-m5-xJT">
+                                <rect key="frame" x="51" y="76" width="100" height="100"/>
+                                <state key="normal" title="Button" backgroundImage="hospital"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="cTP-Ma-N6W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="BGH-fc-6d0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dVQ-m5-xJT" secondAttribute="trailing" symbolic="YES" id="4RA-cD-rNF"/>
+                            <constraint firstItem="dVQ-m5-xJT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="51" id="88A-kK-Pwu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="c5N-2s-ZQc" secondAttribute="bottom" constant="231" id="Kr9-ta-Giw"/>
+                            <constraint firstItem="dVQ-m5-xJT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="Th2-Ie-JT5"/>
                             <constraint firstItem="c5N-2s-ZQc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="USL-oJ-LKD"/>
                             <constraint firstItem="c5N-2s-ZQc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xh4-NU-5l8"/>
-                            <constraint firstItem="cTP-Ma-N6W" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="YtM-LQ-s1k"/>
                             <constraint firstItem="c5N-2s-ZQc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fxm-sg-tmM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
                             <outlet property="categoriesCollectionView" destination="c5N-2s-ZQc" id="BtL-Kf-00l"/>
-                            <outlet property="lastCategoryImage" destination="cTP-Ma-N6W" id="RR7-ez-8Gu"/>
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Eri-sv-5pD"/>
@@ -431,6 +428,7 @@ will not be deleted.</string>
     </scenes>
     <resources>
         <image name="flashCard" width="490" height="317"/>
+        <image name="hospital" width="100" height="100"/>
         <image name="sign" width="490" height="658"/>
         <image name="thumbDown" width="50" height="50"/>
         <image name="thumbUp" width="50" height="50"/>

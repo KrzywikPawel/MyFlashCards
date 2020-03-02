@@ -10,8 +10,10 @@ import UIKit
 extension CategoryViewController: BtnActionInFlashCardView {
     
     func backBtnAction() {
-       let saveAlert = setView.createAlertSaveHardWord()
-        self.present(saveAlert,animated: true)
+        if hardWords.count != 0 {
+            let saveAlert = setView.createAlertSaveHardWord()
+            self.present(saveAlert,animated: true)
+        }
     }
     
     func deleteCategory() {
@@ -48,7 +50,6 @@ extension CategoryViewController: BtnActionInFlashCardView {
     }
     
     func dontSaveHardWord() {
-        print("dont save lol")
         self.navigationController?.popViewController(animated: true)
     }
 }
