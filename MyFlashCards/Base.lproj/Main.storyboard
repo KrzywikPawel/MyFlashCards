@@ -31,8 +31,11 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVQ-m5-xJT">
-                                <rect key="frame" x="51" y="76" width="200" height="200"/>
-                                <state key="normal" title="Button" backgroundImage="hospital"/>
+                                <rect key="frame" x="51" y="76" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="rOP-6Q-YRS"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="hospital"/>
                                 <connections>
                                     <action selector="hardestWordsBtn:" destination="8bC-Xf-vdC" eventType="touchUpInside" id="vGX-HS-OyU"/>
                                 </connections>
@@ -40,12 +43,12 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dVQ-m5-xJT" secondAttribute="trailing" symbolic="YES" id="4RA-cD-rNF"/>
                             <constraint firstItem="dVQ-m5-xJT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="51" id="88A-kK-Pwu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="c5N-2s-ZQc" secondAttribute="bottom" constant="231" id="Kr9-ta-Giw"/>
                             <constraint firstItem="dVQ-m5-xJT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="Th2-Ie-JT5"/>
                             <constraint firstItem="c5N-2s-ZQc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="USL-oJ-LKD"/>
                             <constraint firstItem="c5N-2s-ZQc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xh4-NU-5l8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dVQ-m5-xJT" secondAttribute="trailing" constant="224" id="e3l-eP-Anm"/>
                             <constraint firstItem="c5N-2s-ZQc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fxm-sg-tmM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

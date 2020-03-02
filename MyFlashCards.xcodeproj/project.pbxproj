@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		29F72DF456790E3E70690729 /* Pods_MyFlashCardsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 553FF6DF750C56B9E87000AE /* Pods_MyFlashCardsTests.framework */; };
 		8D5F2C05CF2A1231208E1EB0 /* Pods_MyFlashCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31C2825A814B6F28CCF96710 /* Pods_MyFlashCards.framework */; };
-		E507C06E2406F327004DA8DF /* BtnActionInFlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C06D2406F327004DA8DF /* BtnActionInFlashCard.swift */; };
+		E507C06E2406F327004DA8DF /* BtnActionInCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C06D2406F327004DA8DF /* BtnActionInCategory.swift */; };
 		E51C11ED2400611100D2BEC5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E51C11EC2400611100D2BEC5 /* GoogleService-Info.plist */; };
 		E52EBE2E23FD352E008311BB /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52EBE2D23FD352E008311BB /* CategoryViewController.swift */; };
 		E531512524006B4F0089D59B /* WordStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E531512424006B4F0089D59B /* WordStruct.swift */; };
@@ -56,7 +56,7 @@
 		31C2825A814B6F28CCF96710 /* Pods_MyFlashCards.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyFlashCards.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3928A45BE40D099FABC964FA /* Pods-MyFlashCardsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyFlashCardsTests.debug.xcconfig"; path = "Target Support Files/Pods-MyFlashCardsTests/Pods-MyFlashCardsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		553FF6DF750C56B9E87000AE /* Pods_MyFlashCardsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyFlashCardsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E507C06D2406F327004DA8DF /* BtnActionInFlashCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnActionInFlashCard.swift; sourceTree = "<group>"; };
+		E507C06D2406F327004DA8DF /* BtnActionInCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnActionInCategory.swift; sourceTree = "<group>"; };
 		E51C11EC2400611100D2BEC5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E52EBE2D23FD352E008311BB /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		E531512424006B4F0089D59B /* WordStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordStruct.swift; sourceTree = "<group>"; };
@@ -131,7 +131,7 @@
 				E5D7BE4F23FA95AC00F10DFE /* MainViewController.swift */,
 				E55304E223FAC51700A7A32F /* CategoriesCollectionView.swift */,
 				E52EBE2D23FD352E008311BB /* CategoryViewController.swift */,
-				E507C06D2406F327004DA8DF /* BtnActionInFlashCard.swift */,
+				E507C06D2406F327004DA8DF /* BtnActionInCategory.swift */,
 				E561D1BF2402837D008917F6 /* YourCategoriesViewController.swift */,
 				E561D1C3240287C0008917F6 /* YourCategoriesCollectionView.swift */,
 				E5DB07C82402D214001B0158 /* AddCategoryViewController.swift */,
@@ -423,7 +423,7 @@
 				E5DB07CB2402D251001B0158 /* AddCategoryView.swift in Sources */,
 				E55D6B132407BB2F00A6A590 /* EmptyCollectionViewMessage.swift in Sources */,
 				E59FE95E24019BFC0094A3B5 /* CircleCollectionData.swift in Sources */,
-				E507C06E2406F327004DA8DF /* BtnActionInFlashCard.swift in Sources */,
+				E507C06E2406F327004DA8DF /* BtnActionInCategory.swift in Sources */,
 				E5D7BE4C23FA95AC00F10DFE /* AppDelegate.swift in Sources */,
 				E55828E12403B07B002708E6 /* OperationInMemory.swift in Sources */,
 				E561D1CF24028D9B008917F6 /* CategoriesCollectionViewCell.swift in Sources */,

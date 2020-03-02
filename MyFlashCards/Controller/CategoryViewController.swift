@@ -62,6 +62,9 @@ class CategoryViewController: UIViewController{
     
     private func takeDataFromUserDefaults(){
         words = operationInMemory.loadCategory(categoryName)
+        if isHardWordsView == true {
+            hardWords = words
+        }
         flashCardStartAction()
     }
     
