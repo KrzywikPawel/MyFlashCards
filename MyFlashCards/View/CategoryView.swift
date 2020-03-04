@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 protocol BtnActionInFlashCardView: class {
-    func loadAgainBtn(_ sender:UIButton)
-    func reviewHardBtn(_ sender:UIButton)
+    func loadWordsAgainBtn(_ sender:UIButton)
+    func reviewHardWordsBtn(_ sender:UIButton)
     func deleteCategory()
     func backBtnAction()
     func saveHardWord()
@@ -43,59 +43,18 @@ class CategoryView: UIView {
         loadAgainBtn.titleLabel?.alpha = 0.68
         reviewHardBtn.titleLabel?.alpha = 0.68
         setBackground()
-        setFlashCard()
+        setFlashCardLayout()
     }
     
-    func createBackBtnItem(_ navigationItem: UINavigationItem){
-        let createBackBtn = CreateBarBackBtn()
-        let backBtn = createBackBtn.setBarBackBtn()
-        backBtn.addTarget(self, action: #selector(backToMainScreen(_:)), for: .touchUpInside)
-        let leftBarBtnItem = UIBarButtonItem(customView: backBtn)
-        navigationItem.leftBarButtonItem = leftBarBtnItem
-    }
-    
-    func createAlertSaveHardWord() -> UIAlertController{
-        let saveAlert = UIAlertController(title: "write down hard words?", message: "you can back to learn it later", preferredStyle: .alert)
-        let saveOption = UIAlertAction(title: "save", style: .default) { (result) in
-            self.delegate?.saveHardWord()
-        }
-        saveAlert.addAction(saveOption)
-        let dontSave = UIAlertAction(title: "don't save", style: .default) { (result) in
-            self.delegate?.dontSaveHardWord()
-        }
-        saveAlert.addAction(dontSave)
-        return saveAlert
-    }
-    
-    @objc func backToMainScreen(_ sender:UIButton){
-        delegate?.backBtnAction()
-    }
-    
-    func setWordLbl(_ word: String){
+    func setWordLbl(_ word: String) {
         wordLbl.text = word
     }
     
-    func transitionFlashCardView(){
+    func transitionFlashCardView() {
         UIView.transition(with: flashCardView, duration: 0.4, options: .transitionFlipFromLeft, animations: nil, completion: nil)
     }
     
-    @IBAction func loadAgainBtn(_ sender: UIButton) {
-        delegate?.loadAgainBtn(sender)
-    }
-    @IBAction func reviewHardBtn(_ sender: UIButton) {
-        delegate?.reviewHardBtn(sender)
-    }
-    
-    
-    private func setBackground() {
-        let backgroundImg = UIImage(named: "flashCardBackground")
-        let backgroundImageView = UIImageView.init(frame: self.frame)
-        backgroundImageView.image = backgroundImg
-        backgroundImageView.contentMode = .scaleAspectFill
-        self.insertSubview(backgroundImageView, at: 0)
-    }
-    
-    private func setFlashCard(){
+    private func setFlashCardLayout() {
         flashCardView.backgroundColor = .clear
         flashCardView.translatesAutoresizingMaskIntoConstraints = false
         flashCardView.topAnchor.constraint(equalTo: self.topAnchor, constant: 200).isActive = true
@@ -107,27 +66,27 @@ class CategoryView: UIView {
         
     }
     
-    func createDeleteBtnIfYourCategory(_ navigationItem: UINavigationItem){
+    func createDeleteBtnIfYourCategory(_ navigationItem: UINavigationItem) {
         let deleteBtn = UIBarButtonItem(title: "Delete", style: .done, target: self, action: #selector(deleteCategory(_:)))
         navigationItem.rightBarButtonItem = deleteBtn
     }
     
-    @objc func deleteCategory(_ sender:UIButton){
+    @objc func deleteCategory(_ sender:UIButton) {
         delegate?.deleteCategory()
     }
     
-    private func setImgFlashCard(){
+    private func setImgFlashCard() {
         flashCardImg.image = UIImage(named: cardViewImg)
     }
     
-    func showThumbUp(_ alphaCalculate: CGFloat){
+    func showThumbUp(_ alphaCalculate: CGFloat) {
         let thumbUpImg = UIImage(named: thumbUpImgName)
         thumbUp.image = thumbUpImg
         thumbUp.tintColor = .green
         thumbUp.alpha = alphaCalculate
     }
     
-    func showThumbDown(_ alphaCalculate: CGFloat){
+    func showThumbDown(_ alphaCalculate: CGFloat) {
         let thumbDownImg = UIImage(named: thumbDownImgName)
         thumbDown.image = thumbDownImg
         thumbDown.tintColor = .red
@@ -144,11 +103,11 @@ class CategoryView: UIView {
         })
     }
     
-    func takeWordLblText() -> String{
+    func takeWordLblText() -> String {
         return wordLbl.text!
     }
     
-    func setNavigationController(_ navigationController: UINavigationController){
+    func setNavigationController(_ navigationController: UINavigationController) {
         navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController.navigationBar.shadowImage = UIImage()
         navigationController.navigationBar.isTranslucent = true
@@ -156,5 +115,43 @@ class CategoryView: UIView {
     }
     
     
+    func createBackBtnItem(_ navigationItem: UINavigationItem) {
+        let createBackBtn = CreateBarBackBtn()
+        let backBtn = createBackBtn.setBarBackBtn()
+        backBtn.addTarget(self, action: #selector(backToMainScreen(_:)), for: .touchUpInside)
+        let leftBarBtnItem = UIBarButtonItem(customView: backBtn)
+        navigationItem.leftBarButtonItem = leftBarBtnItem
+    }
     
+    func createAlertSaveHardWord() -> UIAlertController {
+        let saveAlert = UIAlertController(title: "write down hard words?", message: "you can back to learn it later", preferredStyle: .alert)
+        let saveOption = UIAlertAction(title: "save", style: .default) { (result) in
+            self.delegate?.saveHardWord()
+        }
+        saveAlert.addAction(saveOption)
+        let dontSave = UIAlertAction(title: "don't save", style: .default) { (result) in
+            self.delegate?.dontSaveHardWord()
+        }
+        saveAlert.addAction(dontSave)
+        return saveAlert
+    }
+    
+    @objc func backToMainScreen(_ sender:UIButton) {
+        delegate?.backBtnAction()
+    }
+    
+    @IBAction func loadAgainBtn(_ sender: UIButton) {
+        delegate?.loadWordsAgainBtn(sender)
+    }
+    @IBAction func reviewHardBtn(_ sender: UIButton) {
+        delegate?.reviewHardWordsBtn(sender)
+    }
+    
+    private func setBackground() {
+        let backgroundImg = UIImage(named: "flashCardBackground")
+        let backgroundImageView = UIImageView.init(frame: self.frame)
+        backgroundImageView.image = backgroundImg
+        backgroundImageView.contentMode = .scaleAspectFill
+        self.insertSubview(backgroundImageView, at: 0)
+    }
 }

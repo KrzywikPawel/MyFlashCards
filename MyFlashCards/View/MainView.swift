@@ -60,7 +60,7 @@ class MainView: UIView{
         categoriesCollectionView.applyRotationToCells = rotateCells
     }
     
-    func setNavigationController(_ navigationController: UINavigationController){
+    func setNavigationController(_ navigationController: UINavigationController) {
         navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController.navigationBar.shadowImage = UIImage()
         navigationController.navigationBar.isTranslucent = true

@@ -19,10 +19,10 @@ class MainViewController: UIViewController, BtnActionInMainView {
         setView.setNavigationController(self.navigationController!)
         let nibCell = UINib(nibName: "CategoriesCollectionViewCell", bundle: nil)
         setView.categoriesCollectionView.register(nibCell, forCellWithReuseIdentifier: "CategoriesCollectionViewCell")
-        takeData()
+        takeDataToCircleCollection()
     }
     
-    private func takeData(){
+    private func takeDataToCircleCollection(){
         let data = CircleCollectionData()
         data.takeData { (dataToCircleCollection) in
             self.dataToCircleCollection = dataToCircleCollection

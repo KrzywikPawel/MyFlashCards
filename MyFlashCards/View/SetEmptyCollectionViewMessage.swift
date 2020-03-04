@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SetEmptyCollectionViewMessage{
+class SetEmptyCollectionViewMessage {
     func collectionViewEmptyMessage(_ collectionView: UICollectionView, _ message: String){
         collectionView.setEmptyMessage(message)
     }

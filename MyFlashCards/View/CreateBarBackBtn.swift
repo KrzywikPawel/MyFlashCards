@@ -11,7 +11,7 @@ import UIKit
 
 class CreateBarBackBtn{
     
-     func setBarBackBtn() -> UIButton{
+     func setBarBackBtn() -> UIButton {
         let backBtn = UIButton(type: .custom)
         backBtn.translatesAutoresizingMaskIntoConstraints = false
         backBtn.heightAnchor.constraint(equalToConstant: 50).isActive = true

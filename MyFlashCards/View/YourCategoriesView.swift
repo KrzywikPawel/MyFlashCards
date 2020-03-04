@@ -13,7 +13,7 @@ protocol BtnActionInYourCategories: class {
     func addNewCategoryBtn()
 }
 
-class YourCategoriesView: UIView{
+class YourCategoriesView: UIView {
     
     @IBOutlet weak var yourCategoriesCollectionView: UICollectionView!
     @IBOutlet weak var addNewCategoryBtn: UIButton!

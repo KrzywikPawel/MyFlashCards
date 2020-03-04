@@ -32,13 +32,13 @@ extension CategoryViewController: BtnActionInFlashCardView {
         self.navigationController?.popViewController(animated: true)
     }
     
-    func loadAgainBtn(_ sender: UIButton) {
+    func loadWordsAgainBtn(_ sender: UIButton) {
         showedCard = 0
         checkType()
     }
     
     
-    func reviewHardBtn(_ sender: UIButton) {
+    func reviewHardWordsBtn(_ sender: UIButton) {
         if hardWords.count == 0 {
             setView.setWordLbl(emptyHardwords)
         } else {

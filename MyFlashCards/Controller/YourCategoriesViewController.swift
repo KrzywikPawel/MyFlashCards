@@ -27,10 +27,9 @@ class YourCategoriesViewController: UIViewController, BtnActionInYourCategories 
         setView.yourCategoriesCollectionView.reloadData()
     }
     
-    private func takeCategoriesNames(){
-        let parser = OperationInMemory()
-        yourCategoriesNames = parser.loadNamesArray()
-        
+    private func takeCategoriesNames() {
+        let operationInMemory = OperationInMemory()
+        yourCategoriesNames = operationInMemory.loadNamesArray()
     }
     
     func addNewCategoryBtn() {

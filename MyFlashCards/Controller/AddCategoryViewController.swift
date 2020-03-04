@@ -20,8 +20,8 @@ class AddCategoryViewController: UIViewController, AddCategoryBtnAction {
     }
     
     private func takeCategory(_ name: String) -> [WordStruct]{
-        let parser = OperationInMemory()
-        let wordsInCategory = parser.loadCategory(name)
+        let operationInMemory = OperationInMemory()
+        let wordsInCategory = operationInMemory.loadCategory(name)
         return wordsInCategory
     }
     
@@ -29,10 +29,10 @@ class AddCategoryViewController: UIViewController, AddCategoryBtnAction {
         let category = setView.takeCategoryNameTextField()
         let angWord = setView.takeAngTextField()
         let polWord = setView.takePolTextField()
-        setView.clearTextFields()
+        setView.clearWordsTextFields()
         let wordToSave = WordStruct(angWord, polWord)
-        let array = [wordToSave]
-        OperationInMemory().saveToMemory(categoryName: category, array)
+        let arrayWithAddWord = [wordToSave]
+        OperationInMemory().saveToMemory(categoryName: category, arrayWithAddWord)
     }
     
     func backToYourCategoriesScreen() {

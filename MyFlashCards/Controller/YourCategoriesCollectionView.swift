@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-extension YourCategoriesViewController:UICollectionViewDelegate,UICollectionViewDataSource{
+extension YourCategoriesViewController:UICollectionViewDelegate,UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if yourCategoriesNames.count == 0 {
             let setEmptyMessage = SetEmptyCollectionViewMessage()
@@ -23,8 +24,8 @@ extension YourCategoriesViewController:UICollectionViewDelegate,UICollectionView
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoriesCollectionViewCell", for: indexPath) as! CategoriesCollectionViewCell
         let img = UIImage(named: "hospital")
-        let text = yourCategoriesNames[indexPath.row]
-        cell.configurateCell(text, img!)
+        let categoryName = yourCategoriesNames[indexPath.row]
+        cell.configurateCell(categoryName, img!)
         return cell
     }
     

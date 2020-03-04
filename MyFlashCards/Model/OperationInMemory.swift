@@ -16,9 +16,9 @@ class OperationInMemory {
             yourCategoriesNames.append(categoryName)
             UserDefaults.standard.set(yourCategoriesNames,forKey: arrayWithCategoriesNamesInMemory)
         } else {
-            var array = [String]()
-            array.append(categoryName)
-            UserDefaults.standard.set(array,forKey: arrayWithCategoriesNamesInMemory)
+            var categoryNameArray = [String]()
+            categoryNameArray.append(categoryName)
+            UserDefaults.standard.set(categoryNameArray,forKey: arrayWithCategoriesNamesInMemory)
         }
     }
     
@@ -47,32 +47,31 @@ class OperationInMemory {
         }
     }
     
-    func loadCategory(_ categoryName: String) -> [WordStruct]{
-        if let isInMemory = UserDefaults.standard.value([WordStruct].self, forKey: categoryName){
-            return isInMemory
+    func loadCategory(_ categoryName: String) -> [WordStruct] {
+        if let categoryIsInMemory = UserDefaults.standard.value([WordStruct].self, forKey: categoryName) {
+            return categoryIsInMemory
         } else {
             let emptyCategory = [WordStruct]()
             return emptyCategory
         }
     }
     
-    func loadNamesArray() -> [String]{
-        if let namesInArray = UserDefaults.standard.stringArray(forKey: arrayWithCategoriesNamesInMemory){
+    func loadNamesArray() -> [String] {
+        if let namesInArray = UserDefaults.standard.stringArray(forKey: arrayWithCategoriesNamesInMemory) {
             return namesInArray
         } else {
-            //            return empty doesnt throw exception but meaby dont see anybody in other func taken this
             let emptyNamesArray = [String]()
             return emptyNamesArray
         }
     }
     
-    func deleteCategory(_ categoryName: String){
-        let memory = UserDefaults.standard
-        memory.removeObject(forKey: categoryName)
+    func deleteCategory(_ categoryName: String) {
+        let operationInMemory = UserDefaults.standard
+        operationInMemory.removeObject(forKey: categoryName)
         var categoriesNamesArray = UserDefaults.standard.stringArray(forKey: arrayWithCategoriesNamesInMemory)
-        if let deleteIndex = categoriesNamesArray!.firstIndex(of: categoryName){
+        if let deleteIndex = categoriesNamesArray!.firstIndex(of: categoryName) {
             categoriesNamesArray?.remove(at: deleteIndex)
-            UserDefaults.standard.set(categoriesNamesArray,forKey: arrayWithCategoriesNamesInMemory)
+            operationInMemory.set(categoriesNamesArray,forKey: arrayWithCategoriesNamesInMemory)
         }
     }
     
@@ -92,6 +91,7 @@ class OperationInMemory {
         UserDefaults.standard.set(encodable: hardWords, forKey: key)
     }
 }
+
 fileprivate extension UserDefaults {
     
     func set<T: Encodable>(encodable: T, forKey key: String) {

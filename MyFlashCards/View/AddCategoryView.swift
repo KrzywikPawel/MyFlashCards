@@ -30,24 +30,24 @@ class AddCategoryView: UIView{
         delegate?.addWordToCategory()
     }
     
-    func takeAngTextField() -> String{
+    func takeAngTextField() -> String {
         return angWordField.text!
     }
     
-    func takePolTextField() -> String{
+    func takePolTextField() -> String {
         return polWordField.text!
     }
     
-    func takeCategoryNameTextField() -> String{
+    func takeCategoryNameTextField() -> String {
         return categoryNameField.text!
     }
     
-    func clearTextFields(){
+    func clearWordsTextFields() {
         angWordField.text = ""
         polWordField.text = ""
     }
     
-    private func setBackground(){
+    private func setBackground() {
         let backgroundImg = UIImage(named: "addCategoryBackground")
         let backgroundView = UIImageView.init(frame: self.frame)
         backgroundView.image = backgroundImg
@@ -55,14 +55,14 @@ class AddCategoryView: UIView{
         self.insertSubview(backgroundView, at: 0)
     }
     
-    func setNavigationController(_ navigationController: UINavigationController){
+    func setNavigationController(_ navigationController: UINavigationController) {
         navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController.navigationBar.shadowImage = UIImage()
         navigationController.navigationBar.isTranslucent = true
         navigationController.interactivePopGestureRecognizer?.delegate = nil
     }
     
-    func createBackBtnItem(_ navigationItem:UINavigationItem){
+    func createBackBtnItem(_ navigationItem:UINavigationItem) {
         let createBackBtn = CreateBarBackBtn()
         let backBtn = createBackBtn.setBarBackBtn()
         backBtn.addTarget(self, action: #selector(backToYourCategoriesScreen(_:)), for: .touchUpInside)
@@ -70,7 +70,7 @@ class AddCategoryView: UIView{
         navigationItem.leftBarButtonItem = leftBarItem
     }
     
-    @objc func backToYourCategoriesScreen(_ sender:UIButton){
+    @objc func backToYourCategoriesScreen(_ sender:UIButton) {
         delegate?.backToYourCategoriesScreen()
     }
 }
