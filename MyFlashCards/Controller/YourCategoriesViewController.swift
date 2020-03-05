@@ -15,6 +15,7 @@ class YourCategoriesViewController: UIViewController, BtnActionInYourCategories 
     @IBOutlet var setView: YourCategoriesView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        setView.setNavigationController(self.navigationController!)
         setView.delegate = self
         let nibCell = UINib(nibName: "CategoriesCollectionViewCell", bundle: nil)
         setView.yourCategoriesCollectionView.register(nibCell, forCellWithReuseIdentifier: "CategoriesCollectionViewCell")

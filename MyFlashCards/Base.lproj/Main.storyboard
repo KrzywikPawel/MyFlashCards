@@ -85,7 +85,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flashCardBackground" translatesAutoresizingMaskIntoConstraints="NO" id="hyi-dV-Q6v">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="630"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="i47-q7-Ita">
                                 <rect key="frame" x="7" y="484" width="124" height="155"/>
@@ -179,7 +179,7 @@ hard</string>
                         <constraints>
                             <constraint firstItem="pFt-84-mcz" firstAttribute="trailing" secondItem="IEp-Vz-Tlg" secondAttribute="trailing" constant="7" id="3m4-u6-7xR"/>
                             <constraint firstItem="hyi-dV-Q6v" firstAttribute="top" secondItem="NOG-Iz-jmp" secondAttribute="top" id="6uG-yg-34R"/>
-                            <constraint firstItem="pFt-84-mcz" firstAttribute="bottom" secondItem="hyi-dV-Q6v" secondAttribute="bottom" constant="37" id="8Ml-IU-pwB"/>
+                            <constraint firstItem="pFt-84-mcz" firstAttribute="bottom" secondItem="hyi-dV-Q6v" secondAttribute="bottom" id="8Ml-IU-pwB"/>
                             <constraint firstItem="i47-q7-Ita" firstAttribute="leading" secondItem="pFt-84-mcz" secondAttribute="leading" constant="7" id="SO6-Ub-GOt"/>
                             <constraint firstItem="pFt-84-mcz" firstAttribute="trailing" secondItem="D7T-8x-TtW" secondAttribute="trailing" id="TGG-BZ-qk9"/>
                             <constraint firstItem="pFt-84-mcz" firstAttribute="bottom" secondItem="IEp-Vz-Tlg" secondAttribute="bottom" constant="37" id="WY3-GX-dBw"/>
@@ -266,6 +266,9 @@ hard</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yourCategoriesBackground" translatesAutoresizingMaskIntoConstraints="NO" id="cgX-Ya-pUR">
+                                <rect key="frame" x="0.0" y="-65" width="375" height="683"/>
+                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zc3-ET-7iw">
                                 <rect key="frame" x="0.0" y="40" width="375" height="328"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -303,10 +306,14 @@ Category</string>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="cgX-Ya-pUR" firstAttribute="bottom" secondItem="amv-Ke-5Td" secondAttribute="bottom" id="7Rd-Dn-hBh"/>
+                            <constraint firstItem="cgX-Ya-pUR" firstAttribute="leading" secondItem="amv-Ke-5Td" secondAttribute="leading" id="BvU-F3-EjB"/>
                             <constraint firstItem="zc3-ET-7iw" firstAttribute="leading" secondItem="amv-Ke-5Td" secondAttribute="leading" id="JTF-yo-juh"/>
+                            <constraint firstItem="cgX-Ya-pUR" firstAttribute="top" secondItem="ZhH-F8-bYC" secondAttribute="top" constant="-65" id="Lwi-D9-UwM"/>
                             <constraint firstItem="amv-Ke-5Td" firstAttribute="trailing" secondItem="O9j-VU-ALZ" secondAttribute="trailing" constant="16" id="TPF-Vf-PIN"/>
                             <constraint firstItem="zc3-ET-7iw" firstAttribute="trailing" secondItem="amv-Ke-5Td" secondAttribute="trailing" id="Ws9-QN-STb"/>
                             <constraint firstItem="amv-Ke-5Td" firstAttribute="bottom" secondItem="O9j-VU-ALZ" secondAttribute="bottom" constant="65" id="fO5-4L-WvG"/>
+                            <constraint firstItem="cgX-Ya-pUR" firstAttribute="trailing" secondItem="amv-Ke-5Td" secondAttribute="trailing" id="fhh-l4-zHb"/>
                             <constraint firstItem="zc3-ET-7iw" firstAttribute="top" secondItem="ZhH-F8-bYC" secondAttribute="top" constant="40" id="tya-lE-4J7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="amv-Ke-5Td"/>
@@ -332,6 +339,9 @@ Category</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addCategoryBackground" translatesAutoresizingMaskIntoConstraints="NO" id="LFb-sH-Qbd">
+                                <rect key="frame" x="0.0" y="-66" width="375" height="732"/>
+                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e7T-mb-Stx">
                                 <rect key="frame" x="67" y="145" width="129" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -381,15 +391,19 @@ will not be deleted.</string>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="BTr-xC-xSf" firstAttribute="top" secondItem="e7T-mb-Stx" secondAttribute="bottom" constant="45" id="022-B3-ghX"/>
+                            <constraint firstItem="8i1-Fb-lkL" firstAttribute="bottom" secondItem="LFb-sH-Qbd" secondAttribute="bottom" constant="1" id="32e-93-v9F"/>
+                            <constraint firstItem="LFb-sH-Qbd" firstAttribute="top" secondItem="8i1-Fb-lkL" secondAttribute="top" constant="-66" id="4In-lq-Dga"/>
                             <constraint firstItem="ImD-Or-e06" firstAttribute="leading" secondItem="8i1-Fb-lkL" secondAttribute="leading" constant="9" id="5l8-Cj-akx"/>
                             <constraint firstItem="Ijt-Ot-Maw" firstAttribute="top" secondItem="e7T-mb-Stx" secondAttribute="bottom" constant="52" id="75a-lO-8DM"/>
                             <constraint firstItem="BTr-xC-xSf" firstAttribute="leading" secondItem="aQS-Ak-WN6" secondAttribute="trailing" constant="38" id="8ee-Q4-ZGY"/>
                             <constraint firstItem="8i1-Fb-lkL" firstAttribute="bottom" secondItem="ImD-Or-e06" secondAttribute="bottom" constant="110" id="EsV-M3-RSy"/>
                             <constraint firstItem="Ijt-Ot-Maw" firstAttribute="leading" secondItem="aQS-Ak-WN6" secondAttribute="trailing" constant="8" id="HV0-tm-h9C"/>
+                            <constraint firstItem="LFb-sH-Qbd" firstAttribute="trailing" secondItem="8i1-Fb-lkL" secondAttribute="trailing" id="KFp-n5-QJN"/>
                             <constraint firstItem="fH2-E2-lKc" firstAttribute="leading" secondItem="8i1-Fb-lkL" secondAttribute="leading" constant="115" id="R1V-3Q-Vkz"/>
                             <constraint firstItem="e7T-mb-Stx" firstAttribute="leading" secondItem="8i1-Fb-lkL" secondAttribute="leading" constant="67" id="cpp-CV-apM"/>
                             <constraint firstItem="e7T-mb-Stx" firstAttribute="top" secondItem="8i1-Fb-lkL" secondAttribute="top" constant="145" id="dM6-5C-4hc"/>
                             <constraint firstItem="fH2-E2-lKc" firstAttribute="top" secondItem="Ijt-Ot-Maw" secondAttribute="bottom" constant="58" id="drs-3W-yf7"/>
+                            <constraint firstItem="LFb-sH-Qbd" firstAttribute="leading" secondItem="8i1-Fb-lkL" secondAttribute="leading" id="hxk-MF-LYf"/>
                             <constraint firstItem="8i1-Fb-lkL" firstAttribute="trailing" secondItem="BTr-xC-xSf" secondAttribute="trailing" constant="127" id="msh-oT-vtw"/>
                             <constraint firstItem="aQS-Ak-WN6" firstAttribute="leading" secondItem="8i1-Fb-lkL" secondAttribute="leading" constant="16" id="qzv-v4-uvV"/>
                             <constraint firstItem="BTr-xC-xSf" firstAttribute="leading" secondItem="Ijt-Ot-Maw" secondAttribute="trailing" constant="8" id="tTG-Vs-Zhd"/>
@@ -453,10 +467,12 @@ will not be deleted.</string>
     <resources>
         <image name="HardestWords" width="64" height="64"/>
         <image name="MainViewBackground" width="375" height="667"/>
+        <image name="addCategoryBackground" width="375" height="667"/>
         <image name="flashCard" width="490" height="317"/>
         <image name="flashCardBackground" width="375" height="667"/>
         <image name="sign" width="490" height="658"/>
         <image name="thumbDown" width="50" height="50"/>
         <image name="thumbUp" width="50" height="50"/>
+        <image name="yourCategoriesBackground" width="375" height="667"/>
     </resources>
 </document>

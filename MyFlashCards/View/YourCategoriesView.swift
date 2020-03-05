@@ -21,20 +21,18 @@ class YourCategoriesView: UIView {
 
     override func awakeFromNib() {
         addNewCategoryBtn.titleLabel?.alpha = 0.68
-        setBackground()
         setYourCategoriesCollectionView()
-    }
-    
-    private func setBackground(){
-        let backgroundImg = UIImage(named: "yourCategoriesBackground")
-        let backgroundView = UIImageView.init(frame: self.frame)
-        backgroundView.image = backgroundImg
-        backgroundView.contentMode = .scaleAspectFit
-        self.insertSubview(backgroundView, at: 0)
     }
     
     @IBAction func addNewCategoryBtn(_ sender: UIButton) {
         delegate?.addNewCategoryBtn()
+    }
+    
+    func setNavigationController(_ navigationController: UINavigationController) {
+        navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController.navigationBar.shadowImage = UIImage()
+        navigationController.navigationBar.isTranslucent = true
+        navigationController.interactivePopGestureRecognizer?.delegate = nil
     }
     
     

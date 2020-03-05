@@ -42,7 +42,6 @@ class CategoryView: UIView {
         super.awakeFromNib()
         loadAgainBtn.titleLabel?.alpha = 0.68
         reviewHardBtn.titleLabel?.alpha = 0.68
-//        setBackground()
         setFlashCardLayout()
     }
     
@@ -145,13 +144,5 @@ class CategoryView: UIView {
     }
     @IBAction func reviewHardBtn(_ sender: UIButton) {
         delegate?.reviewHardWordsBtn(sender)
-    }
-    
-    private func setBackground() {
-        let backgroundImg = UIImage(named: "flashCardBackground")
-        let backgroundImageView = UIImageView.init(frame: self.frame)
-        backgroundImageView.image = backgroundImg
-        backgroundImageView.contentMode = .scaleAspectFill
-        self.insertSubview(backgroundImageView, at: 0)
     }
 }

@@ -24,7 +24,6 @@ class AddCategoryView: UIView{
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setBackground()
     }
     @IBAction func addBtn(_ sender: UIButton) {
         delegate?.addWordToCategory()
@@ -45,14 +44,6 @@ class AddCategoryView: UIView{
     func clearWordsTextFields() {
         angWordField.text = ""
         polWordField.text = ""
-    }
-    
-    private func setBackground() {
-        let backgroundImg = UIImage(named: "addCategoryBackground")
-        let backgroundView = UIImageView.init(frame: self.frame)
-        backgroundView.image = backgroundImg
-        backgroundView.contentMode = .scaleAspectFit
-        self.insertSubview(backgroundView, at: 0)
     }
     
     func setNavigationController(_ navigationController: UINavigationController) {
