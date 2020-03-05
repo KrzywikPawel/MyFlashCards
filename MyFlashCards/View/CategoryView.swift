@@ -55,14 +55,14 @@ class CategoryView: UIView {
     
     private func setFlashCardLayout() {
         flashCardView.backgroundColor = .clear
-        flashCardView.translatesAutoresizingMaskIntoConstraints = false
-        flashCardView.topAnchor.constraint(equalTo: self.topAnchor, constant: 200).isActive = true
-        flashCardView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -267).isActive = true
-        flashCardView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 67).isActive = true
-        flashCardView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        flashCardView.widthAnchor.constraint(equalToConstant: 308).isActive = true
-        flashCardView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        
+//        flashCardView.translatesAutoresizingMaskIntoConstraints = false
+//        flashCardView.topAnchor.constraint(equalTo: self.topAnchor, constant: 200).isActive = true
+//        flashCardView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -267).isActive = true
+//        flashCardView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 67).isActive = true
+//        flashCardView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+//        flashCardView.widthAnchor.constraint(equalToConstant: 308).isActive = true
+//        flashCardView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+//        
     }
     
     func createDeleteBtnIfYourCategory(_ navigationItem: UINavigationItem) {
