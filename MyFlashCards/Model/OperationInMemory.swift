@@ -68,10 +68,12 @@ class OperationInMemory {
     func deleteCategory(_ categoryName: String) {
         let operationInMemory = UserDefaults.standard
         operationInMemory.removeObject(forKey: categoryName)
-        var categoriesNamesArray = UserDefaults.standard.stringArray(forKey: arrayWithCategoriesNamesInMemory)
-        if let deleteIndex = categoriesNamesArray!.firstIndex(of: categoryName) {
-            categoriesNamesArray?.remove(at: deleteIndex)
-            operationInMemory.set(categoriesNamesArray,forKey: arrayWithCategoriesNamesInMemory)
+        if categoryName != namedHardWordArrayInMemory {
+            var categoriesNamesArray = UserDefaults.standard.stringArray(forKey: arrayWithCategoriesNamesInMemory)
+            if let deleteIndex = categoriesNamesArray!.firstIndex(of: categoryName) {
+                categoriesNamesArray?.remove(at: deleteIndex)
+                operationInMemory.set(categoriesNamesArray,forKey: arrayWithCategoriesNamesInMemory)
+            }
         }
     }
     
