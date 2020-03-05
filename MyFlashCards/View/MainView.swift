@@ -28,22 +28,12 @@ class MainView: UIView{
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setBackground()
         setCategoriesCollectionView()
         
     }
     
     @IBAction func hardestWordsBtn(_ sender: UIButton) {
         delegate?.hardestWordsAction()
-    }
-    
-    
-    private func setBackground() {
-        let backgroundImg = UIImage(named: "MainViewBackground")
-        let backgroundImageView = UIImageView.init(frame: self.frame)
-        backgroundImageView.image = backgroundImg
-        backgroundImageView.contentMode = .scaleAspectFill
-        self.insertSubview(backgroundImageView, at: 0)
     }
     
     private func setCategoriesCollectionView() {

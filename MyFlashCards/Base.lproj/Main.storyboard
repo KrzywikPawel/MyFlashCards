@@ -15,8 +15,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MainViewBackground" translatesAutoresizingMaskIntoConstraints="NO" id="rgf-IH-sPS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="fDo-2N-4jc"/>
+                                </constraints>
+                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="c5N-2s-ZQc">
-                                <rect key="frame" x="0.0" y="44" width="339" height="343"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="343"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6Kq-pB-cwc">
                                     <size key="itemSize" width="114" height="112"/>
@@ -31,7 +37,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVQ-m5-xJT">
-                                <rect key="frame" x="51" y="76" width="64" height="70"/>
+                                <rect key="frame" x="51" y="76" width="100" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="6eA-1G-cqr"/>
                                     <constraint firstAttribute="height" constant="70" id="rOP-6Q-YRS"/>
@@ -44,13 +50,17 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="rgf-IH-sPS" firstAttribute="leading" secondItem="c5N-2s-ZQc" secondAttribute="leading" id="2Me-Pv-nzv"/>
                             <constraint firstItem="dVQ-m5-xJT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="51" id="88A-kK-Pwu"/>
+                            <constraint firstItem="rgf-IH-sPS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-44" id="95K-df-10g"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="c5N-2s-ZQc" secondAttribute="bottom" constant="231" id="Kr9-ta-Giw"/>
                             <constraint firstItem="dVQ-m5-xJT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="Th2-Ie-JT5"/>
                             <constraint firstItem="c5N-2s-ZQc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="USL-oJ-LKD"/>
                             <constraint firstItem="c5N-2s-ZQc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xh4-NU-5l8"/>
+                            <constraint firstItem="rgf-IH-sPS" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="bzX-CA-knJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dVQ-m5-xJT" secondAttribute="trailing" constant="224" id="e3l-eP-Anm"/>
                             <constraint firstItem="c5N-2s-ZQc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fxm-sg-tmM"/>
+                            <constraint firstAttribute="trailing" secondItem="rgf-IH-sPS" secondAttribute="trailing" id="mjJ-cP-4aG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <connections>
@@ -74,6 +84,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flashCardBackground" translatesAutoresizingMaskIntoConstraints="NO" id="hyi-dV-Q6v">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="630"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="i47-q7-Ita">
                                 <rect key="frame" x="7" y="484" width="124" height="155"/>
                                 <constraints>
@@ -165,12 +178,16 @@ hard</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="pFt-84-mcz" firstAttribute="trailing" secondItem="IEp-Vz-Tlg" secondAttribute="trailing" constant="7" id="3m4-u6-7xR"/>
+                            <constraint firstItem="hyi-dV-Q6v" firstAttribute="top" secondItem="NOG-Iz-jmp" secondAttribute="top" id="6uG-yg-34R"/>
+                            <constraint firstItem="pFt-84-mcz" firstAttribute="bottom" secondItem="hyi-dV-Q6v" secondAttribute="bottom" constant="37" id="8Ml-IU-pwB"/>
                             <constraint firstItem="i47-q7-Ita" firstAttribute="leading" secondItem="pFt-84-mcz" secondAttribute="leading" constant="7" id="SO6-Ub-GOt"/>
                             <constraint firstItem="pFt-84-mcz" firstAttribute="trailing" secondItem="D7T-8x-TtW" secondAttribute="trailing" id="TGG-BZ-qk9"/>
                             <constraint firstItem="pFt-84-mcz" firstAttribute="bottom" secondItem="IEp-Vz-Tlg" secondAttribute="bottom" constant="37" id="WY3-GX-dBw"/>
                             <constraint firstItem="pFt-84-mcz" firstAttribute="bottom" secondItem="D7T-8x-TtW" secondAttribute="bottom" constant="293" id="bfX-h4-8xv"/>
+                            <constraint firstItem="hyi-dV-Q6v" firstAttribute="trailing" secondItem="pFt-84-mcz" secondAttribute="trailing" id="fDT-eO-zRv"/>
                             <constraint firstItem="pFt-84-mcz" firstAttribute="bottom" secondItem="i47-q7-Ita" secondAttribute="bottom" constant="28" id="fv6-lH-q2o"/>
                             <constraint firstItem="D7T-8x-TtW" firstAttribute="leading" secondItem="pFt-84-mcz" secondAttribute="leading" constant="67" id="qze-uS-8TX"/>
+                            <constraint firstItem="hyi-dV-Q6v" firstAttribute="leading" secondItem="pFt-84-mcz" secondAttribute="leading" id="seB-YV-7r6"/>
                             <constraint firstItem="D7T-8x-TtW" firstAttribute="top" secondItem="pFt-84-mcz" secondAttribute="top" constant="134" id="zW7-Yj-sjp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pFt-84-mcz"/>
@@ -435,7 +452,9 @@ will not be deleted.</string>
     </scenes>
     <resources>
         <image name="HardestWords" width="64" height="64"/>
+        <image name="MainViewBackground" width="375" height="667"/>
         <image name="flashCard" width="490" height="317"/>
+        <image name="flashCardBackground" width="375" height="667"/>
         <image name="sign" width="490" height="658"/>
         <image name="thumbDown" width="50" height="50"/>
         <image name="thumbUp" width="50" height="50"/>

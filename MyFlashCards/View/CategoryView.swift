@@ -42,7 +42,7 @@ class CategoryView: UIView {
         super.awakeFromNib()
         loadAgainBtn.titleLabel?.alpha = 0.68
         reviewHardBtn.titleLabel?.alpha = 0.68
-        setBackground()
+//        setBackground()
         setFlashCardLayout()
     }
     
