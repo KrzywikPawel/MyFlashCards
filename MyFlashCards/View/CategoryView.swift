@@ -20,7 +20,7 @@ protocol BtnActionInFlashCardView: class {
 
 class CategoryView: UIView {
     @IBOutlet weak private var wordLbl: UILabel!
-    @IBOutlet weak private var flashCardImg: UIImageView!
+    @IBOutlet weak var flashCardImg: UIImageView!
     @IBOutlet weak  var flashCardView: UIView!
     @IBOutlet weak private var thumbDown: UIImageView!
     @IBOutlet weak private var thumbUp: UIImageView!
@@ -40,13 +40,13 @@ class CategoryView: UIView {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        loadAgainBtn.titleLabel?.alpha = 0.68
-        reviewHardBtn.titleLabel?.alpha = 0.68
+//        loadAgainBtn.titleLabel?.alpha = 0.68
+//        reviewHardBtn.titleLabel?.alpha = 0.68
         setFlashCardLayout()
     }
     
     func setWordLbl(_ word: String) {
-        wordLbl.text = word
+//        wordLbl.text = word
     }
     
     func transitionFlashCardView() {
@@ -54,15 +54,14 @@ class CategoryView: UIView {
     }
     
     private func setFlashCardLayout() {
-        flashCardView.backgroundColor = .clear
+//        flashCardView.backgroundColor = .black
 //        flashCardView.translatesAutoresizingMaskIntoConstraints = false
-//        flashCardView.topAnchor.constraint(equalTo: self.topAnchor, constant: 200).isActive = true
-//        flashCardView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -267).isActive = true
-//        flashCardView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 67).isActive = true
+//        flashCardView.topAnchor.constraint(equalTo: self.topAnchor, constant: 152).isActive = true
+//        flashCardView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -310).isActive = true
+//        flashCardView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 57).isActive = true
 //        flashCardView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-//        flashCardView.widthAnchor.constraint(equalToConstant: 308).isActive = true
-//        flashCardView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-//        
+//        flashCardView.widthAnchor.constraint(equalToConstant: 320).isActive = true
+//        flashCardView.heightAnchor.constraint(equalToConstant: 206).isActive = true
     }
     
     func createDeleteBtnIfYourCategory(_ navigationItem: UINavigationItem) {

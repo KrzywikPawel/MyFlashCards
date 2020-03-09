@@ -15,7 +15,7 @@ class CategoryViewController: UIViewController{
     var isHardWordsView = false
     var divisor: CGFloat!
     var isPolishSite = false
-    var backCardPoint = CGPoint() //CGPoint(x: 221, y: 300)
+    var backCardPoint = CGPoint()
     var words = [WordStruct]()
     var hardWords = [WordStruct]()
     var showedCard = 0
@@ -27,7 +27,7 @@ class CategoryViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = categoryName
-        backCardPoint = setView.flashCardView.center
+//        backCardPoint = setView.flashCardImg.center
         setView.delegate = self
         setView.setNavigationController(self.navigationController!)
         setView.createBackBtnItem(self.navigationItem)
