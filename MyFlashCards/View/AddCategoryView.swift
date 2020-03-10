@@ -23,6 +23,10 @@ class AddCategoryView: UIView{
     weak var delegate: AddCategoryBtnAction?
     
     override func awakeFromNib() {
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "addCategoryBackGround")
+        backgroundImage.contentMode =  UIView.ContentMode.scaleAspectFill
+        self.insertSubview(backgroundImage, at: 0)
         super.awakeFromNib()
     }
     @IBAction func addBtn(_ sender: UIButton) {
