@@ -31,7 +31,7 @@ extension YourCategoriesViewController:UICollectionViewDelegate,UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let pushVC = mainStoryboard.instantiateViewController(identifier: "FlashCardViewController") as! CategoryViewController
+        let pushVC = mainStoryboard.instantiateViewController(identifier: "CategoryViewController") as! CategoryViewController
         pushVC.categoryName = yourCategoriesNames[indexPath.row]
         pushVC.categoryType = "YourCategory"
         self.navigationController?.pushViewController(pushVC, animated: true)

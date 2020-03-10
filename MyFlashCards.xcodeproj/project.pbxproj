@@ -11,6 +11,7 @@
 		8D5F2C05CF2A1231208E1EB0 /* Pods_MyFlashCards.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31C2825A814B6F28CCF96710 /* Pods_MyFlashCards.framework */; };
 		E507C06E2406F327004DA8DF /* BtnActionInCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E507C06D2406F327004DA8DF /* BtnActionInCategory.swift */; };
 		E51C11ED2400611100D2BEC5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E51C11EC2400611100D2BEC5 /* GoogleService-Info.plist */; };
+		E51F43BD2416DA0600D3F985 /* testBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51F43BC2416DA0600D3F985 /* testBar.swift */; };
 		E52EBE2E23FD352E008311BB /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52EBE2D23FD352E008311BB /* CategoryViewController.swift */; };
 		E531512524006B4F0089D59B /* WordStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E531512424006B4F0089D59B /* WordStruct.swift */; };
 		E531512724006D6D0089D59B /* TakeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E531512624006D6D0089D59B /* TakeCategory.swift */; };
@@ -20,6 +21,7 @@
 		E55D6B102407AF8400A6A590 /* CreateBarBackBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55D6B0F2407AF8400A6A590 /* CreateBarBackBtn.swift */; };
 		E55D6B132407BB2F00A6A590 /* EmptyCollectionViewMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55D6B122407BB2F00A6A590 /* EmptyCollectionViewMessage.swift */; };
 		E55D6B152407BC0800A6A590 /* SetEmptyCollectionViewMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55D6B142407BC0800A6A590 /* SetEmptyCollectionViewMessage.swift */; };
+		E55DBA5F24178D1C00FBAA34 /* TestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55DBA5E24178D1C00FBAA34 /* TestCollectionViewCell.swift */; };
 		E561D1C02402837D008917F6 /* YourCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E561D1BF2402837D008917F6 /* YourCategoriesViewController.swift */; };
 		E561D1C224028698008917F6 /* YourCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E561D1C124028698008917F6 /* YourCategoriesView.swift */; };
 		E561D1C4240287C0008917F6 /* YourCategoriesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E561D1C3240287C0008917F6 /* YourCategoriesCollectionView.swift */; };
@@ -58,6 +60,7 @@
 		553FF6DF750C56B9E87000AE /* Pods_MyFlashCardsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyFlashCardsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E507C06D2406F327004DA8DF /* BtnActionInCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnActionInCategory.swift; sourceTree = "<group>"; };
 		E51C11EC2400611100D2BEC5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E51F43BC2416DA0600D3F985 /* testBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testBar.swift; sourceTree = "<group>"; };
 		E52EBE2D23FD352E008311BB /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		E531512424006B4F0089D59B /* WordStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordStruct.swift; sourceTree = "<group>"; };
 		E531512624006D6D0089D59B /* TakeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeCategory.swift; sourceTree = "<group>"; };
@@ -70,6 +73,7 @@
 		E55D6B0F2407AF8400A6A590 /* CreateBarBackBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBarBackBtn.swift; sourceTree = "<group>"; };
 		E55D6B122407BB2F00A6A590 /* EmptyCollectionViewMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCollectionViewMessage.swift; sourceTree = "<group>"; };
 		E55D6B142407BC0800A6A590 /* SetEmptyCollectionViewMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetEmptyCollectionViewMessage.swift; sourceTree = "<group>"; };
+		E55DBA5E24178D1C00FBAA34 /* TestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCollectionViewCell.swift; sourceTree = "<group>"; };
 		E561D1BF2402837D008917F6 /* YourCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCategoriesViewController.swift; sourceTree = "<group>"; };
 		E561D1C124028698008917F6 /* YourCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCategoriesView.swift; sourceTree = "<group>"; };
 		E561D1C3240287C0008917F6 /* YourCategoriesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourCategoriesCollectionView.swift; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 				E561D1BF2402837D008917F6 /* YourCategoriesViewController.swift */,
 				E561D1C3240287C0008917F6 /* YourCategoriesCollectionView.swift */,
 				E5DB07C82402D214001B0158 /* AddCategoryViewController.swift */,
+				E51F43BC2416DA0600D3F985 /* testBar.swift */,
+				E55DBA5E24178D1C00FBAA34 /* TestCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -416,7 +422,9 @@
 				E52EBE2E23FD352E008311BB /* CategoryViewController.swift in Sources */,
 				E55D6B102407AF8400A6A590 /* CreateBarBackBtn.swift in Sources */,
 				E531512524006B4F0089D59B /* WordStruct.swift in Sources */,
+				E55DBA5F24178D1C00FBAA34 /* TestCollectionViewCell.swift in Sources */,
 				E55304DF23FAB58800A7A32F /* MainView.swift in Sources */,
+				E51F43BD2416DA0600D3F985 /* testBar.swift in Sources */,
 				E5E7E0D024007281001303BC /* CategoryView.swift in Sources */,
 				E561D1C02402837D008917F6 /* YourCategoriesViewController.swift in Sources */,
 				E561D1C4240287C0008917F6 /* YourCategoriesCollectionView.swift in Sources */,

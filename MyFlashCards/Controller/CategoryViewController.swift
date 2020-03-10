@@ -27,7 +27,7 @@ class CategoryViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = categoryName
-//        backCardPoint = setView.flashCardImg.center
+        backCardPoint = setView.flashCardImg.center
         setView.delegate = self
         setView.setNavigationController(self.navigationController!)
         setView.createBackBtnItem(self.navigationItem)
