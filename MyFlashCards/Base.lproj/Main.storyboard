@@ -75,7 +75,7 @@
             </objects>
             <point key="canvasLocation" x="2956" y="99.400299850074973"/>
         </scene>
-        <!--Item-->
+        <!--Category View Controller-->
         <scene sceneID="6JW-Yz-6fu">
             <objects>
                 <viewController storyboardIdentifier="CategoryViewController" id="MgK-Pe-AHX" customClass="CategoryViewController" customModule="MyFlashCards" customModuleProvider="target" sceneMemberID="viewController">
@@ -84,7 +84,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flashCardBackground" translatesAutoresizingMaskIntoConstraints="NO" id="UKQ-g9-mWw">
-                                <rect key="frame" x="0.0" y="-44" width="375" height="711"/>
+                                <rect key="frame" x="0.0" y="-57" width="375" height="724"/>
                                 <gestureRecognizers/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JKk-OS-F1o" userLabel="review hard">
@@ -111,27 +111,27 @@ hard</string>
                                 </connections>
                             </button>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Wqf-qs-a2B">
-                                <rect key="frame" x="45" y="71" width="330" height="344"/>
+                                <rect key="frame" x="45" y="83" width="330" height="308"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flashCard" translatesAutoresizingMaskIntoConstraints="NO" id="bzu-OH-mDy">
-                                        <rect key="frame" x="0.0" y="18" width="330.00000000000006" height="326"/>
+                                        <rect key="frame" x="8" y="18" width="334.00000000000006" height="290"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8pa-h1-4qN">
-                                        <rect key="frame" x="237" y="113" width="77" height="66"/>
+                                        <rect key="frame" x="237" y="98" width="77" height="66"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="66" id="7WY-jO-YQ1"/>
                                             <constraint firstAttribute="width" constant="77" id="XKX-PS-idg"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qet-Fq-s0R">
-                                        <rect key="frame" x="144" y="161.5" width="42" height="21"/>
+                                        <rect key="frame" x="154" y="152.5" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Bu-Ke-e1E">
-                                        <rect key="frame" x="31" y="92" width="77" height="66"/>
+                                        <rect key="frame" x="31" y="73" width="77" height="66"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="66" id="9lb-HK-j2g"/>
                                             <constraint firstAttribute="width" constant="77" id="Omr-m1-oei"/>
@@ -141,15 +141,15 @@ hard</string>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="8pa-h1-4qN" firstAttribute="top" secondItem="Wqf-qs-a2B" secondAttribute="top" constant="113" id="0d8-qF-7Fh"/>
-                                    <constraint firstItem="bzu-OH-mDy" firstAttribute="leading" secondItem="Wqf-qs-a2B" secondAttribute="leading" id="9yc-p7-YUP"/>
-                                    <constraint firstItem="4Bu-Ke-e1E" firstAttribute="top" secondItem="Wqf-qs-a2B" secondAttribute="top" constant="92" id="HBm-L5-fzE"/>
-                                    <constraint firstItem="qet-Fq-s0R" firstAttribute="centerY" secondItem="Wqf-qs-a2B" secondAttribute="centerY" id="JRz-is-wmO"/>
+                                    <constraint firstItem="8pa-h1-4qN" firstAttribute="top" secondItem="Wqf-qs-a2B" secondAttribute="top" constant="98" id="0d8-qF-7Fh"/>
+                                    <constraint firstItem="bzu-OH-mDy" firstAttribute="leading" secondItem="Wqf-qs-a2B" secondAttribute="leading" constant="8" id="9yc-p7-YUP"/>
+                                    <constraint firstItem="4Bu-Ke-e1E" firstAttribute="top" secondItem="Wqf-qs-a2B" secondAttribute="top" constant="73" id="HBm-L5-fzE"/>
+                                    <constraint firstItem="qet-Fq-s0R" firstAttribute="centerY" secondItem="Wqf-qs-a2B" secondAttribute="centerY" constant="9" id="JRz-is-wmO"/>
                                     <constraint firstItem="bzu-OH-mDy" firstAttribute="top" secondItem="Wqf-qs-a2B" secondAttribute="top" constant="18" id="OD6-ng-WP7"/>
-                                    <constraint firstAttribute="trailing" secondItem="bzu-OH-mDy" secondAttribute="trailing" id="Tpr-Kk-lXl"/>
+                                    <constraint firstAttribute="trailing" secondItem="bzu-OH-mDy" secondAttribute="trailing" constant="-11.999999999999943" id="Tpr-Kk-lXl"/>
                                     <constraint firstItem="4Bu-Ke-e1E" firstAttribute="leading" secondItem="Wqf-qs-a2B" secondAttribute="leading" constant="31" id="cRX-TS-KlS"/>
                                     <constraint firstAttribute="trailing" secondItem="8pa-h1-4qN" secondAttribute="trailing" constant="16" id="i93-5q-ioG"/>
-                                    <constraint firstItem="qet-Fq-s0R" firstAttribute="centerX" secondItem="Wqf-qs-a2B" secondAttribute="centerX" id="sQz-1d-Atw"/>
+                                    <constraint firstItem="qet-Fq-s0R" firstAttribute="centerX" secondItem="Wqf-qs-a2B" secondAttribute="centerX" constant="10" id="sQz-1d-Atw"/>
                                     <constraint firstAttribute="bottom" secondItem="bzu-OH-mDy" secondAttribute="bottom" id="ukq-cx-ZNw"/>
                                 </constraints>
                                 <connections>
@@ -177,19 +177,19 @@ again</string>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="UKQ-g9-mWw" firstAttribute="top" secondItem="5LC-Ek-TaE" secondAttribute="top" constant="-44" id="86P-tL-Idr"/>
+                            <constraint firstItem="UKQ-g9-mWw" firstAttribute="top" secondItem="5LC-Ek-TaE" secondAttribute="top" constant="-101" id="86P-tL-Idr"/>
                             <constraint firstItem="Wqf-qs-a2B" firstAttribute="leading" secondItem="5LC-Ek-TaE" secondAttribute="leading" constant="45" id="9Ry-cy-wMn"/>
-                            <constraint firstItem="JKk-OS-F1o" firstAttribute="top" secondItem="Wqf-qs-a2B" secondAttribute="bottom" constant="72" id="D9H-VZ-iye"/>
+                            <constraint firstItem="JKk-OS-F1o" firstAttribute="top" secondItem="Wqf-qs-a2B" secondAttribute="bottom" constant="96" id="D9H-VZ-iye"/>
                             <constraint firstItem="B46-R8-3oi" firstAttribute="leading" secondItem="5LC-Ek-TaE" secondAttribute="leading" constant="16" id="E1D-V6-7z3"/>
                             <constraint firstItem="UKQ-g9-mWw" firstAttribute="trailing" secondItem="5LC-Ek-TaE" secondAttribute="trailing" id="HI0-lR-eYF"/>
                             <constraint firstItem="5LC-Ek-TaE" firstAttribute="bottom" secondItem="B46-R8-3oi" secondAttribute="bottom" constant="25" id="Kbc-F4-VpV"/>
-                            <constraint firstItem="Wqf-qs-a2B" firstAttribute="top" secondItem="5LC-Ek-TaE" secondAttribute="top" constant="71" id="Nt1-5T-bYi"/>
+                            <constraint firstItem="Wqf-qs-a2B" firstAttribute="top" secondItem="5LC-Ek-TaE" secondAttribute="top" constant="39" id="Nt1-5T-bYi"/>
                             <constraint firstItem="5LC-Ek-TaE" firstAttribute="trailing" secondItem="JKk-OS-F1o" secondAttribute="trailing" constant="16" id="PET-ON-Ko1"/>
                             <constraint firstItem="UKQ-g9-mWw" firstAttribute="leading" secondItem="5LC-Ek-TaE" secondAttribute="leading" id="aek-nX-PpG"/>
                             <constraint firstItem="Wqf-qs-a2B" firstAttribute="trailing" secondItem="5LC-Ek-TaE" secondAttribute="trailing" id="bXV-lm-lMs"/>
                             <constraint firstItem="5LC-Ek-TaE" firstAttribute="bottom" secondItem="JKk-OS-F1o" secondAttribute="bottom" constant="25" id="iKe-J3-KRu"/>
                             <constraint firstItem="UKQ-g9-mWw" firstAttribute="bottom" secondItem="5LC-Ek-TaE" secondAttribute="bottom" id="ovw-dV-BVX"/>
-                            <constraint firstItem="5LC-Ek-TaE" firstAttribute="bottom" secondItem="Wqf-qs-a2B" secondAttribute="bottom" constant="252" id="p5a-bZ-LFS"/>
+                            <constraint firstItem="5LC-Ek-TaE" firstAttribute="bottom" secondItem="Wqf-qs-a2B" secondAttribute="bottom" constant="276" id="p5a-bZ-LFS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5LC-Ek-TaE"/>
                         <connections>
@@ -202,7 +202,6 @@ again</string>
                             <outlet property="wordLbl" destination="qet-Fq-s0R" id="uyr-Bc-O9s"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="sUa-A7-oPT"/>
                     <navigationItem key="navigationItem" id="CiJ-kr-cZ3"/>
                     <connections>
                         <outlet property="setView" destination="MTD-sp-ZgT" id="aN9-vu-1vh"/>
@@ -220,7 +219,7 @@ again</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4375" y="99"/>
+            <point key="canvasLocation" x="5312.8000000000002" y="98.50074962518741"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="TCb-Wl-XCZ">
@@ -234,8 +233,8 @@ again</string>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="ulJ-Mh-Cob" kind="relationship" relationship="viewControllers" id="4xN-Cx-FA1"/>
                         <segue destination="APU-m0-iqo" kind="relationship" relationship="viewControllers" id="ZTt-28-gma"/>
+                        <segue destination="ulJ-Mh-Cob" kind="relationship" relationship="viewControllers" id="RG4-ar-R2v"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QOG-6h-vRW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -323,7 +322,7 @@ Category</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addCategoryBackground" translatesAutoresizingMaskIntoConstraints="NO" id="LFb-sH-Qbd">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addCategoryBackGround" translatesAutoresizingMaskIntoConstraints="NO" id="LFb-sH-Qbd">
                                 <rect key="frame" x="0.0" y="-65" width="375" height="732"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category Name" textAlignment="center" minimumFontSize="17" id="e7T-mb-Stx">
@@ -462,11 +461,30 @@ will not be deleted.</string>
             </objects>
             <point key="canvasLocation" x="717.60000000000002" y="-915.29235382308855"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="uiS-RU-Npf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SLm-oQ-f7i" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="sUa-A7-oPT"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="e44-Oo-lQs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MgK-Pe-AHX" kind="relationship" relationship="rootViewController" id="EBx-3h-FdH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zNG-Q4-6iT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4373.6000000000004" y="98.50074962518741"/>
+        </scene>
     </scenes>
     <resources>
         <image name="HardestWords" width="64" height="64"/>
         <image name="MainViewBackground" width="375" height="667"/>
-        <image name="addCategoryBackground" width="375" height="667"/>
+        <image name="addCategoryBackGround" width="375" height="667"/>
         <image name="flashCard" width="367.5" height="238"/>
         <image name="flashCardBackground" width="138" height="245.5"/>
         <image name="sign" width="490" height="658"/>
