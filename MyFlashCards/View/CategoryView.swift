@@ -40,9 +40,9 @@ class CategoryView: UIView {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-       
-//        loadAgainBtn.titleLabel?.alpha = 0.68
-//        reviewHardBtn.titleLabel?.alpha = 0.68
+        
+        //        loadAgainBtn.titleLabel?.alpha = 0.68
+        //        reviewHardBtn.titleLabel?.alpha = 0.68
     }
     
     func setWordLbl(_ word: String) {

@@ -27,7 +27,8 @@ class CategoryViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = categoryName
-//        backCardPoint = setView.flashCardImg.center
+        backCardPoint = setView.flashCardView.center
+        print(setView.flashCardView.center)
         setView.delegate = self
         setView.setNavigationController(self.navigationController!)
         setView.createBackBtnItem(self.navigationItem)
@@ -81,6 +82,7 @@ class CategoryViewController: UIViewController{
     
     private func showFlashCard() {
         if showedCard >= words.count {
+            setView.backCardToStartPosition(flashCard,backCardPoint)
             setView.setWordLbl(wordsAreEnded)
         } else {
             setView.backCardToStartPosition(flashCard,backCardPoint)
@@ -89,6 +91,10 @@ class CategoryViewController: UIViewController{
     }
     
     @IBAction private func flashCardTapGesture(_ sender: UITapGestureRecognizer) {
+        test()
+    }
+    
+    fileprivate func test() {
         setView.transitionFlashCardView()
         let onFlashCard = self.setView.takeWordLblText()
         if onFlashCard != wordsAreEnded && onFlashCard != emptyHardwords{
@@ -128,8 +134,8 @@ class CategoryViewController: UIViewController{
             } else if flashCard.center.x > (view.frame.width - 75) {
                 swipeRight()
             }
-            //            ended hold flash and dont swipe, back to start position
-            setView.backCardToStartPosition(setView.flashCardView,backCardPoint)
+            test()
+            setView.backCardToStartPosition(flashCard,backCardPoint)
         }
     }
     
@@ -153,7 +159,6 @@ class CategoryViewController: UIViewController{
     
     private func nextFlashCard() {
         showedCard = showedCard + 1
-        setView.backCardToStartPosition(setView.flashCardView,backCardPoint)
         showFlashCard()
     }
     
