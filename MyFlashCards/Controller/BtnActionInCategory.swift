@@ -40,7 +40,7 @@ extension CategoryViewController: BtnActionInFlashCardView {
     
     func reviewHardWordsBtn(_ sender: UIButton) {
         if hardWords.count == 0 {
-            setView.setWordLbl(emptyHardwords)
+            setView.setWordLbl(reloadWordsComunicate)
             showedCard = words.count
         } else {
             showedCard = 0

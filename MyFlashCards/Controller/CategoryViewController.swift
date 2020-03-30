@@ -21,8 +21,8 @@ class CategoryViewController: UIViewController{
     var showedCard = 0
     var flashCard = UIView()
     let operationInMemory = OperationInMemory()
-    let wordsAreEnded = "end words"
-    let emptyHardwords = "your hard words is empty"
+    let endWordsComunicate = "end words"
+    let reloadWordsComunicate = "load or add another words"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,14 +76,19 @@ class CategoryViewController: UIViewController{
             setView.setWordLbl(words[showedCard].ang)
             showFlashCard()
         } else {
-            setView.setWordLbl(wordsAreEnded)
+            setView.setWordLbl(endWordsComunicate)
+            setView.backCardToStartPosition(flashCard,backCardPoint)
         }
     }
     
     private func showFlashCard() {
         if showedCard >= words.count {
             setView.backCardToStartPosition(flashCard,backCardPoint)
-            setView.setWordLbl(wordsAreEnded)
+            if setView.takeWordLblText() == endWordsComunicate {
+                setView.setWordLbl(reloadWordsComunicate)
+            }else {
+                setView.setWordLbl(endWordsComunicate)
+            }
         } else {
             setView.backCardToStartPosition(flashCard,backCardPoint)
             setView.setWordLbl(words[showedCard].ang)
@@ -97,7 +102,7 @@ class CategoryViewController: UIViewController{
     private func swipeAndGoToStartPositionFlashCard() {
         setView.transitionFlashCardView()
         let onFlashCard = self.setView.takeWordLblText()
-        if onFlashCard != wordsAreEnded && onFlashCard != emptyHardwords{
+        if onFlashCard != endWordsComunicate && onFlashCard != reloadWordsComunicate{
             if isPolishSite {
                 isPolishSite = false
                 setView.setWordLbl(words[showedCard].ang)
@@ -105,6 +110,10 @@ class CategoryViewController: UIViewController{
                 isPolishSite = true
                 setView.setWordLbl(words[showedCard].pol)
             }
+        }else if onFlashCard == reloadWordsComunicate {
+            setView.setWordLbl(endWordsComunicate)
+        }else {
+            setView.setWordLbl(reloadWordsComunicate)
         }
     }
     
@@ -166,7 +175,7 @@ class CategoryViewController: UIViewController{
     
     private func deleteFromHardWord() {
         let wordOnFlashCard = setView.takeWordLblText()
-        if wordOnFlashCard != wordsAreEnded && wordOnFlashCard != emptyHardwords {
+        if wordOnFlashCard != endWordsComunicate && wordOnFlashCard != reloadWordsComunicate {
             if let index = hardWords.firstIndex(of: words[showedCard]) {
                 hardWords.remove(at: index)
             }
@@ -179,7 +188,7 @@ class CategoryViewController: UIViewController{
     }
     
     private func addWordToTemporaryHard(_ wordOnFlashCard: String) {
-        if wordOnFlashCard != wordsAreEnded && wordOnFlashCard != emptyHardwords {
+        if wordOnFlashCard != endWordsComunicate && wordOnFlashCard != reloadWordsComunicate {
             if hardWords.contains(where: {$0 == self.words[self.showedCard]}) {
                 //check duplicate
             } else {
