@@ -91,10 +91,10 @@ class CategoryViewController: UIViewController{
     }
     
     @IBAction private func flashCardTapGesture(_ sender: UITapGestureRecognizer) {
-        test()
+        swipeAndGoToStartPositionFlashCard()
     }
     
-    fileprivate func test() {
+    private func swipeAndGoToStartPositionFlashCard() {
         setView.transitionFlashCardView()
         let onFlashCard = self.setView.takeWordLblText()
         if onFlashCard != wordsAreEnded && onFlashCard != emptyHardwords{
@@ -133,9 +133,11 @@ class CategoryViewController: UIViewController{
                 swipeLeft()
             } else if flashCard.center.x > (view.frame.width - 75) {
                 swipeRight()
+            }else{
+                swipeAndGoToStartPositionFlashCard()
+                setView.backCardToStartPosition(flashCard,backCardPoint)
+                
             }
-            test()
-            setView.backCardToStartPosition(flashCard,backCardPoint)
         }
     }
     
