@@ -34,7 +34,7 @@
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVQ-m5-xJT">
-                                <rect key="frame" x="51" y="76" width="100" height="70"/>
+                                <rect key="frame" x="42" y="76" width="100" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dVQ-m5-xJT" secondAttribute="height" multiplier="10:7" id="TZn-hT-iwE"/>
                                     <constraint firstAttribute="height" constant="70" id="rOP-6Q-YRS"/>
@@ -48,14 +48,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="rgf-IH-sPS" firstAttribute="leading" secondItem="c5N-2s-ZQc" secondAttribute="leading" id="2Me-Pv-nzv"/>
-                            <constraint firstItem="dVQ-m5-xJT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="51" id="88A-kK-Pwu"/>
+                            <constraint firstItem="dVQ-m5-xJT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="88A-kK-Pwu"/>
                             <constraint firstItem="rgf-IH-sPS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-44" id="95K-df-10g"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="c5N-2s-ZQc" secondAttribute="bottom" constant="231" id="Kr9-ta-Giw"/>
                             <constraint firstItem="dVQ-m5-xJT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="Th2-Ie-JT5"/>
                             <constraint firstItem="c5N-2s-ZQc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="USL-oJ-LKD"/>
                             <constraint firstItem="c5N-2s-ZQc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Xh4-NU-5l8"/>
                             <constraint firstItem="rgf-IH-sPS" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="bzX-CA-knJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dVQ-m5-xJT" secondAttribute="trailing" constant="224" id="e3l-eP-Anm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dVQ-m5-xJT" secondAttribute="trailing" constant="233" id="e3l-eP-Anm"/>
                             <constraint firstItem="c5N-2s-ZQc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fxm-sg-tmM"/>
                             <constraint firstAttribute="trailing" secondItem="rgf-IH-sPS" secondAttribute="trailing" id="mjJ-cP-4aG"/>
                         </constraints>
@@ -112,7 +112,7 @@ hard</string>
                                 <rect key="frame" x="45" y="83" width="330" height="308"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flashCard" translatesAutoresizingMaskIntoConstraints="NO" id="bzu-OH-mDy">
-                                        <rect key="frame" x="8" y="18" width="334" height="290"/>
+                                        <rect key="frame" x="8" y="18" width="334.00000000000006" height="290"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8pa-h1-4qN">
@@ -408,11 +408,11 @@ will not be deleted.</string>
             </objects>
             <point key="canvasLocation" x="4200.8000000000002" y="-915.29235382308855"/>
         </scene>
-        <!--Item-->
+        <!--Categories-->
         <scene sceneID="2ER-xZ-MQj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="APU-m0-iqo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="dk3-mg-uqE"/>
+                    <tabBarItem key="tabBarItem" title="Categories" image="compas" id="dk3-mg-uqE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ok3-Jy-vIh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -427,11 +427,11 @@ will not be deleted.</string>
             </objects>
             <point key="canvasLocation" x="2016.8" y="99.400299850074973"/>
         </scene>
-        <!--Item-->
+        <!--Personal-->
         <scene sceneID="KZt-Bm-XNF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ulJ-Mh-Cob" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="JDD-67-hsX"/>
+                    <tabBarItem key="tabBarItem" title="Personal" image="person.badge.plus.fill" catalog="system" id="JDD-67-hsX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Acx-nH-7dG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -488,8 +488,10 @@ will not be deleted.</string>
         <image name="HardestWords" width="64" height="64"/>
         <image name="MainViewBackground" width="375" height="667"/>
         <image name="addCategoryBackGround" width="125" height="222.5"/>
+        <image name="compas" width="25" height="25"/>
         <image name="flashCard" width="367.5" height="238"/>
         <image name="flashCardBackground" width="138" height="245.5"/>
+        <image name="person.badge.plus.fill" catalog="system" width="64" height="58"/>
         <image name="sign" width="490" height="658"/>
         <image name="yourCategoriesBackground" width="375" height="667"/>
     </resources>
